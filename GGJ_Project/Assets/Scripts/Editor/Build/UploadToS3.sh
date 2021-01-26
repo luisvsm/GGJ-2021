@@ -2,7 +2,7 @@
 
 ProjectName="GGJ_2021"
 AWSProfile="connectedplay"
-BuildDirectory=$(cat ./Assets/Game/Scripts/Build/lastbuild.txt)
+BuildDirectory=$(cat ./Assets/Scripts/Editor/Build/lastbuild.txt)
 Platform=$1
 ZipName=$ProjectName-$Platform-$(date +'%d-%m-%y_%H-%M-%S').zip
 ZipPath="./builds/$ZipName"
@@ -22,7 +22,7 @@ Policy="{
 }"
 
 Base64Policy=$(echo "$Policy" | tr -d "\n" | tr -d " \t\n\r" | openssl base64 | tr -- '+=/' '-_~' | tr -d "\n" | tr -d " \t\n\r")
-SignedPolicy=$(echo "$Policy" | tr -d "\n" | tr -d " \t\n\r" | openssl sha1 -sign $PrivateKey -pass pass:"$PrivKeyPass" | openssl base64 | tr -- '+=/' '-_~'| tr -d "\n" | tr -d " \t\n\r") 
+SignedPolicy=$(echo "$Policy" | tr -d "\n" | tr -d " \t\n\r" | openssl sha1 -sign $PrivateKey | openssl base64 | tr -- '+=/' '-_~'| tr -d "\n" | tr -d " \t\n\r") 
 
 SignedURL="$URL?Policy=$Base64Policy&Signature=$SignedPolicy&Key-Pair-Id=$KeyPairID"
 echo "$SignedURL"
