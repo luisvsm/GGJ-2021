@@ -1,22 +1,36 @@
 #!/bin/bash
 
+### [ Config ] ###
+# Expire in 1 year
+LinkExpiryInDays=365
 ProjectName="GGJ_2021"
 AWSProfile="connectedplay"
-BuildDirectory=$(cat ./Assets/Scripts/Editor/Build/lastbuild.txt)
+URL="https://builds.connectedplay.io/ggj2021"
+S3Address="s3://builds.connectedplay.io/ggj2021"
+BuildInfoFileLocation="./Assets/Scripts/Editor/Build/lastbuild.txt"
+CloudFrontDistID="E28MCYN6VPSOX9"
+
+### [ Calculated Values ] ###
+OneDayInSeconds=$((24 * 60 * 60))
+ExpiryTime=$(($(date +%s) + $((LinkExpiryInDays * OneDayInSeconds ))))
+BuildDirectory=$(cat $BuildInfoFileLocation)
 Platform=$1
 ZipName=$ProjectName-$Platform-$(date +'%d-%m-%y_%H-%M-%S').zip
 ZipPath="./builds/$ZipName"
-URL="https://builds.connectedplay.io/ggj2021/$ZipName"
-S3Address="s3://builds.connectedplay.io/ggj2021"
+URL="$URL/$ZipName"
 PrivateKey=~/CloudFront/private_connectedplay_builds_key.pem
-CloudFrontDistID="E28MCYN6VPSOX9"
 zip -r -X "$ZipPath" "$BuildDirectory"
 
 KeyPairID="K166I4EZSMCK92"
 Policy="{
     \"Statement\": [
         {
-            \"Resource\": \"$URL\"
+            \"Resource\": \"$URL\",
+            \"Condition\": {
+                \"DateLessThan\": {
+                    \"AWS:EpochTime\": $ExpiryTime
+                }
+            }
         }
     ]
 }"
@@ -25,7 +39,9 @@ Base64Policy=$(echo "$Policy" | tr -d "\n" | tr -d " \t\n\r" | openssl base64 | 
 SignedPolicy=$(echo "$Policy" | tr -d "\n" | tr -d " \t\n\r" | openssl sha1 -sign $PrivateKey | openssl base64 | tr -- '+=/' '-_~'| tr -d "\n" | tr -d " \t\n\r") 
 
 SignedURL="$URL?Policy=$Base64Policy&Signature=$SignedPolicy&Key-Pair-Id=$KeyPairID"
+
 echo "$SignedURL"
+
 FileSize=$(ls -lah $ZipPath | awk -F " " {'print $5'})
 
 aws s3 cp "$ZipPath" $S3Address --profile $AWSProfile
@@ -33,11 +49,15 @@ aws s3 cp "$ZipPath" $S3Address --profile $AWSProfile
 aws cloudfront create-invalidation \
     --distribution-id $CloudFrontDistID \
     --paths "/$ZipName" --profile $AWSProfile
-dateNow=$(date '+%Y-%m-%d %H:%M:%S')
-curl -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST --data "{\
+
+DiscordPostData="{\
     \"embeds\": {\
         \"url\":\"$URL\",\
         \"title\":\"New $Platform build\",\
         \"description\":\"Uploaded at $dateNow ($FileSize)\"\
     }\
-}" $DiscordWebhook
+}"
+
+dateNow=$(date '+%Y-%m-%d %H:%M:%S')
+curl -i -H "Accept: application/json" -H "Content-Type:application/json" \
+-X POST --data "$DiscordPostData" "$DiscordWebhook"
