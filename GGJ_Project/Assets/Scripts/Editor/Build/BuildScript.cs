@@ -18,8 +18,7 @@ public class BuildScript
 
         BuildPipeline.BuildPlayer(getScenes(), buildArtifact,
             BuildTarget.StandaloneLinux64, BuildOptions.None);
-
-        System.IO.File.WriteAllText(@"./Assets/Game/Scripts/Build/lastbuild.txt", buildArtifact);
+        System.IO.File.WriteAllText(@"./Assets/Scripts/Editor/Build/lastbuild.txt", buildArtifact);
     }
 
 
@@ -34,7 +33,7 @@ public class BuildScript
         BuildPipeline.BuildPlayer(getScenes(), buildArtifact,
             BuildTarget.StandaloneOSX, BuildOptions.None);
 
-        System.IO.File.WriteAllText(@"./Assets/Game/Scripts/Build/lastbuild.txt", $"./builds/{buildFolder}");
+        System.IO.File.WriteAllText(@"./Assets/Scripts/Editor/Build/lastbuild.txt", $"./builds/{buildFolder}");
     }
 
     [MenuItem("NullyRef/Build/Windows")]
@@ -48,7 +47,7 @@ public class BuildScript
         BuildPipeline.BuildPlayer(getScenes(), buildArtifact,
             BuildTarget.StandaloneWindows64, BuildOptions.None);
 
-        System.IO.File.WriteAllText(@"./Assets/Game/Scripts/Build/lastbuild.txt", $"./builds/{buildFolder}");
+        System.IO.File.WriteAllText(@"./Assets/Scripts/Editor/Build/lastbuild.txt", $"./builds/{buildFolder}");
     }
 
     [MenuItem("NullyRef/Build/Android")]
@@ -62,7 +61,7 @@ public class BuildScript
         BuildPipeline.BuildPlayer(getScenes(), buildArtifact,
             BuildTarget.Android, BuildOptions.None);
 
-        System.IO.File.WriteAllText(@"./Assets/Game/Scripts/Build/lastbuild.txt", buildArtifact);
+        System.IO.File.WriteAllText(@"./Assets/Scripts/Editor/Build/lastbuild.txt", buildArtifact);
     }
 
     [MenuItem("NullyRef/Build/iOS")]
@@ -75,6 +74,6 @@ public class BuildScript
         BuildPipeline.BuildPlayer(getScenes(), buildArtifact,
             BuildTarget.iOS, BuildOptions.None);
 
-        System.IO.File.WriteAllText(@"./Assets/Game/Scripts/Build/lastbuild.txt", buildArtifact);
+        System.IO.File.WriteAllText(@"./Assets/Scripts/Editor/Build/lastbuild.txt", buildArtifact);
     }
 }
