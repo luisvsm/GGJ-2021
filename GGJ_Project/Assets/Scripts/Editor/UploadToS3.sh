@@ -4,7 +4,7 @@ ProjectName="GGJ_2021"
 AWSProfile="connectedplay"
 BuildDirectory=$(cat ./Assets/Game/Scripts/Build/lastbuild.txt)
 Platform=$1
-ZipName=$ProjectName-$Platform-$(date +'%Y-%m').zip
+ZipName=$ProjectName-$Platform-$(date +'%d-%m-%y_%H-%M-%S').zip
 ZipPath="./builds/$ZipName"
 URL="https://builds.connectedplay.io/ggj2021/$ZipName"
 S3Address="s3://builds.connectedplay.io/ggj2021"
@@ -33,3 +33,11 @@ aws s3 cp "$ZipPath" $S3Address --profile $AWSProfile
 aws cloudfront create-invalidation \
     --distribution-id $CloudFrontDistID \
     --paths "/$ZipName" --profile $AWSProfile
+dateNow=$(date '+%Y-%m-%d %H:%M:%S')
+curl -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST --data "{\
+    \"embeds\": {\
+        \"url\":\"$URL\",\
+        \"title\":\"New $Platform build\",\
+        \"description\":\"Uploaded at $dateNow ($FileSize)\"\
+    }\
+}" $DiscordWebhook
