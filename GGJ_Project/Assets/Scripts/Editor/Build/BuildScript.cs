@@ -18,7 +18,7 @@ public class BuildScript
 
         BuildPipeline.BuildPlayer(getScenes(), buildArtifact,
             BuildTarget.StandaloneLinux64, BuildOptions.None);
-        System.IO.File.WriteAllText(@"./Assets/Scripts/Editor/Build/lastbuild.txt", buildArtifact);
+        System.IO.File.WriteAllText(@"./Assets/Scripts/Editor/Build/lastbuild.txt", $"./builds/{buildFolder}");
     }
 
 
