@@ -44,20 +44,16 @@ echo "$SignedURL"
 
 FileSize=$(ls -lah $ZipPath | awk -F " " {'print $5'})
 
-aws s3 cp "$ZipPath" $S3Address --profile $AWSProfile
+aws s3 cp "$ZipPath" "$S3Address/$ZipName" --profile $AWSProfile
 
 aws cloudfront create-invalidation \
     --distribution-id $CloudFrontDistID \
     --paths "/$ZipName" --profile $AWSProfile
 
+DateNow=$(date '+%Y-%m-%d %H:%M:%S')
+GitVersionHash=$(git rev-parse --short HEAD)
 DiscordPostData="{\
-    \"embeds\": {\
-        \"url\":\"$URL\",\
-        \"title\":\"New $Platform build\",\
-        \"description\":\"Uploaded at $dateNow ($FileSize)\"\
-    }\
+    \"content\": \"New [$Platform build ($FileSize)]($URL) #$GitVersionHash uploaded at $DateNow\"
 }"
-
-dateNow=$(date '+%Y-%m-%d %H:%M:%S')
 curl -i -H "Accept: application/json" -H "Content-Type:application/json" \
 -X POST --data "$DiscordPostData" "$DiscordWebhook"
