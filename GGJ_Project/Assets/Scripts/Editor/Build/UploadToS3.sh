@@ -17,7 +17,7 @@ ExpiryTime=$(($(date +%s) + $((LinkExpiryInDays * OneDayInSeconds ))))
 BuildDirectory=$(cat $BuildInfoFileLocation)
 Platform=$1
 GitVersionHash=$(git rev-parse --short HEAD)
-ZipName=$ProjectName-$Platform-$GitVersionHash-$(date +'%d_%m_%y').zip
+ZipName=$ProjectName-$Platform-$GitVersionHash.zip
 ZipPath="./builds/$ZipName"
 URL="$URL/$ZipName"
 PrivateKey=~/CloudFront/private_connectedplay_builds_key.ProjectName
@@ -53,7 +53,7 @@ aws cloudfront create-invalidation \
 
 DateNow=$(date '+%Y-%m-%d %H:%M:%S')
 DiscordPostData="{\
-    \"content\": \"New [$Platform build #$GitVersionHash ($FileSize)]($URL) uploaded at $DateNow\"
+    \"content\": \"New [$Platform build #$GitVersionHash ($FileSize)]($SignedURL) uploaded at $DateNow\"
 }"
 curl -i -H "Accept: application/json" -H "Content-Type:application/json" \
 -X POST --data "$DiscordPostData" "$DiscordWebhook"
