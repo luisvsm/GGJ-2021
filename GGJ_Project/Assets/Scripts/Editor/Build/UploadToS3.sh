@@ -20,7 +20,7 @@ GitVersionHash=$(git rev-parse --short HEAD)
 ZipName=$ProjectName-$Platform-$GitVersionHash.zip
 ZipPath="./builds/$ZipName"
 URL="$URL/$ZipName"
-PrivateKey=~/CloudFront/private_connectedplay_builds_key.ProjectName
+PrivateKey=~/CloudFront/private_connectedplay_builds_key.pem
 
 Policy="{
     \"Statement\": [
