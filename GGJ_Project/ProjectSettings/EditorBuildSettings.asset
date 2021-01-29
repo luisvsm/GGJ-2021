@@ -6,6 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+    guid: 1232c4f49134344e1a2c69c8ad76aba4
+  - enabled: 1
+    path: Assets/Scenes/GreenHouseGameScene.unity
+    guid: 0187daa9baa4b467eb71ea5cb4f0e1d6
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/AnnaTestScene.unity
+    guid: 23924d2996c684294bd432a6425062a2
+  - enabled: 1
+    path: Assets/Scenes/ArielTestScene.unity
+    guid: 703d922e825614a09a3f906dd2b85f19
+  - enabled: 1
+    path: Assets/Scenes/EdTestScene.unity
+    guid: 912fac2f76e904516aea5f622ca50e1b
+  - enabled: 1
+    path: Assets/Scenes/LillyTestScene.unity
+    guid: 05dcf35e0ecd44a3294c268f4a8fcd05
+  - enabled: 1
+    path: Assets/Scenes/LuisTestScene.unity
+    guid: 716a071f4c11d40429cbcc03235cd4c9
   m_configObjects: {}
