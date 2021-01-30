@@ -13,6 +13,13 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
         middle,
         bottom
     }
+    
+    public enum RESOURCE_TYPE
+    {
+        water,
+        poo,
+        love
+    }
     [Serializable]
     public struct PlatDecoration
     {

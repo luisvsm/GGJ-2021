@@ -18,6 +18,8 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
     private DragConsumer previousDragConsumer;
     private LayerMask mask;
 
+    private bool _debugLogging = false;
+
     void Start()
     {
         draggableObjectDisplayInstance = Instantiate(draggableObjectDisplay, Vector3.zero, Quaternion.identity);
@@ -44,6 +46,10 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
             dragConsumer != previousDragConsumer // And if the /something/ is different from the last frame
         )
         {
+            if (_debugLogging)
+            {
+                Debug.Log(string.Format("<color=magenta>DRAG OUT!!</color>"));
+            }
             // The drag consumer has changed, tell the drag controller
             // from the previous frame that a drag out event happened
             previousDragConsumer.OnDragOut.Invoke();
@@ -54,6 +60,10 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
             dragConsumer != previousDragConsumer // And if the /something/ is different from the last frame
         )
         {
+            if (_debugLogging)
+            {
+                Debug.Log(string.Format("<color=magenta>DRAG IN!!</color>"));
+            }
             // The drag consumer has changed, tell the drag controller that a drag out event happened
             dragConsumer.OnDragIn.Invoke();
         }
@@ -65,8 +75,15 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
     {
         if (dragConsumer != null)
         {
+            if (_debugLogging)
+            {
+                Debug.Log(string.Format("<color=yellow> DRAG DROP!!</color>"));
+            }
+            
             dragConsumer.OnDragLetGo.Invoke();
         }
+        
+        currentDraggableObject = null;
     }
 
     void UpdateDragPosition()
@@ -89,6 +106,7 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
     void StartDragging()
     {
         //Debug.Log("Start");
+        currentDraggableObject = this;
         mask = LayerMask.GetMask(RaycastLayerName);
         dragging = true;
         draggableObjectDisplayInstance.SetActive(true);

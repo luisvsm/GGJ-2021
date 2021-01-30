@@ -51,12 +51,14 @@ public class BasePlant : MonoBehaviour
     [SerializeField] private int _maxHealth = 20;
     [Tooltip("How fast does the plant sicken if it's needs aren't met")] 
     [SerializeField] private float _sicknessRate = 0.1f;
+    [SerializeField] private float _healingRate = 0.2f;
     
     [Header("Happiness")]
     //TODO: set global happiness percentage to icon rates
     [SerializeField] private int _maxHappiness = 20;
     [Tooltip("How fast does the plant get sad if it's needs aren't met")] 
     [SerializeField] private float _sadnesssRate = 0.1f;
+    [SerializeField] private float _happinessRate = 0.2f;
     [Tooltip("How at what point the plant goes from being sad to sickening")] 
     [SerializeField] private float _sadToSickThresholdPercentage = 0.5f;
     
@@ -66,6 +68,9 @@ public class BasePlant : MonoBehaviour
     [SerializeField] private int _startingWater = 7;
     [SerializeField] private int _startingPoo = 8;
 
+    [Header("DEBUG")] 
+    [SerializeField] private bool _logPlantStats;
+   
     #region Private vars
 
     private float _pooLevel;
@@ -110,14 +115,21 @@ public class BasePlant : MonoBehaviour
 
     private void UpdatePlantValues()
     {
-        Debug.Log("***** UpdatePlantValues");
+        if (_logPlantStats)
+        {
+            Debug.Log("***** UpdatePlantValues");
+        }
         bool iconSet = false;
         bool healthUpdated = false;
         bool happinessUpdated = false;
         _waterLevel -= _waterConsumptionRate;
         float sadToSickThreshold = _maxHappiness * _sadToSickThresholdPercentage;
 
-        Debug.Log(string.Format("***** _waterLevel {0}", _waterLevel));
+        if (_logPlantStats)
+        {
+            Debug.Log(string.Format("***** _waterLevel {0}", _waterLevel));
+        }
+
         if (_waterLevel < _minWater)
         {
             if (_waterLevel < 0)
@@ -148,7 +160,11 @@ public class BasePlant : MonoBehaviour
         }
 
         _pooLevel -= _pooConsumptionRate;
-        Debug.Log(string.Format("***** _pooLevel {0}", _pooLevel));
+        if (_logPlantStats)
+        {
+            Debug.Log(string.Format("***** _pooLevel {0}", _pooLevel));
+        }
+
         if (_pooLevel < _minPoo)
         {
             if (_pooLevel < 0)
@@ -206,8 +222,11 @@ public class BasePlant : MonoBehaviour
             _happiness = 0;
         }
 
-        Debug.Log(string.Format("***** _happiness {0}", _happiness));
-        Debug.Log(string.Format("***** _health {0}", _health));
+       if( _logPlantStats)
+       {
+           Debug.Log(string.Format("***** _happiness {0}", _happiness));
+           Debug.Log(string.Format("***** _health {0}", _health));
+       }
 
         //TODo: work out happiness vs health & decide on priority
         float happinessPercentage = _happiness / (float) _maxHappiness;
@@ -236,6 +255,24 @@ public class BasePlant : MonoBehaviour
         {
             _healthPercentageBar.UpdateBar(healthPercentage);
         }
+
+        //This means all the plant's needs are met
+        if (!happinessUpdated && !healthUpdated)
+        {
+            _happiness += _happinessRate;
+            _health += _healingRate;
+            if (_happiness > _maxHappiness)
+            {
+                _happiness = _maxHappiness;
+            }
+            
+            if (_health > _maxHealth)
+            {
+                _health = _maxHealth;
+            }
+            _healthPercentageBar.UpdateBar(healthPercentage);
+            _happinessPercentageBar.UpdateBar(happinessPercentage);
+        }
     }
 
     public void AddPoo(int amount = 1)
@@ -248,6 +285,16 @@ public class BasePlant : MonoBehaviour
     {
         _waterLevel += amount;
         PlayerInventoryMonoSingleton.Instance.UseWater(amount);
+    }
+    
+    private void AddLove()
+    {
+        _happiness = _happiness + 1;
+        if (_happiness > _maxHappiness)
+        {
+            _happiness = _maxHappiness;
+        }
+        _happinessPercentageBar.UpdateBar(_happiness/_maxHappiness);
     }
     
     
@@ -323,6 +370,22 @@ public class BasePlant : MonoBehaviour
         }
 
         return -1;
+    }
+
+    public void AddResource(GameDataMonoSingleton.RESOURCE_TYPE resourceType)
+    {
+        switch (resourceType)
+        {
+            case GameDataMonoSingleton.RESOURCE_TYPE.poo:
+                AddPoo();
+                break;
+            case GameDataMonoSingleton.RESOURCE_TYPE.water:
+                AddWater();
+                break;
+            case GameDataMonoSingleton.RESOURCE_TYPE.love:
+                AddLove();
+                break;
+        }
     }
     
 }
