@@ -22,6 +22,11 @@ public class FadeController : MonoBehaviourSingleton<FadeController>
     // Start is called before the first frame update
     public void Fade(voidCallback halfWay, voidCallback completed)
     {
+        if(fadeCollider == null){
+            fadeCollider = gameObject.GetComponent<Collider2D>();
+            sRenderer = gameObject.GetComponent<SpriteRenderer>();
+        }
+
         fadeCollider.enabled = true;
         halfWayCallback = halfWay;
         completedCallback = completed;
