@@ -22,7 +22,7 @@ public class BasePlant : MonoBehaviour
     [SerializeField] private SpriteRenderer _needIconSprite;    
     [SerializeField] private SpriteRenderer _dialogSprite;
     [SerializeField] private PercentageFillBar _healthPercentageBar;
-    [SerializeField] private PercentageFillBar _happinessPercentageBar;
+    //[SerializeField] private PercentageFillBar _happinessPercentageBar;
     [SerializeField] private StartConversation _startConversation;
 
     [Header("Decoration")]
@@ -55,14 +55,14 @@ public class BasePlant : MonoBehaviour
     [SerializeField] private float _sicknessRate = 0.1f;
     [SerializeField] private float _healingRate = 0.2f;
     
-    [Header("Happiness")]
+    //[Header("Happiness")]
     //TODO: set global happiness percentage to icon rates
-    [SerializeField] private int _maxHappiness = 20;
-    [Tooltip("How fast does the plant get sad if it's needs aren't met")] 
-    [SerializeField] private float _sadnesssRate = 0.1f;
-    [SerializeField] private float _happinessRate = 0.2f;
-    [Tooltip("How at what point the plant goes from being sad to sickening")] 
-    [SerializeField] private float _sadToSickThresholdPercentage = 0.5f;
+    //[SerializeField] private int _maxHappiness = 20;
+    //[Tooltip("How fast does the plant get sad if it's needs aren't met")] 
+    //[SerializeField] private float _sadnesssRate = 0.1f;
+    //[SerializeField] private float _happinessRate = 0.2f;
+    //[Tooltip("How at what point the plant goes from being sad to sickening")] 
+    //[SerializeField] private float _sadToSickThresholdPercentage = 0.5f;
     
     [Header("Starting Values")]
     [SerializeField] private int _startingHealth = 15;
@@ -79,7 +79,7 @@ public class BasePlant : MonoBehaviour
     private int _currentSun;
     private float _waterLevel;
     private float _health;
-    private float _happiness;
+    //private float _happiness;
 
     private bool _isDead = false;
     
@@ -100,9 +100,9 @@ public class BasePlant : MonoBehaviour
         _pooLevel = _startingPoo;
         _waterLevel = _startingWater;
         _health = _startingHealth;
-        _happiness = _startingHappiness;
+       // _happiness = _startingHappiness;
         
-        _happinessPercentageBar.Initialize(_happiness/_maxHappiness);
+        //_happinessPercentageBar.Initialize(_happiness/_maxHappiness);
         _healthPercentageBar.Initialize(_health/_maxHealth);
         
         PlayerInventoryMonoSingleton.Instance.AddPlant(this);
@@ -168,11 +168,11 @@ public class BasePlant : MonoBehaviour
         {
             Debug.Log("***** UpdatePlantValues");
         }
+
         bool iconSet = false;
         bool healthUpdated = false;
-        bool happinessUpdated = false;
         _waterLevel -= _waterConsumptionRate;
-        float sadToSickThreshold = _maxHappiness * _sadToSickThresholdPercentage;
+
 
         if (_logPlantStats)
         {
@@ -186,26 +186,16 @@ public class BasePlant : MonoBehaviour
                 _waterLevel = 0;
             }
 
-            _happiness -= _sadnesssRate;
-            happinessUpdated = true;
-            if (_happiness < sadToSickThreshold)
-            {
-                _health -= _sicknessRate;
-                healthUpdated = true;
-            }
+            _health -= _sicknessRate;
+            healthUpdated = true;
 
             _needIconSprite.sprite = GameDataMonoSingleton.Instance.Water;
             iconSet = true;
         }
         else if (_waterLevel > _maxWater)
         {
-            _happiness -= _sadnesssRate;
-            happinessUpdated = true;
-            if (_happiness < sadToSickThreshold)
-            {
-                _health -= _sicknessRate;
-                healthUpdated = true;
-            }
+            _health -= _sicknessRate;
+            healthUpdated = true;
         }
 
         _pooLevel -= _pooConsumptionRate;
@@ -221,13 +211,9 @@ public class BasePlant : MonoBehaviour
                 _pooLevel = 0;
             }
 
-            _happiness -= _sadnesssRate;
-            happinessUpdated = true;
-            if (_happiness < sadToSickThreshold)
-            {
-                _health -= _sicknessRate;
-                healthUpdated = true;
-            }
+            _health -= _sicknessRate;
+            healthUpdated = true;
+
 
             if (!iconSet)
             {
@@ -240,24 +226,17 @@ public class BasePlant : MonoBehaviour
         if (_currentSun > _maxSun)
         {
             temp = 1;
-            _happiness -= _sadnesssRate;
-            happinessUpdated = true;
-            if (_happiness < sadToSickThreshold)
-            {
-                _health -= _sicknessRate;
-                healthUpdated = true;
-            }
+
+            _health -= _sicknessRate;
+            healthUpdated = true;
+
         }
         else if (_currentSun < _minSun)
         {
             temp = -1;
-            _happiness -= _sadnesssRate;
-            happinessUpdated = true;
-            if (_happiness < sadToSickThreshold)
-            {
-                _health -= _sicknessRate;
-                healthUpdated = true;
-            }
+
+            _health -= _sicknessRate;
+            healthUpdated = true;
 
             if (!iconSet)
             {
@@ -266,19 +245,13 @@ public class BasePlant : MonoBehaviour
             }
         }
 
-        if (_happiness < 0)
+        if (_logPlantStats)
         {
-            _happiness = 0;
+            Debug.Log(string.Format("***** _health {0}", _health));
         }
 
-       if( _logPlantStats)
-       {
-           Debug.Log(string.Format("***** _happiness {0}", _happiness));
-           Debug.Log(string.Format("***** _health {0}", _health));
-       }
-
         //TODo: work out happiness vs health & decide on priority
-        float happinessPercentage = _happiness / (float) _maxHappiness;
+        // float happinessPercentage = _happiness / (float) _maxHappiness;
         float healthPercentage = _health / (float) _maxHealth;
         Sprite needed = GameDataMonoSingleton.Instance.GetEmojiIcon(healthPercentage, temp, iconSet);
         if (needed != null)
@@ -295,32 +268,19 @@ public class BasePlant : MonoBehaviour
             _isDead = true;
         }
 
-        if (happinessUpdated)
-        {
-           _happinessPercentageBar.UpdateBar(happinessPercentage);
-        }
-        
         if (healthUpdated)
         {
             _healthPercentageBar.UpdateBar(healthPercentage);
         }
-
-        //This means all the plant's needs are met
-        if (!happinessUpdated && !healthUpdated)
+        else
         {
-            _happiness += _happinessRate;
-            _health += _healingRate;
-            if (_happiness > _maxHappiness)
-            {
-                _happiness = _maxHappiness;
-            }
-            
+
             if (_health > _maxHealth)
             {
                 _health = _maxHealth;
             }
+
             _healthPercentageBar.UpdateBar(healthPercentage);
-            _happinessPercentageBar.UpdateBar(happinessPercentage);
         }
     }
 
@@ -338,12 +298,12 @@ public class BasePlant : MonoBehaviour
     
     private void AddLove()
     {
-        _happiness = _happiness + 1;
-        if (_happiness > _maxHappiness)
+        _health = _health + 1;
+        if (_health > _maxHealth)
         {
-            _happiness = _maxHappiness;
+            _health = _maxHealth;
         }
-        _happinessPercentageBar.UpdateBar(_happiness/_maxHappiness);
+        _healthPercentageBar.UpdateBar(_health/_maxHealth);
     }
     
     

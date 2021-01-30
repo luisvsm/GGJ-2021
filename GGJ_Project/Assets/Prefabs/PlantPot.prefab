@@ -868,7 +868,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4984408292034415746
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1073,11 +1073,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809845f714f7748afb377c6305ffaae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantName: BasePlant
+  _plantName: Dave
+  _plantIcon: {fileID: 21300000, guid: 8f7f0acc5db093806b42d75cbad098ea, type: 3}
   _needIconSprite: {fileID: 6423523440505511108}
   _dialogSprite: {fileID: 6423523441614814283}
   _healthPercentageBar: {fileID: 1608758901155453959}
-  _happinessPercentageBar: {fileID: 705573916557982373}
   _startConversation: {fileID: 109688147}
   _decorationSlots:
   - AssignedDecorationName: 
@@ -1099,10 +1099,6 @@ MonoBehaviour:
   _maxHealth: 20
   _sicknessRate: 0.1
   _healingRate: 0.2
-  _maxHappiness: 20
-  _sadnesssRate: 0.1
-  _happinessRate: 0.2
-  _sadToSickThresholdPercentage: 0.5
   _startingHealth: 15
   _startingHappiness: 15
   _startingWater: 7
