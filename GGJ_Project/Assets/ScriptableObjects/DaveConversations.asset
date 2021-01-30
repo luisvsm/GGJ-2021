@@ -26,33 +26,3 @@ MonoBehaviour:
       ConversationText: We'll I'll be isn't this a good ol'pickle we found us'selves
         in.
       AudioID: 
-    PlayerSeen: 0
-    OnceOnly: 0
-  - ConversationID: Test2
-    Conversation:
-    - SpeakerName: Dave
-      ConversationText: Howdy Partner!
-      AudioID: 
-    - SpeakerName: 
-      ConversationText: .....Hi.....
-      AudioID: 
-    - SpeakerName: Dave
-      ConversationText: We'll I'll be isn't this a good ol'pickle we found us'selves
-        in.
-      AudioID: 
-    PlayerSeen: 0
-    OnceOnly: 0
-  - ConversationID: Howdy
-    Conversation:
-    - SpeakerName: Dave
-      ConversationText: Howdy Partner!
-      AudioID: 
-    - SpeakerName: 
-      ConversationText: .....Hi.....
-      AudioID: 
-    - SpeakerName: Dave
-      ConversationText: We'll I'll be isn't this a good ol'pickle we found us'selves
-        in.
-      AudioID: 
-    PlayerSeen: 0
-    OnceOnly: 0
