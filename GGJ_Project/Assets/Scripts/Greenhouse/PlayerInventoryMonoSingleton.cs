@@ -34,10 +34,11 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
 
         _playerPlants.Add(plant);
 
-        if (_nextPlantTalk == -1)
+        //uncomment to tun convesrsayion back on
+        /*if (_nextPlantTalk == -1)
         {
             PlantTalked();
-        }
+        }*/
     }
 
     public void PlantTalked()
