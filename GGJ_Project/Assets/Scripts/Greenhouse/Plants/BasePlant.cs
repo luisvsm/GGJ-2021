@@ -9,22 +9,21 @@ public class BasePlant : MonoBehaviour
     [Serializable]
     public struct PlatDecorationSlots
     {
-        public string Name;
+        public string AssignedDecorationName;
         public GameDataMonoSingleton.DECORATION_POSITION Position;
-        public SpriteRenderer Sprite;
+        public SpriteRenderer SpriteRend;
     }
     
-
-    
-
     #endregion
     
     [Header("Plant set up")]
     [SerializeField] private string _plantName;
-    //Set up here in case we want to decorate the pot and change out teh sprite
-    [SerializeField] private SpriteRenderer _plantSprite;
-    [SerializeField] private SpriteRenderer _needSprite;
+    [SerializeField] private SpriteRenderer _needIconSprite;    
+    [SerializeField] private SpriteRenderer _dialogSprite;
+    [SerializeField] private PercentageFillBar _healthPercentageBar;
+    [SerializeField] private PercentageFillBar _happinessPercentageBar;
 
+    [Header("Decoration")]
     [SerializeField] private PlatDecorationSlots[] _decorationSlots;
     //[SerializeField] private SpriteRenderer _emojiSprite;
 
@@ -62,8 +61,8 @@ public class BasePlant : MonoBehaviour
     [SerializeField] private float _sadToSickThresholdPercentage = 0.5f;
     
     [Header("Starting Values")]
-    [SerializeField] private int _startingHealth = 10;
-    [SerializeField] private int _startingHappiness = 10;
+    [SerializeField] private int _startingHealth = 15;
+    [SerializeField] private int _startingHappiness = 15;
     [SerializeField] private int _startingWater = 7;
     [SerializeField] private int _startingPoo = 8;
 
@@ -89,6 +88,8 @@ public class BasePlant : MonoBehaviour
         _health = _startingHealth;
         _happiness = _startingHappiness;
         
+        _happinessPercentageBar.Initialize(_happiness/_maxHappiness);
+        _healthPercentageBar.Initialize(_health/_maxHealth);
         //debug 
         _currentSun = _minSun + 1;
         
@@ -111,8 +112,10 @@ public class BasePlant : MonoBehaviour
     {
         Debug.Log("***** UpdatePlantValues");
         bool iconSet = false;
-
+        bool healthUpdated = false;
+        bool happinessUpdated = false;
         _waterLevel -= _waterConsumptionRate;
+        float sadToSickThreshold = _maxHappiness * _sadToSickThresholdPercentage;
 
         Debug.Log(string.Format("***** _waterLevel {0}", _waterLevel));
         if (_waterLevel < _minWater)
@@ -123,22 +126,24 @@ public class BasePlant : MonoBehaviour
             }
 
             _happiness -= _sadnesssRate;
-
-            if (_happiness < (_maxHappiness * _sadToSickThresholdPercentage))
+            happinessUpdated = true;
+            if (_happiness < sadToSickThreshold)
             {
                 _health -= _sicknessRate;
+                healthUpdated = true;
             }
 
-            _needSprite.sprite = GameDataMonoSingleton.Instance.Water;
+            _needIconSprite.sprite = GameDataMonoSingleton.Instance.Water;
             iconSet = true;
         }
         else if (_waterLevel > _maxWater)
         {
             _happiness -= _sadnesssRate;
-
-            if (_happiness < (_maxHappiness * _sadToSickThresholdPercentage))
+            happinessUpdated = true;
+            if (_happiness < sadToSickThreshold)
             {
                 _health -= _sicknessRate;
+                healthUpdated = true;
             }
         }
 
@@ -152,15 +157,16 @@ public class BasePlant : MonoBehaviour
             }
 
             _happiness -= _sadnesssRate;
-
-            if (_happiness < (_maxHappiness * _sadToSickThresholdPercentage))
+            happinessUpdated = true;
+            if (_happiness < sadToSickThreshold)
             {
                 _health -= _sicknessRate;
+                healthUpdated = true;
             }
 
             if (!iconSet)
             {
-                _needSprite.sprite = GameDataMonoSingleton.Instance.Poo;
+                _needIconSprite.sprite = GameDataMonoSingleton.Instance.Poo;
                 iconSet = true;
             }
         }
@@ -170,25 +176,27 @@ public class BasePlant : MonoBehaviour
         {
             temp = 1;
             _happiness -= _sadnesssRate;
-
-            if (_happiness < (_maxHappiness * _sadToSickThresholdPercentage))
+            happinessUpdated = true;
+            if (_happiness < sadToSickThreshold)
             {
                 _health -= _sicknessRate;
+                healthUpdated = true;
             }
         }
         else if (_currentSun < _minSun)
         {
             temp = -1;
             _happiness -= _sadnesssRate;
-
-            if (_happiness < (_maxHappiness * _sadToSickThresholdPercentage))
+            happinessUpdated = true;
+            if (_happiness < sadToSickThreshold)
             {
                 _health -= _sicknessRate;
+                healthUpdated = true;
             }
 
             if (!iconSet)
             {
-                _needSprite.sprite = GameDataMonoSingleton.Instance.Heat;
+                _needIconSprite.sprite = GameDataMonoSingleton.Instance.Heat;
                 iconSet = true;
             }
         }
@@ -207,7 +215,7 @@ public class BasePlant : MonoBehaviour
         Sprite needed = GameDataMonoSingleton.Instance.GetEmojiIcon(healthPercentage, temp, iconSet);
         if (needed != null)
         {
-            _needSprite.sprite = needed;
+            _needIconSprite.sprite = needed;
         }
 
 
@@ -215,8 +223,18 @@ public class BasePlant : MonoBehaviour
         {
             _health = 0;
             Debug.Log(string.Format("<color=red>OH NOES!!! {0} IS DEAD!</color>", _plantName));
-            _needSprite.sprite = GameDataMonoSingleton.Instance.Dead;
+            _needIconSprite.sprite = GameDataMonoSingleton.Instance.Dead;
             _isDead = true;
+        }
+
+        if (happinessUpdated)
+        {
+           _happinessPercentageBar.UpdateBar(happinessPercentage);
+        }
+        
+        if (healthUpdated)
+        {
+            _healthPercentageBar.UpdateBar(healthPercentage);
         }
     }
 
@@ -248,9 +266,9 @@ public class BasePlant : MonoBehaviour
             return false;
         }
 
-        if (!string.IsNullOrEmpty(_decorationSlots[slotIndex].Name))
+        if (!string.IsNullOrEmpty(_decorationSlots[slotIndex].AssignedDecorationName))
         {
-            PlayerInventoryMonoSingleton.Instance.CollectDecoration(_decorationSlots[slotIndex].Name);
+            PlayerInventoryMonoSingleton.Instance.CollectDecoration(_decorationSlots[slotIndex].AssignedDecorationName);
             return true;
         }
         
@@ -282,13 +300,13 @@ public class BasePlant : MonoBehaviour
             return false;
         }
 
-        if (!string.IsNullOrEmpty(_decorationSlots[slotIndex].Name))
+        if (!string.IsNullOrEmpty(_decorationSlots[slotIndex].AssignedDecorationName))
         {
-            PlayerInventoryMonoSingleton.Instance.CollectDecoration(_decorationSlots[slotIndex].Name);
+            PlayerInventoryMonoSingleton.Instance.CollectDecoration(_decorationSlots[slotIndex].AssignedDecorationName);
         }
         
-        _decorationSlots[slotIndex].Name = decoName;
-        _decorationSlots[slotIndex].Sprite.sprite = GameDataMonoSingleton.Instance.GetDectorationSprite(decoName);
+        _decorationSlots[slotIndex].AssignedDecorationName = decoName;
+        _decorationSlots[slotIndex].SpriteRend.sprite = GameDataMonoSingleton.Instance.GetDectorationSprite(decoName);
         PlayerInventoryMonoSingleton.Instance.UseDecoration(decoName);
 
         return false;
