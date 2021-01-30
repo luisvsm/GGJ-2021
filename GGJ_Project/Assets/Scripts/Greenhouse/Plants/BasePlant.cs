@@ -104,6 +104,12 @@ public class BasePlant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (GameDataMonoSingleton.Instance.TickerPaused)
+        {
+            //If the ticker is paused don't do anything.
+            return;
+        }
+        
         if (!_isDead)
         {
             if (Time.time > nextActionTime ) {

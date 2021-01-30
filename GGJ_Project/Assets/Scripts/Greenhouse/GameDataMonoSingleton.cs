@@ -55,7 +55,8 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     [Header("Configuration Values")] 
     [SerializeField] private float _sickThreshold = 0.5f;
     [SerializeField] private float _almostDeadThreshold = 0.25f;
-    [SerializeField] private float _TickerTimeIntervalInSeconds = 1.0f;
+    [SerializeField] private float _tickerTimeIntervalInSeconds = 1.0f;
+    private bool _tickerPaused;
 
     [Header("Decorations")] 
     [SerializeField] private PlatDecoration[] _decorations;
@@ -84,7 +85,9 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
 
     public Sprite Dead => _dead;
 
-    public float TickerTimeIntervalInSeconds => _TickerTimeIntervalInSeconds;
+    public float TickerTimeIntervalInSeconds => _tickerTimeIntervalInSeconds;
+    
+    public bool TickerPaused => _tickerPaused;
 
     #endregion
     
