@@ -105,3 +105,8 @@ MonoBehaviour:
   _dead: {fileID: 21300000, guid: e9609da7794f4405f94c90454c9d2118, type: 3}
   _sickThreshold: 0.5
   _almostDeadThreshold: 0.5
+  _TickerTimeIntervalInSeconds: 1
+  _decorations:
+  - Name: 
+    Position: 0
+    Sprite: {fileID: 0}

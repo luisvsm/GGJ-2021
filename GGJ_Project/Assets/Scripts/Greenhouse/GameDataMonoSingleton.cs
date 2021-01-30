@@ -1,9 +1,29 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleton>
 {
+    #region Data set up
+
+    public enum DECORATION_POSITION
+    {
+        top,
+        middle,
+        bottom
+    }
+    [Serializable]
+    public struct PlatDecoration
+    {
+        public string Name;
+        public GameDataMonoSingleton.DECORATION_POSITION Position;
+        public Sprite Sprite;
+    }
+    
+
+    #endregion
+    
     [Header("Need Icons")]
 
     [SerializeField] private Sprite _water;
@@ -25,9 +45,15 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     [SerializeField] private Sprite _almostDead;
     [SerializeField] private Sprite _dead;
 
-    [Header("Emoji Threshold percentages 0-1")] 
+    [Header("Configuration Values")] 
     [SerializeField] private float _sickThreshold = 0.5f;
-    [SerializeField] private float _almostDeadThreshold = 0.5f;
+    [SerializeField] private float _almostDeadThreshold = 0.25f;
+    [SerializeField] private float _TickerTimeIntervalInSeconds = 1.0f;
+
+    [Header("Decorations")] 
+    [SerializeField] private PlatDecoration[] _decorations;
+
+    #region encapsulated fields
 
     public Sprite Water => _water;
 
@@ -50,6 +76,11 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     public Sprite Cold => _cold;
 
     public Sprite Dead => _dead;
+
+    public float TickerTimeIntervalInSeconds => _TickerTimeIntervalInSeconds;
+
+    #endregion
+    
 
     public bool IsHappy(float healthPercentage)
     {
@@ -96,16 +127,41 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
         return null;
     }
 
-
-    // Start is called before the first frame update
-    void Start()
+    public Sprite GetDectorationSprite(string name)
     {
-        
+        for (int i = 0; i  < _decorations.Length; i++)
+        {
+            if (name.Equals(_decorations[i].Name))
+            {
+                return _decorations[i].Sprite;
+            }
+        }
+        Debug.Log(string.Format("<color=red>OH NOES!!! Cannot find decoration {0} in game data </color>", name));
+
+        return null;
     }
 
-    // Update is called once per frame
-    void Update()
+    public bool IsValidSlot(string name, DECORATION_POSITION requestedSlot)
     {
-        
+        bool found = false;
+        for (int i = 0; i < _decorations.Length; i++)
+        {
+            if (name.Equals(_decorations[i].Name))
+            {
+                found = true;
+                if (_decorations[i].Position == requestedSlot)
+                {
+                    return true;
+                }
+            }
+        }
+
+        if (!found)
+        {
+            Debug.Log(string.Format("<color=red>OH NOES!!! Cannot find decoration {0} in game data </color>", name));
+
+        }
+
+        return false;
     }
 }

@@ -1,26 +1,45 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BasePlant : MonoBehaviour
 {
+    #region setup
+    [Serializable]
+    public struct PlatDecorationSlots
+    {
+        public string Name;
+        public GameDataMonoSingleton.DECORATION_POSITION Position;
+        public SpriteRenderer Sprite;
+    }
+    
+
+    
+
+    #endregion
+    
+    [Header("Plant set up")]
     [SerializeField] private string _plantName;
     //Set up here in case we want to decorate the pot and change out teh sprite
     [SerializeField] private SpriteRenderer _plantSprite;
     [SerializeField] private SpriteRenderer _needSprite;
+
+    [SerializeField] private PlatDecorationSlots[] _decorationSlots;
     //[SerializeField] private SpriteRenderer _emojiSprite;
-    
-    [SerializeField] private int _startingPoo = 8;
+
+    [Header("Poo")]
     [SerializeField] private int _minPoo = 5;
     [Tooltip("How fast the plant uses the poo units per second")] 
-    [SerializeField] private float _pooConsumptionRate = 0.05f;
+    [SerializeField] private float _pooConsumptionRate = 0.1f;
 
-    [SerializeField] private int _startingWater = 7;
+    [Header("Water")]
     [SerializeField] private int _minWater = 5;
     [SerializeField] private int _maxWater = 20;
     [Tooltip("How fast the plant uses the water units per second")] 
-    [SerializeField] private float _waterConsumptionRate = 0.02f;
+    [SerializeField] private float _waterConsumptionRate = 0.3f;
     
+    [Header("Sun")]
     [Tooltip("How much sun does the plant need between 1-10 the higher the value the more sun it needs")] 
     [Range(1, 10)]
     [SerializeField] private int _minSun = 5;
@@ -29,19 +48,27 @@ public class BasePlant : MonoBehaviour
     [SerializeField] private int _maxSun = 8;
     
     //TODO: set global health percentage to icon rates
-    [SerializeField] private int _startingHealth = 10;
+    [Header("Health")]
     [SerializeField] private int _maxHealth = 20;
     [Tooltip("How fast does the plant sicken if it's needs aren't met")] 
     [SerializeField] private float _sicknessRate = 0.1f;
     
+    [Header("Happiness")]
     //TODO: set global happiness percentage to icon rates
     [SerializeField] private int _maxHappiness = 20;
-    [SerializeField] private int _startingHappiness = 10;
-    [Tooltip("How fast does the plant sicken if it's needs aren't met")] 
+    [Tooltip("How fast does the plant get sad if it's needs aren't met")] 
     [SerializeField] private float _sadnesssRate = 0.1f;
-    
+    [Tooltip("How at what point the plant goes from being sad to sickening")] 
     [SerializeField] private float _sadToSickThresholdPercentage = 0.5f;
     
+    [Header("Starting Values")]
+    [SerializeField] private int _startingHealth = 10;
+    [SerializeField] private int _startingHappiness = 10;
+    [SerializeField] private int _startingWater = 7;
+    [SerializeField] private int _startingPoo = 8;
+
+    #region Private vars
+
     private float _pooLevel;
     private int _currentSun;
     private float _waterLevel;
@@ -51,7 +78,8 @@ public class BasePlant : MonoBehaviour
     private bool _isDead = false;
     
     private float nextActionTime = 0.0f;
-    private float period = 0.1f;
+
+    #endregion
     
     // Start is called before the first frame update
     void Start()
@@ -73,7 +101,7 @@ public class BasePlant : MonoBehaviour
         if (!_isDead)
         {
             if (Time.time > nextActionTime ) {
-                nextActionTime += period;
+                nextActionTime += GameDataMonoSingleton.Instance.TickerTimeIntervalInSeconds;
                 UpdatePlantValues();
             } 
         }
@@ -206,6 +234,47 @@ public class BasePlant : MonoBehaviour
     public void SetSunLevel(int level)
     {
         _currentSun += level;
+    }
+
+    //TODO:Add Remove Decoration
+    public bool AttachDecoration(string name, GameDataMonoSingleton.DECORATION_POSITION slot)
+    {
+        bool canPutInSlot = GameDataMonoSingleton.Instance.IsValidSlot(name, slot);
+        if (!canPutInSlot)
+        {
+            return false;
+        }
+
+        int slotIndex = GetSlotIndex(slot);
+        if (slotIndex < 0)
+        {
+            Debug.Log(string.Format("<color=red>OH NOES!!! {0} Does not have a slot at position {1}!</color>",
+                _plantName, slot));
+            return false;
+        }
+
+        if (!string.IsNullOrEmpty(_decorationSlots[slotIndex].Name))
+        {
+            PlayerInventoryMonoSingleton.Instance.CollectDecoration(_decorationSlots[slotIndex].Name);
+        }
+
+        _decorationSlots[slotIndex].Name = name;
+        _decorationSlots[slotIndex].Sprite.sprite = GameDataMonoSingleton.Instance.GetDectorationSprite(name);
+
+        return false;
+    }
+
+    private int GetSlotIndex(GameDataMonoSingleton.DECORATION_POSITION slot)
+    {
+        for (int i = 0; i < _decorationSlots.Length; i++)
+        {
+            if (_decorationSlots[i].Position == slot)
+            {
+                return i;
+            }
+        }
+
+        return -1;
     }
     
 }

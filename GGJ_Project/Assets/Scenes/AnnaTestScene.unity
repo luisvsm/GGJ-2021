@@ -647,12 +647,12 @@ PrefabInstance:
     - target: {fileID: 6423523441409253443, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: _pooConsumptionRate
-      value: 0.1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6423523441409253443, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: _waterConsumptionRate
-      value: 0.05
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4f0f853547114c769ab9147cb19c040, type: 3}
