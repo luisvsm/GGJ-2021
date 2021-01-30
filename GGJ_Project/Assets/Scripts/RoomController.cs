@@ -15,6 +15,7 @@ public class RoomController : MonoBehaviourSingleton<RoomController>
 
     public void showRoom(int roomIndex)
     {
+		AudioController.Play("SFX_Generic_Transition");
         FadeController.Instance.Fade(() =>
         {
             for (int i = 0; i < RoomList.Count; i++)
