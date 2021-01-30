@@ -1073,11 +1073,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809845f714f7748afb377c6305ffaae7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _plantName: Cactus
+  _plantName: BasePlant
   _needIconSprite: {fileID: 6423523440505511108}
   _dialogSprite: {fileID: 6423523441614814283}
   _healthPercentageBar: {fileID: 1608758901155453959}
   _happinessPercentageBar: {fileID: 705573916557982373}
+  _startConversation: {fileID: 109688147}
   _decorationSlots:
   - AssignedDecorationName: 
     Position: 0
@@ -1097,8 +1098,10 @@ MonoBehaviour:
   _maxSun: 8
   _maxHealth: 20
   _sicknessRate: 0.1
+  _healingRate: 0.2
   _maxHappiness: 20
   _sadnesssRate: 0.1
+  _happinessRate: 0.2
   _sadToSickThresholdPercentage: 0.5
   _startingHealth: 15
   _startingHappiness: 15
@@ -1360,6 +1363,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6423523441614814282}
   - component: {fileID: 6423523441614814283}
+  - component: {fileID: 109688148}
+  - component: {fileID: 109688147}
   m_Layer: 0
   m_Name: SpeachBubble
   m_TagString: Untagged
@@ -1432,6 +1437,46 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &109688148
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423523441614814277}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 1
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.15}
+  m_SpriteTilingProperty:
+    border: {x: 2.4099998, y: 1.92, z: 0.61, w: 0.62}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 10.34, y: 6.33}
+    newSize: {x: 7.17, y: 7.77}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 1
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.58, y: 8.35}
+  m_EdgeRadius: 0
+--- !u!114 &109688147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423523441614814277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a97bb1f35aa440eea00f08701713517, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _plant: {fileID: 9030745581764260460}
+  _collider: {fileID: 109688148}
 --- !u!1 &6938871915416584023
 GameObject:
   m_ObjectHideFlags: 0

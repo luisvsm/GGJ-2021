@@ -27,8 +27,8 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
         public GameDataMonoSingleton.DECORATION_POSITION Position;
         public Sprite Sprite;
     }
-    
 
+    
     #endregion
     
     [Header("Need Icons")]
@@ -40,6 +40,8 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     [SerializeField] private Sprite _heat;
 
     [SerializeField] private Sprite _heart;
+    
+    [SerializeField] private Sprite _toTalk;
     
     
     [Header("Happiness/sickness Emojis")]
@@ -56,11 +58,18 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     [SerializeField] private float _sickThreshold = 0.5f;
     [SerializeField] private float _almostDeadThreshold = 0.25f;
     [SerializeField] private float _tickerTimeIntervalInSeconds = 1.0f;
+    [SerializeField] private float _randomTalkIntervalInSecondsMin = 20.0f;
+    [SerializeField] private float _randomTalkIntervalInSecondsMax = 30.0f;
+    
     private bool _tickerPaused;
 
     [Header("Decorations")] 
     [SerializeField] private PlatDecoration[] _decorations;
-
+    
+    [Header("Conversations")] 
+    [SerializeField] private ConversationData[] _conversationDatas;
+    [SerializeField] private Conversation _conversationBinder;
+    
     #region encapsulated fields
 
     public Sprite Water => _water;
@@ -88,6 +97,14 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     public float TickerTimeIntervalInSeconds => _tickerTimeIntervalInSeconds;
     
     public bool TickerPaused => _tickerPaused;
+
+    public Sprite ToTalk => _toTalk;
+
+    public float RandomTalkIntervalInSecondsMin => _randomTalkIntervalInSecondsMin;
+
+    public float RandomTalkIntervalInSecondsMax => _randomTalkIntervalInSecondsMax;
+
+    public Conversation ConversationBinder => _conversationBinder;
 
     #endregion
     
@@ -173,5 +190,31 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
         }
 
         return false;
+    }
+
+    public ConversationData.Character_Conversation GetConversation(string characterID)
+    {
+        for (int i = 0; i < _conversationDatas.Length; i++)
+        {
+            if (_conversationDatas[i].PlantCharacterName == characterID)
+            {
+                if (!_conversationDatas[i].ConversationExhausted)
+                {
+                    return _conversationDatas[i].GetNextConversation();
+                }
+            }
+        }
+        return new ConversationData.Character_Conversation();
+    }
+
+    public void StartNextConversation(string plantName)
+    {
+        ConversationData.Character_Conversation convo = GetConversation(plantName);
+        if (convo.Conversation == null || convo.Conversation.Length == 0)
+        {
+            return;
+        }
+        _conversationBinder.gameObject.SetActive(true);
+        _conversationBinder.InitialiseConversation(convo.Conversation);
     }
 }

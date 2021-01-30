@@ -18,10 +18,12 @@ public class BasePlant : MonoBehaviour
     
     [Header("Plant set up")]
     [SerializeField] private string _plantName;
+    [SerializeField] private Sprite _plantIcon;
     [SerializeField] private SpriteRenderer _needIconSprite;    
     [SerializeField] private SpriteRenderer _dialogSprite;
     [SerializeField] private PercentageFillBar _healthPercentageBar;
     [SerializeField] private PercentageFillBar _happinessPercentageBar;
+    [SerializeField] private StartConversation _startConversation;
 
     [Header("Decoration")]
     [SerializeField] private PlatDecorationSlots[] _decorationSlots;
@@ -81,7 +83,14 @@ public class BasePlant : MonoBehaviour
 
     private bool _isDead = false;
     
-    private float nextActionTime = 0.0f;
+    private bool _isWaitingToTalk = false;
+    private float _nextTalkTimeStamp;
+    private bool _isNextToTalk;
+
+    
+    private float _nextActionTime = 0.0f;
+
+    public Sprite Icon => _plantIcon;
 
     #endregion
     
@@ -95,6 +104,8 @@ public class BasePlant : MonoBehaviour
         
         _happinessPercentageBar.Initialize(_happiness/_maxHappiness);
         _healthPercentageBar.Initialize(_health/_maxHealth);
+        
+        PlayerInventoryMonoSingleton.Instance.AddPlant(this);
         //debug 
         _currentSun = _minSun + 1;
         
@@ -112,11 +123,43 @@ public class BasePlant : MonoBehaviour
         
         if (!_isDead)
         {
-            if (Time.time > nextActionTime ) {
-                nextActionTime += GameDataMonoSingleton.Instance.TickerTimeIntervalInSeconds;
+            if (_isNextToTalk && Time.time > _nextTalkTimeStamp)
+            {
+                WantsToTalk();
+            }
+            else if (Time.time > _nextActionTime ) {
+                _nextActionTime += GameDataMonoSingleton.Instance.TickerTimeIntervalInSeconds;
                 UpdatePlantValues();
             } 
         }
+    }
+
+    private void WantsToTalk()
+    {
+        if (!_isWaitingToTalk)
+        {
+            _needIconSprite.sprite = GameDataMonoSingleton.Instance.ToTalk;
+            _startConversation.Activate();
+            _isWaitingToTalk = true;
+        }
+    }
+
+    public void StartConversation()
+    {
+        _startConversation.Deactivate();
+        Debug.Log("<color=blue>START CONVERSATION</color>");
+        GameDataMonoSingleton.Instance.StartNextConversation(_plantName);
+        
+        //StartConversation
+    }
+    
+    
+    
+    public void EndConversation()
+    {
+        _isWaitingToTalk = false;
+        _isNextToTalk = false;
+        PlayerInventoryMonoSingleton.Instance.PlantTalked();
     }
 
     private void UpdatePlantValues()
@@ -393,5 +436,10 @@ public class BasePlant : MonoBehaviour
                 break;
         }
     }
-    
+
+    public void QueueForRandomConversation(float nextTalkTimestamp)
+    {
+        _isNextToTalk = true;
+        _nextTalkTimeStamp = nextTalkTimestamp;
+    }
 }
