@@ -7,6 +7,5 @@ public class OpenOutsideDoor : MonoBehaviour
     public void OpenDoor()
     {
         RoomController.Instance.showRoom(3);
-        MenuController.Instance.showMenu(3);
     }
 }

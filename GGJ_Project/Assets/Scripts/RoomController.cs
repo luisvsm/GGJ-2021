@@ -35,5 +35,7 @@ public class RoomController : MonoBehaviourSingleton<RoomController>
         {
             RoomList[i].SetActive(i == roomIndex);
         }
+
+        MenuController.Instance.showMenu(roomIndex);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadUI : MonoBehaviour
 {
-    private static bool hasLoadedUIScene = false;
+    public static bool hasLoadedUIScene = false;
 
     // Start is called before the first frame update
     void Start()
