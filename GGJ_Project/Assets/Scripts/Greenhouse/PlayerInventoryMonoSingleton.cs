@@ -15,39 +15,11 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
     private int _water;
     private int _poo;
     private Dictionary<string, int> _unassignedDecorations;
-    private List<BasePlant> _playerPlants;
-    
-    private float _nextTalkTimestamp;
-    private int _nextPlantTalk = -1;
 
     public int Water => _water;
     public int Poo => _poo;
     public Dictionary<string, int> Decorations => _unassignedDecorations;
-    public List<BasePlant> PlayerPlants => _playerPlants;
 
-    public void AddPlant(BasePlant plant)
-    {
-        if (_playerPlants == null)
-        {
-            _playerPlants = new List<BasePlant>();
-        }
-
-        _playerPlants.Add(plant);
-        //uncomment to turn back on conversations
-       /* if (_nextPlantTalk == -1)
-        {
-            PlantTalked();
-        }*/
-    }
-
-    public void PlantTalked()
-    {
-        _nextTalkTimestamp = Time.time + Random.Range(GameDataMonoSingleton.Instance.RandomTalkIntervalInSecondsMin,
-                                 GameDataMonoSingleton.Instance.RandomTalkIntervalInSecondsMax);
-        _nextPlantTalk = Random.Range(0, _playerPlants.Count - 1);
-        _playerPlants[_nextPlantTalk].QueueForRandomConversation(_nextTalkTimestamp);
-    }
-    
     public void CollectWater(int amount =1)
     {
         _water += amount;
@@ -134,17 +106,5 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
 
         return false;
     }
-
-    public Sprite GetPlantIcon(string lineSpeakerName)
-    {
-        for (int i = 0; i < _playerPlants.Count; i++)
-        {
-            if (_playerPlants[i].name == lineSpeakerName)
-            {
-                return _playerPlants[i].Icon;
-            }
-        }
-
-        return null;
-    }
+    
 }

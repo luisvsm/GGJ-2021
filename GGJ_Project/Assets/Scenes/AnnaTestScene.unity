@@ -705,11 +705,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6370791650761917450, guid: f4f0f853547114c769ab9147cb19c040,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261320, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_Name
@@ -769,17 +764,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
-        type: 3}
-      propertyPath: _plantIcon
-      value: 
-      objectReference: {fileID: 21300000, guid: 8f7f0acc5db093806b42d75cbad098ea,
-        type: 3}
-    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
-        type: 3}
-      propertyPath: _plantName
-      value: Dave
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4f0f853547114c769ab9147cb19c040, type: 3}

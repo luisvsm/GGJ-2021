@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0297e1c601814b9c880079cfebfe8f3, type: 3}
   m_Name: FlyTrapConversations
   m_EditorClassIdentifier: 
-  _plantCharacterName: Venus Fly Trap
+  _plantCharacterName: ReginaGretchenKaren
   _conversationList:
   - ConversationID: Greeting
     Conversation:
-    - SpeakerName: VenusFlyTrap
+    - SpeakerName: ReginaGretchenKaren
       ConversationText: Oh my god. Oh my god. Oh my god.
       AudioID: 
     - SpeakerName: 
       ConversationText: You going okay there?
       AudioID: 
-    - SpeakerName: VenusFlyTrap
+    - SpeakerName: ReginaGretchenKaren
       ConversationText: I'm a plaaaaaaaaaant!
       AudioID: 
     PlayerSeen: 0

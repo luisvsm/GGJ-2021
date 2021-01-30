@@ -54,16 +54,7 @@ public class BasePlant : MonoBehaviour
     [Tooltip("How fast does the plant sicken if it's needs aren't met")] 
     [SerializeField] private float _sicknessRate = 0.1f;
     [SerializeField] private float _healingRate = 0.2f;
-    
-    //[Header("Happiness")]
-    //TODO: set global happiness percentage to icon rates
-    //[SerializeField] private int _maxHappiness = 20;
-    //[Tooltip("How fast does the plant get sad if it's needs aren't met")] 
-    //[SerializeField] private float _sadnesssRate = 0.1f;
-    //[SerializeField] private float _happinessRate = 0.2f;
-    //[Tooltip("How at what point the plant goes from being sad to sickening")] 
-    //[SerializeField] private float _sadToSickThresholdPercentage = 0.5f;
-    
+
     [Header("Starting Values")]
     [SerializeField] private int _startingHealth = 15;
     [SerializeField] private int _startingHappiness = 15;
@@ -86,11 +77,14 @@ public class BasePlant : MonoBehaviour
     private bool _isWaitingToTalk = false;
     private float _nextTalkTimeStamp;
     private bool _isNextToTalk;
+    private bool _hasTalked = false;
 
     
     private float _nextActionTime = 0.0f;
 
     public Sprite Icon => _plantIcon;
+
+    public string PlantName => _plantName;
 
     #endregion
     
@@ -105,7 +99,6 @@ public class BasePlant : MonoBehaviour
         //_happinessPercentageBar.Initialize(_happiness/_maxHappiness);
         _healthPercentageBar.Initialize(_health/_maxHealth);
         
-        PlayerInventoryMonoSingleton.Instance.AddPlant(this);
         //debug 
         _currentSun = _minSun + 1;
         
@@ -159,7 +152,7 @@ public class BasePlant : MonoBehaviour
     {
         _isWaitingToTalk = false;
         _isNextToTalk = false;
-        PlayerInventoryMonoSingleton.Instance.PlantTalked();
+        PlantManager.Instance.PlantTalked();
     }
 
     private void UpdatePlantValues()

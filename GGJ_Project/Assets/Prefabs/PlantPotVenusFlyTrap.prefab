@@ -208,7 +208,7 @@ PrefabInstance:
     - target: {fileID: 6423523439924261320, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_Name
-      value: PlantPot05
+      value: PlantPotVenusFlyTrap
       objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
@@ -218,22 +218,22 @@ PrefabInstance:
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.26
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
@@ -345,8 +345,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
+      propertyPath: _plantIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: f87333644222c4374a995950db2cea90,
+        type: 3}
+    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
       propertyPath: _plantName
-      value: Dave
+      value: ReginaGretchenKaren
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4f0f853547114c769ab9147cb19c040, type: 3}

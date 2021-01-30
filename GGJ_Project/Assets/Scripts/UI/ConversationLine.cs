@@ -14,7 +14,7 @@ public class ConversationLine : MonoBehaviour
     {
         if (_icon != null && string.IsNullOrEmpty(line.SpeakerName))
         {
-            _icon.sprite = PlayerInventoryMonoSingleton.Instance.GetPlantIcon(line.SpeakerName);
+            _icon.sprite = PlantManager.Instance.GetPlantIcon(line.SpeakerName);
         }
 
         _text.text = line.ConversationText;

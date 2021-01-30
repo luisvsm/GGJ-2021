@@ -22,7 +22,7 @@ public class ConversationData : ScriptableObject
     {
         public string ConversationID;
         public Conversation_Line[] Conversation;
-        public bool PlayerSeen;
+        public bool GreetingConversation;
         public bool OnceOnly;
     }
 
