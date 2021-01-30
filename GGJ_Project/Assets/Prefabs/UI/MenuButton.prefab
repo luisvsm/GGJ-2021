@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1962090455411171742}
   - component: {fileID: 8447662562869638065}
   - component: {fileID: 3222155584519461431}
+  - component: {fileID: 994965260}
   m_Layer: 5
   m_Name: MenuButton
   m_TagString: Untagged
@@ -74,3 +75,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &994965260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3863085999030948610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607f9946dba1d4888b4e130005e7ef8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RaycastLayerName: Default
+  draggableSprite: {fileID: 21300000, guid: c839b60e8217946d191d5dd51f664b01, type: 3}
+  draggableObjectDisplay: {fileID: 3026798920163466273, guid: a378b869773514f5684d582f45d3ac87,
+    type: 3}
