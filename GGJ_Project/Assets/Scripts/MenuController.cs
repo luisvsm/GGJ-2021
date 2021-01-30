@@ -5,7 +5,6 @@ using UnityEngine;
 public class MenuController : MonoBehaviourSingleton<MenuController>
 {
     public List<Animator> MenuListAnimators;
-    private Animator prevAnimator;
 
     public static MenuController instance
     {
@@ -28,19 +27,11 @@ public class MenuController : MonoBehaviourSingleton<MenuController>
         }
     }
 
-    public void closeMenu()
-    {
-        if (prevAnimator != null)
-            prevAnimator.SetTrigger("Close");
-    }
-
     public void showMenu(int menuIndex)
     {
-        if (MenuListAnimators[menuIndex] != prevAnimator)
+        for (int i = 0; i < MenuListAnimators.Count; i++)
         {
-            closeMenu();
-            MenuListAnimators[menuIndex].SetTrigger("Open");
-            prevAnimator = MenuListAnimators[menuIndex];
+            MenuListAnimators[i].SetBool("open", menuIndex==i);
         }
     }
 }

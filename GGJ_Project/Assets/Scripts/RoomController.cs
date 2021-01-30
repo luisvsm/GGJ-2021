@@ -15,20 +15,17 @@ public class RoomController : MonoBehaviourSingleton<RoomController>
 
     public void showRoom(int roomIndex)
     {
-        MenuController.Instance.closeMenu();
-
         FadeController.Instance.Fade(() =>
         {
             for (int i = 0; i < RoomList.Count; i++)
             {
                 RoomList[i].SetActive(i == roomIndex);
             }
-            Debug.Log("HalfWay");
+            MenuController.Instance.showMenu(roomIndex);
         },
         () =>
         {
-            Debug.Log("Complted");
-            MenuController.Instance.showMenu(roomIndex);
+            
         });
     }
 }

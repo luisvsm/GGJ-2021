@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1450124562291663164
+--- !u!1001 &5370181939289514806
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9,23 +9,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3361205633220417098, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.76
-      objectReference: {fileID: 0}
-    - target: {fileID: 3361205633220417098, guid: f4f0f853547114c769ab9147cb19c040,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -4.54
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3740270135259111678, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.8199999
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6399986960386682661, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261320, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_Name
-      value: PlantPot01
+      value: PlantPotBasil
       objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
@@ -34,13 +34,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.74
       objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.69
       objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
@@ -84,31 +94,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6423523441467441488, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 6423523441467441488, guid: f4f0f853547114c769ab9147cb19c040,
-        type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.83
+      value: -0.46
       objectReference: {fileID: 0}
     - target: {fileID: 6423523441467441489, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 34da369cf1141831d9fb195df49ca88f,
+      objectReference: {fileID: 21300000, guid: 512ca833bf1ac459ebde0430b993c372,
         type: 3}
-    - target: {fileID: 6423523441467441489, guid: f4f0f853547114c769ab9147cb19c040,
+    - target: {fileID: 6423523441614814277, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
+      propertyPath: m_Name
+      value: SpeechBubble
       objectReference: {fileID: 0}
-    - target: {fileID: 6572966134511800923, guid: f4f0f853547114c769ab9147cb19c040,
+    - target: {fileID: 6423523441614814282, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 7a8cefd2ac25f4c69bb1f71ecff368c1,
-        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.14
+      objectReference: {fileID: 0}
     - target: {fileID: 7503206210144637920, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_IsActive
@@ -118,22 +122,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c09b03d7db52513789ae481eaba83613,
+      objectReference: {fileID: 21300000, guid: d2dacbfaf1537463bb4f3d6cf0c71643,
         type: 3}
     - target: {fileID: 7961024753781165415, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961024753781165415, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.37
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7961024753781165415, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.6
+      value: 4.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563905585800963112, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: _plantName
-      value: LeafyGreen
+      value: Dave
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4f0f853547114c769ab9147cb19c040, type: 3}
