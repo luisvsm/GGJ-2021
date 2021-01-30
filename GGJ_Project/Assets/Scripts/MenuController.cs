@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MenuController : MonoBehaviourSingleton<MenuController>
 {
-    public List<GameObject> MenuList;
-    public int startingRoom = 0;
+    public List<Animator> MenuListAnimators;
+    private Animator prevAnimator;
 
     public static MenuController instance
     {
@@ -26,15 +26,21 @@ public class MenuController : MonoBehaviourSingleton<MenuController>
         {
             _instance = this;
         }
+    }
 
-        showMenu(startingRoom);
+    public void closeMenu()
+    {
+        if (prevAnimator != null)
+            prevAnimator.SetTrigger("Close");
     }
 
     public void showMenu(int menuIndex)
     {
-        for (int i = 0; i < MenuList.Count; i++)
+        if (MenuListAnimators[menuIndex] != prevAnimator)
         {
-            MenuList[i].SetActive(i == menuIndex);
+            closeMenu();
+            MenuListAnimators[menuIndex].SetTrigger("Open");
+            prevAnimator = MenuListAnimators[menuIndex];
         }
     }
 }
