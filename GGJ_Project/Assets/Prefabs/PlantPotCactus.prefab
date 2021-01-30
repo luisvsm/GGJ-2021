@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &9111573682877659005
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2116164945185895774, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254191614980527078, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3361205633220417098, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3550504873384403433, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740270135259111678, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261320, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_Name
+      value: PlantPotCactus
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6423523441467441489, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a320a70890ee91baa904b86faaa9d7b2,
+        type: 3}
+    - target: {fileID: 6423523441614814277, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_Name
+      value: SpeechBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 7961024753781165415, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8563905585800963112, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f4f0f853547114c769ab9147cb19c040, type: 3}
