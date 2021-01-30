@@ -408,6 +408,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8896438335730406211, guid: d4682aec9c2092b47ba0667d42ee1746,
+        type: 3}
+      propertyPath: AudioCategories.Array.data[1].audioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 13eac2fbc4b3d4485a9642b0c066b41b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4682aec9c2092b47ba0667d42ee1746, type: 3}
 --- !u!1 &554392809
@@ -1197,6 +1203,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlantPotBonsai
       objectReference: {fileID: 0}
+    - target: {fileID: 1545218375731014407, guid: 1abd72835b52e4a2fbfe4476347e30b2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1abd72835b52e4a2fbfe4476347e30b2, type: 3}
 --- !u!4 &61371048967241207 stripped
@@ -1359,7 +1370,7 @@ PrefabInstance:
     - target: {fileID: 1089721326266734373, guid: de700c483b660464dbb5aa83dfe70805,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de700c483b660464dbb5aa83dfe70805, type: 3}
@@ -1378,7 +1389,7 @@ PrefabInstance:
     - target: {fileID: 655635495493200048, guid: 70a4937b502dc45a09448e733c93d74f,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 655635495493200049, guid: 70a4937b502dc45a09448e733c93d74f,
         type: 3}
@@ -1462,7 +1473,7 @@ PrefabInstance:
     - target: {fileID: 1414773001186267902, guid: 76b6a8bc1b15545e8b854a7bcff44341,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1414773001186267903, guid: 76b6a8bc1b15545e8b854a7bcff44341,
         type: 3}
@@ -1615,7 +1626,7 @@ PrefabInstance:
     - target: {fileID: 6101331487975716473, guid: dcdfc64f716e947978a254a596a33c2e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6101331487975716474, guid: dcdfc64f716e947978a254a596a33c2e,
         type: 3}
@@ -1754,6 +1765,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlantPotArnold
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667791015352847232, guid: 9353b60ce67c74d4c801a42cf9dda04f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6667791015352847233, guid: 9353b60ce67c74d4c801a42cf9dda04f,
         type: 3}
@@ -1908,7 +1924,7 @@ PrefabInstance:
     - target: {fileID: 6210038754327327705, guid: bdca1dd8fb1704dc19102871c0993dc2,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdca1dd8fb1704dc19102871c0993dc2, type: 3}
