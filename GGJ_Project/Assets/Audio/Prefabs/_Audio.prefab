@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8896438335730406211}
   - component: {fileID: 2443567361476377358}
   - component: {fileID: 4480738689898360109}
+  - component: {fileID: 659595906}
   m_Layer: 0
   m_Name: _Audio
   m_TagString: Untagged
@@ -2572,7 +2573,7 @@ MonoBehaviour:
         RandomStartPosition: 0
         individualSettings: []
     _volume: 1
-    audioMixerGroup: {fileID: 0}
+    audioMixerGroup: {fileID: 24300002, guid: 13eac2fbc4b3d4485a9642b0c066b41b, type: 2}
   - Name: AMB
     _parentCategoryName: 
     AudioObjectPrefab: {fileID: 0}
@@ -2585,7 +2586,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 0.65
+      Volume: 0.43
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 1
@@ -2631,8 +2632,8 @@ MonoBehaviour:
   _audioDisabled: 0
   _volume: 1
   _currentInspectorSelection:
-    currentCategoryIndex: 1
-    currentItemIndex: 1
+    currentCategoryIndex: 2
+    currentItemIndex: 0
     currentSubitemIndex: 0
     currentPlaylistEntryIndex: 0
     currentPlaylistIndex: 0
@@ -2742,5 +2743,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8cd7e379c2ccc242af04f0746d2d65b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &659595906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2684272714688919947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff485b3b95d3ac4d91da12f3ab203ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

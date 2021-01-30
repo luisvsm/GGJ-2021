@@ -52,6 +52,10 @@ public class FadeController : MonoBehaviourSingleton<FadeController>
         {
             completedCallback();
             completedCallback = null;
+
+			// Ed put this here because he's lazy AF but hey it works. Haters gonna hate
+			if (!AudioController.IsPlaying("AMB_Country_Lp"))
+			AudioController.Play("AMB_Country_Lp");
         }
     }
 

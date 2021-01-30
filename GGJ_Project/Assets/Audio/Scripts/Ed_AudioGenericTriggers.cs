@@ -13,6 +13,8 @@ public class Ed_AudioGenericTriggers : MonoBehaviour
 	public void GrabPoo() { AudioController.Play("SFX_Poo_Grab"); }
 	public void GrabPlant() { AudioController.Play("SFX_PotPlant_Move"); }
 	public void GrabWaterCan() { AudioController.Play("SFX_WaterCan_Grab"); }
+	public void GrabPotPlant() { AudioController.Play("SFX_PotPlant_Move"); }
+	public void DropPotPlant() { AudioController.Play("SFX_WaterCan_Drop"); }
 	public void Custom(string audioToPlay) { AudioController.Play(audioToPlay); }
 	public void CustomStop(string audioToStop) { AudioController.Stop(audioToStop); }
 }
