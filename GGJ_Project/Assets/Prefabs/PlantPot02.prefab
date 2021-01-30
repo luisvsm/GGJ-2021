@@ -35,7 +35,7 @@ PrefabInstance:
     - target: {fileID: 6423523439924261320, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_Name
-      value: PlantPotCactus
+      value: PlantPot02
       objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
