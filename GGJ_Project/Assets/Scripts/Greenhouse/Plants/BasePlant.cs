@@ -223,11 +223,13 @@ public class BasePlant : MonoBehaviour
     public void AddPoo(int amount = 1)
     {
         _pooLevel += amount;
+        PlayerInventoryMonoSingleton.Instance.UsePoo(amount);
     }
     
     public void AddWater(int amount = 1)
     {
         _waterLevel += amount;
+        PlayerInventoryMonoSingleton.Instance.UseWater(amount);
     }
     
     
@@ -236,15 +238,42 @@ public class BasePlant : MonoBehaviour
         _currentSun += level;
     }
 
-    //TODO:Add Remove Decoration
-    public bool AttachDecoration(string name, GameDataMonoSingleton.DECORATION_POSITION slot)
+    public bool RemoveDecoration(GameDataMonoSingleton.DECORATION_POSITION slot)
     {
-        bool canPutInSlot = GameDataMonoSingleton.Instance.IsValidSlot(name, slot);
-        if (!canPutInSlot)
+        int slotIndex = GetSlotIndex(slot);
+        if (slotIndex < 0)
         {
+            Debug.Log(string.Format("<color=red>OH NOES!!! {0} Does not have a slot at position {1}!</color>",
+                _plantName, slot));
             return false;
         }
 
+        if (!string.IsNullOrEmpty(_decorationSlots[slotIndex].Name))
+        {
+            PlayerInventoryMonoSingleton.Instance.CollectDecoration(_decorationSlots[slotIndex].Name);
+            return true;
+        }
+        
+        Debug.Log(string.Format("<color=red>OH NOES!!! {0} Does not have a decoration at position {1}!</color>",
+            _plantName, slot));
+        return false;
+    }
+
+    public bool AttachDecoration(string decoName, GameDataMonoSingleton.DECORATION_POSITION slot)
+    {
+        bool canUseDecoration = PlayerInventoryMonoSingleton.Instance.HasDecoration(decoName);
+        if (!canUseDecoration)
+        {
+            Debug.Log(string.Format("<color=red>OH NOES!!! The player does not have enough {0}!</color>", decoName));
+            return false;
+        }
+        bool canPutInSlot = GameDataMonoSingleton.Instance.IsValidSlot(decoName, slot);
+        if (!canPutInSlot)
+        {
+            Debug.Log(string.Format("<color=red>OH NOES!!! {0} cannot go into slot {1}!</color>", decoName, slot));
+            return false;
+        }
+        
         int slotIndex = GetSlotIndex(slot);
         if (slotIndex < 0)
         {
@@ -257,9 +286,10 @@ public class BasePlant : MonoBehaviour
         {
             PlayerInventoryMonoSingleton.Instance.CollectDecoration(_decorationSlots[slotIndex].Name);
         }
-
-        _decorationSlots[slotIndex].Name = name;
-        _decorationSlots[slotIndex].Sprite.sprite = GameDataMonoSingleton.Instance.GetDectorationSprite(name);
+        
+        _decorationSlots[slotIndex].Name = decoName;
+        _decorationSlots[slotIndex].Sprite.sprite = GameDataMonoSingleton.Instance.GetDectorationSprite(decoName);
+        PlayerInventoryMonoSingleton.Instance.UseDecoration(decoName);
 
         return false;
     }

@@ -45,47 +45,65 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
     }
     
     
-    public void CollectDecoration(string name)
+    public void CollectDecoration(string decoName)
     {
         if (_unassignedDecorations == null)
         {
             _unassignedDecorations = new Dictionary<string, int>();
         }
 
-        if (_unassignedDecorations.ContainsKey(name))
+        if (_unassignedDecorations.ContainsKey(decoName))
         {
-            int value = _unassignedDecorations[name];
-            _unassignedDecorations[name] = value + 1;
-            OnDecorationCountUpdated?.Invoke(name, _unassignedDecorations[name]);
+            int value = _unassignedDecorations[decoName];
+            _unassignedDecorations[decoName] = value + 1;
+            OnDecorationCountUpdated?.Invoke(decoName, _unassignedDecorations[decoName]);
         }
         else
         {
-            _unassignedDecorations.Add(name,1);
-            OnDecorationCountUpdated?.Invoke(name, _unassignedDecorations[name]);
+            _unassignedDecorations.Add(decoName,1);
+            OnDecorationCountUpdated?.Invoke(decoName, _unassignedDecorations[decoName]);
         }
     }
     
-    public void UseDecoration(string name)
+    public void UseDecoration(string decoName)
     {
         if (_unassignedDecorations == null)
         {
             _unassignedDecorations = new Dictionary<string, int>();
         }
 
-        if (_unassignedDecorations.ContainsKey(name))
+        if (_unassignedDecorations.ContainsKey(decoName))
         {
-            int value = _unassignedDecorations[name];
+            int value = _unassignedDecorations[decoName];
             if (value > 0)
             {
-                _unassignedDecorations[name] = value - 1;
-                OnDecorationCountUpdated?.Invoke(name, _unassignedDecorations[name]);
+                _unassignedDecorations[decoName] = value - 1;
+                OnDecorationCountUpdated?.Invoke(decoName, _unassignedDecorations[decoName]);
             }
         }
         else
         {
-            Debug.Log(string.Format("<color=red>OH NOES!!! Cannot find decoration {0} in game inventory </color>", name));
+            Debug.Log(string.Format("<color=red>OH NOES!!! Cannot find decoration {0} in game inventory </color>", decoName));
         }
     }
-    
-    
+
+
+    public bool HasDecoration(string decoName)
+    {
+        if (_unassignedDecorations == null)
+        {
+            _unassignedDecorations = new Dictionary<string, int>();
+        }
+
+        if (_unassignedDecorations.ContainsKey(decoName))
+        {
+            int value = _unassignedDecorations[decoName];
+            if (value > 0)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
