@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f0297e1c601814b9c880079cfebfe8f3, type: 3}
-  m_Name: Data
+  m_Name: VeraConversations
   m_EditorClassIdentifier: 
   _plantCharacterName: Vera
   _conversationList:

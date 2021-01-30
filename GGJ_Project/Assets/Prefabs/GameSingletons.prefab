@@ -114,7 +114,12 @@ MonoBehaviour:
     Position: 0
     Sprite: {fileID: 0}
   _conversationDatas:
-  - {fileID: 11400000, guid: 326861b5cbfff49aa8c053b611d143d6, type: 2}
+  - {fileID: 11400000, guid: 04c6d8665e4cb0fa9a10a2851d3e9f3d, type: 2}
+  - {fileID: 11400000, guid: d1c7763452e3fe402b60b11d01db4415, type: 2}
+  - {fileID: 11400000, guid: da9127059c3be0dd0bc026ba54fc3383, type: 2}
+  - {fileID: 11400000, guid: 01d537d604b6d252d89e0e27e91547da, type: 2}
+  - {fileID: 11400000, guid: 618b28a2ce7f3ec478dec9280520d279, type: 2}
+  - {fileID: 11400000, guid: aaa6ded28ab5fd072af8dc1f090a5161, type: 2}
   _conversationBinder: {fileID: 0}
 --- !u!1 &8945986348790455361
 GameObject:

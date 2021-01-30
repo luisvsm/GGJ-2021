@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -696,6 +696,47 @@ PrefabInstance:
       propertyPath: _conversationBinder
       value: 
       objectReference: {fileID: 597990303}
+    - target: {fileID: 4715934866933488622, guid: 855b372cb6fdf438681b8728774d3ce3,
+        type: 3}
+      propertyPath: _conversationDatas.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4715934866933488622, guid: 855b372cb6fdf438681b8728774d3ce3,
+        type: 3}
+      propertyPath: _conversationDatas.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 04c6d8665e4cb0fa9a10a2851d3e9f3d,
+        type: 2}
+    - target: {fileID: 4715934866933488622, guid: 855b372cb6fdf438681b8728774d3ce3,
+        type: 3}
+      propertyPath: _conversationDatas.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: d1c7763452e3fe402b60b11d01db4415,
+        type: 2}
+    - target: {fileID: 4715934866933488622, guid: 855b372cb6fdf438681b8728774d3ce3,
+        type: 3}
+      propertyPath: _conversationDatas.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: da9127059c3be0dd0bc026ba54fc3383,
+        type: 2}
+    - target: {fileID: 4715934866933488622, guid: 855b372cb6fdf438681b8728774d3ce3,
+        type: 3}
+      propertyPath: _conversationDatas.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: 01d537d604b6d252d89e0e27e91547da,
+        type: 2}
+    - target: {fileID: 4715934866933488622, guid: 855b372cb6fdf438681b8728774d3ce3,
+        type: 3}
+      propertyPath: _conversationDatas.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: 618b28a2ce7f3ec478dec9280520d279,
+        type: 2}
+    - target: {fileID: 4715934866933488622, guid: 855b372cb6fdf438681b8728774d3ce3,
+        type: 3}
+      propertyPath: _conversationDatas.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: aaa6ded28ab5fd072af8dc1f090a5161,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 855b372cb6fdf438681b8728774d3ce3, type: 3}
 --- !u!1001 &6423523440013505026
