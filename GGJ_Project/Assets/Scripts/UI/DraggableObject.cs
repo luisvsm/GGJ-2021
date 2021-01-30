@@ -10,6 +10,7 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
     public Sprite draggableSprite;
     public GameObject draggableObjectDisplay;
     private GameObject draggableObjectDisplayInstance;
+    private Rigidbody2D draggableRB;
 
 
     public static DraggableObject currentDraggableObject;
@@ -22,12 +23,20 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
 
     void Start()
     {
+        if (draggableObjectDisplay == null)
+        {
+            Debug.Log(gameObject.name);
+        }
         draggableObjectDisplayInstance = Instantiate(draggableObjectDisplay, Vector3.zero, Quaternion.identity);
-        draggableObjectDisplayInstance.transform.Find("display").GetComponent<SpriteRenderer>().sprite = draggableSprite;
+        Transform displayTemp = draggableObjectDisplayInstance.transform.Find("display");
+        if (displayTemp)
+            displayTemp.GetComponent<SpriteRenderer>().sprite = draggableSprite;
+
+        draggableRB = draggableObjectDisplayInstance.GetComponent<Rigidbody2D>();
         draggableObjectDisplayInstance.SetActive(false);
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (dragging)
         {
@@ -79,16 +88,23 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
             {
                 Debug.Log(string.Format("<color=yellow> DRAG DROP!!</color>"));
             }
-            
+
             dragConsumer.OnDragLetGo.Invoke();
         }
-        
+
         currentDraggableObject = null;
     }
 
     void UpdateDragPosition()
     {
-        draggableObjectDisplayInstance.transform.position = GetWorldPositionFromInput();
+        if (draggableRB == null)
+        {
+            draggableObjectDisplayInstance.transform.position = GetWorldPositionFromInput();
+        }
+        else
+        {
+            draggableRB.MovePosition(GetWorldPositionFromInput());
+        }
     }
 
     void DetectStopDragging()
@@ -110,6 +126,7 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
         mask = LayerMask.GetMask(RaycastLayerName);
         dragging = true;
         draggableObjectDisplayInstance.SetActive(true);
+        draggableObjectDisplayInstance.transform.position = GetWorldPositionFromInput();
     }
 
     void StopDragging()
