@@ -12,10 +12,12 @@ public class JankyGameText : MonoBehaviour
         {
             nextGameText.SetActive(true);
             gameObject.SetActive(false);
+			AudioController.Play("SFX_Generic_Tap");
         }
         else
         {
             RoomController.Instance.showRoom(3);
-        }
+			AudioController.Play("SFX_Generic_Tap");
+		}
     }
 }

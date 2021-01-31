@@ -30,7 +30,7 @@ public class Conversation : MonoBehaviour
             _nextline = 0;
             _lines = null;
             MenuController.Instance.EndConversation();
-        }
+		}
 
         if (_lines != null)
         {
@@ -42,11 +42,13 @@ public class Conversation : MonoBehaviour
             if (isPlayer)
             {
                 _playerConversationLine.InitialiseConversation(_lines[_nextline]);
-            }
+				AudioController.Play("SFX_Generic_Tap");
+			}
             else
             {
                 _plantConversationLine.InitialiseConversation(_lines[_nextline]);
-            }
+				AudioController.Play("SFX_Generic_Tap");
+			}
 
             _nextline++;
         }
@@ -55,5 +57,5 @@ public class Conversation : MonoBehaviour
     private void OnMouseDown()
     {
         DisplaytNextLine();
-    }
+	}
 }
