@@ -48,6 +48,6 @@ public class MenuController : MonoBehaviourSingleton<MenuController>
         _conversationBinder.gameObject.SetActive(false);
         showMenu(_activeMenuIndex);
         PlantManager.Instance.ConversationComplete();
-        GameDataMonoSingleton.Instance.SetTickerPaused(true);
+        GameDataMonoSingleton.Instance.SetTickerPaused(false);
     }
 }
