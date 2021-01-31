@@ -12,18 +12,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0297e1c601814b9c880079cfebfe8f3, type: 3}
   m_Name: FlyTrapConversations
   m_EditorClassIdentifier: 
-  _plantCharacterName: ReginaGretchenKaren
+  _plantCharacterName: FlyTrap
   _conversationList:
   - ConversationID: Greeting
     Conversation:
-    - SpeakerName: ReginaGretchenKaren
+    - SpeakerName: FlyTrap
       ConversationText: Oh my god. Oh my god. Oh my god.
       AudioID: 
     - SpeakerName: 
       ConversationText: You going okay there?
       AudioID: 
-    - SpeakerName: ReginaGretchenKaren
-      ConversationText: I'm a plaaaaaaaaaant!
+    - SpeakerName: FlyTrap
+      ConversationText: My math exam is today! And now I'm a plaaaaaaant!
       AudioID: 
-    PlayerSeen: 0
+    - SpeakerName: 
+      ConversationText: What's the subject?
+      AudioID: 
+    - SpeakerName: FlyTrap
+      ConversationText: Twigonometry.
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: Looks to me like you're even more qualified today than you
+        were yesterday.
+      AudioID: 
+    - SpeakerName: FlyTrap
+      ConversationText: Noooooo!
+      AudioID: 
+    GreetingConversation: 1
     OnceOnly: 0
+  - ConversationID: Chatter1
+    Conversation:
+    - SpeakerName: FlyTrap
+      ConversationText: Ew, there's an ant!
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: Where?
+      AudioID: 
+    - SpeakerName: FlyTrap
+      ConversationText: Down there, on my stem, crawling around!
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: Awww, cute.
+      AudioID: 
+    - SpeakerName: FlyTrap
+      ConversationText: '*Not* cute! It tickles!'
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: You got ants in your plants, huh?
+      AudioID: 
+    GreetingConversation: 0
+    OnceOnly: 1
+  - ConversationID: Chatter2
+    Conversation:
+    - SpeakerName: FlyTrap
+      ConversationText: I've decided I like being a plant.
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: Yeah? What do you like about it?
+      AudioID: 
+    - SpeakerName: FlyTrap
+      ConversationText: All my best fronds are here, and I don't have to go to school!
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: That's the spirit!
+      AudioID: 
+    GreetingConversation: 0
+    OnceOnly: 1

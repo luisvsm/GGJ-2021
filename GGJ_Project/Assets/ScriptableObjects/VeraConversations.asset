@@ -17,21 +17,57 @@ MonoBehaviour:
   - ConversationID: Greeting
     Conversation:
     - SpeakerName: Vera
-      ConversationText: Oh deary me... if Agnes down the road could see me now...
+      ConversationText: Oh dear... if that fusspot Agnes down the road knew about
+        this...
       AudioID: 
     - SpeakerName: 
       ConversationText: ...what would she say?
       AudioID: 
     - SpeakerName: Vera
       ConversationText: Between you and me, dear, she'd be having a field day with
-        this.
+        it all.
       AudioID: 
     - SpeakerName: 
       ConversationText: How do you mean?
       AudioID: 
     - SpeakerName: Vera
-      ConversationText: I can't knit as a plant! She'll be taking out all the prizes
-        at next week's CWA meeting.
+      ConversationText: She'll take out all my usual knitting prizes at next week's
+        craft fair.
       AudioID: 
-    PlayerSeen: 0
+    - SpeakerName: 
+      ConversationText: Oh no!
+      AudioID: 
+    - SpeakerName: Vera
+      ConversationText: That Agnes has always been a bit of a spore loser.
+      AudioID: 
+    GreetingConversation: 1
     OnceOnly: 0
+  - ConversationID: Chatter1
+    Conversation:
+    - SpeakerName: Vera
+      ConversationText: I miss my garden. Never thought I'd be *part* of one myself.
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: I'm sorry to hear about your garden.
+      AudioID: 
+    - SpeakerName: Vera
+      ConversationText: I didn't realise how much I love working in it!
+      AudioID: 
+    - SpeakerName: Vera
+      ConversationText: It's true what they say - absence makes the heart grow fronder.
+      AudioID: 
+    GreetingConversation: 0
+    OnceOnly: 1
+  - ConversationID: Chatter2
+    Conversation:
+    - SpeakerName: Vera
+      ConversationText: What a lovely day, don't you think?
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: I've been a bit busy!
+      AudioID: 
+    - SpeakerName: Vera
+      ConversationText: It's part and parsley of the gardening life, my dear.
+      AudioID: 
+    GreetingConversation: 0
+    OnceOnly: 1

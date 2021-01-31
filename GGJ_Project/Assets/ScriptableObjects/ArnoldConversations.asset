@@ -14,22 +14,54 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plantCharacterName: Arnold
   _conversationList:
-  - ConversationID: Greeting
+  - ConversationID: Chatter1
     Conversation:
     - SpeakerName: Arnold
-      ConversationText: My child, what a day it is, to wake up as a cactus.
+      ConversationText: Hey, come over here!
       AudioID: 
     - SpeakerName: 
-      ConversationText: This must be a very weird experience for you.
+      ConversationText: What's up?
       AudioID: 
     - SpeakerName: Arnold
-      ConversationText: Eh... it is not one of my better days.
+      ConversationText: Is one of my biceps bigger than the other?
       AudioID: 
     - SpeakerName: 
-      ConversationText: No, I bet. Not really my best, either.
+      ConversationText: I'm surprised you're still managing to work out in this situation.
       AudioID: 
-    - SpeakerName: DonPricklioni
-      ConversationText: We are family. We care for each other, no?
+    - SpeakerName: Arnold
+      ConversationText: Cactus makes perfect.
       AudioID: 
-    PlayerSeen: 0
-    OnceOnly: 0
+    GreetingConversation: 0
+    OnceOnly: 1
+  - ConversationID: Chatter2
+    Conversation:
+    - SpeakerName: Arnold
+      ConversationText: Down... up... down... up...
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: Keeping it green and mean, I see.
+      AudioID: 
+    - SpeakerName: Arnold
+      ConversationText: If you don't do the work, you don't get the results.
+      AudioID: 
+    GreetingConversation: 0
+    OnceOnly: 1
+  - ConversationID: Chatter3
+    Conversation:
+    - SpeakerName: Arnold
+      ConversationText: I need your clothes, your boots, and your motorcycle.
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: You're a cactus, none of those things are going to fit you.
+      AudioID: 
+    - SpeakerName: Arnold
+      ConversationText: I'll make it work.
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: Also, I don't have a motorcycle.
+      AudioID: 
+    - SpeakerName: Arnold
+      ConversationText: A plant can dream!
+      AudioID: 
+    GreetingConversation: 0
+    OnceOnly: 1

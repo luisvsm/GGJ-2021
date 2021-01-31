@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plantCharacterName: Basil
   _conversationList:
-  - ConversationID: Hello
+  - ConversationID: Greeting
     Conversation:
     - SpeakerName: Basil
       ConversationText: I say, how are you, old sport?
@@ -25,5 +25,46 @@ MonoBehaviour:
     - SpeakerName: Basil
       ConversationText: All we can do, really. Keep calm and carry on, you know.
       AudioID: 
-    PlayerSeen: 0
+    GreetingConversation: 1
     OnceOnly: 0
+  - ConversationID: Chatter1
+    Conversation:
+    - SpeakerName: Basil
+      ConversationText: I saw a caterpillar around here earlier. Frightful sort of
+        fellow.
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: He's chewed a hole in your leaf!
+      AudioID: 
+    - SpeakerName: Basil
+      ConversationText: He has, rather. But one mustn't complain.
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: If you see him around again, let me know.
+      AudioID: 
+    - SpeakerName: Basil
+      ConversationText: Oh, I'm not one to arbor a grudge.
+      AudioID: 
+    GreetingConversation: 0
+    OnceOnly: 1
+  - ConversationID: Chatter2
+    Conversation:
+    - SpeakerName: Basil
+      ConversationText: Lovely weather we're having, isn't it?
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: Is it? I hadn't stopped to notice.
+      AudioID: 
+    - SpeakerName: Basil
+      ConversationText: One finds, as a plant, that one has so much more thyme for
+        noticing these things.
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: It must be relaxing.
+      AudioID: 
+    - SpeakerName: Basil
+      ConversationText: You should try it, old sport! Relaxing is one of life's silty
+        pleasures.
+      AudioID: 
+    GreetingConversation: 0
+    OnceOnly: 1

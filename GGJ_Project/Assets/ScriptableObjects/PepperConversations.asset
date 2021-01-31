@@ -25,5 +25,31 @@ MonoBehaviour:
     - SpeakerName: Pepper
       ConversationText: Uh... I'm a *plant*. Duh.
       AudioID: 
-    PlayerSeen: 0
+    GreetingConversation: 1
     OnceOnly: 0
+  - ConversationID: Chatter1
+    Conversation:
+    - SpeakerName: Pepper
+      ConversationText: '*sigh*'
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: Are you okay?
+      AudioID: 
+    - SpeakerName: Pepper
+      ConversationText: I feel like I just took my human life for planted,  you know?
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: Do you want to talk about it?
+      AudioID: 
+    - SpeakerName: Pepper
+      ConversationText: I'm used to being the centre of attention. Delusions of greendure,
+        maybe?
+      AudioID: 
+    - SpeakerName: 
+      ConversationText: I've always thought you were pretty chill.
+      AudioID: 
+    - SpeakerName: Pepper
+      ConversationText: Aw, thanks. You're not so bad yourself.
+      AudioID: 
+    GreetingConversation: 0
+    OnceOnly: 1
