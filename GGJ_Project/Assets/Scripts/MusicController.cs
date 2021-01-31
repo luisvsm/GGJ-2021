@@ -29,7 +29,14 @@ public class MusicController : MonoBehaviourSingleton<MusicController>
 
     public void PlaySong(string plant)
     {
-        plantSongObjects[plant].volume = 1f;
+        if (!plantSongObjects.ContainsKey(plant))
+        {
+            Debug.Log(string.Format("<color=red>****** MUSIC LIBRARY DOES NOT CONTAIN SOUNDS FOR PLANT {0} </color>", plant));
+        }
+        else
+        {
+            plantSongObjects[plant].volume = 1f;
+        }
     }
 
     public void PauseSong(string plant)
