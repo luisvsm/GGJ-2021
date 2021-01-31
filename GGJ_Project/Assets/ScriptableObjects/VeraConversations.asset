@@ -42,7 +42,7 @@ MonoBehaviour:
       AudioID: 
     GreetingConversation: 1
     OnceOnly: 0
-  - ConversationID: Chatter1
+  - ConversationID: Chatter16
     Conversation:
     - SpeakerName: Vera
       ConversationText: I miss my garden. Never thought I'd be *part* of one myself.
@@ -58,7 +58,7 @@ MonoBehaviour:
       AudioID: 
     GreetingConversation: 0
     OnceOnly: 1
-  - ConversationID: Chatter2
+  - ConversationID: Chatter26
     Conversation:
     - SpeakerName: Vera
       ConversationText: What a lovely day, don't you think?

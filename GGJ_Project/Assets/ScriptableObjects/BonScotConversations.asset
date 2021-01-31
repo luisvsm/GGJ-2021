@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plantCharacterName: BonScot
   _conversationList:
-  - ConversationID: Chatter1
+  - ConversationID: Chatter13
     Conversation:
     - SpeakerName: BonScot
       ConversationText: You gettin' the hang of this all right. laddie?
@@ -28,7 +28,7 @@ MonoBehaviour:
       AudioID: 
     GreetingConversation: 0
     OnceOnly: 1
-  - ConversationID: Chatter2
+  - ConversationID: Chatter23
     Conversation:
     - SpeakerName: BonScot
       ConversationText: You seem to be stamen ahead of the curve, looking after us
@@ -42,7 +42,7 @@ MonoBehaviour:
       AudioID: 
     GreetingConversation: 0
     OnceOnly: 1
-  - ConversationID: Chatter3
+  - ConversationID: Chatter33
     Conversation:
     - SpeakerName: BonScot
       ConversationText: Well, aren't you a sight for spore eyes!

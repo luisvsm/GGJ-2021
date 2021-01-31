@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plantCharacterName: Arnold
   _conversationList:
-  - ConversationID: Chatter1
+  - ConversationID: Chatter11
     Conversation:
     - SpeakerName: Arnold
       ConversationText: Hey, come over here!
@@ -33,7 +33,7 @@ MonoBehaviour:
       AudioID: 
     GreetingConversation: 1
     OnceOnly: 0
-  - ConversationID: Chatter2
+  - ConversationID: Chatter21
     Conversation:
     - SpeakerName: Arnold
       ConversationText: Down... up... down... up...
@@ -46,7 +46,7 @@ MonoBehaviour:
       AudioID: 
     GreetingConversation: 0
     OnceOnly: 1
-  - ConversationID: Chatter3
+  - ConversationID: Chatter31
     Conversation:
     - SpeakerName: Arnold
       ConversationText: I need your clothes, your boots, and your motorcycle.

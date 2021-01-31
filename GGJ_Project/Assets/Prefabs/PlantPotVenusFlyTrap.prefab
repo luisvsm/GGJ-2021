@@ -228,12 +228,12 @@ PrefabInstance:
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.81
       objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.4100001
       objectReference: {fileID: 0}
     - target: {fileID: 6423523439924261321, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
@@ -362,7 +362,7 @@ PrefabInstance:
     - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: _plantName
-      value: ReginaGretchenKaren
+      value: FlyTrap
       objectReference: {fileID: 0}
     - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}

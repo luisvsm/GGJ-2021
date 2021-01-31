@@ -90,13 +90,17 @@ public class PlantManager : MonoBehaviourSingleton<PlantManager>
                                  GameDataMonoSingleton.Instance.RandomTalkIntervalInSecondsMax);
         _nextPlantTalk = Random.Range(0, _plantList.Count - 1);
         Debug.Log(string.Format("<color=magenta>***** Nextplant index 01- {0} </color>",_nextPlantTalk));
-
-        if (GameDataMonoSingleton.Instance.IsCharacterConversationExhausted(_plantList[_nextPlantTalk].PlantName))
+        string plantTes = _plantList[_nextPlantTalk].PlantName;
+        
+        if (GameDataMonoSingleton.Instance.IsCharacterConversationExhausted(plantTes))
         {
+            Debug.Log(string.Format("<color=magenta>***** PLANT {0} exhauseted looking get new</color>",plantTes));
             _nextPlantTalk = Random.Range(0, _plantList.Count - 1);
             Debug.Log(string.Format("<color=magenta>***** Nextplant index 02- {0} </color>",_nextPlantTalk));
+            plantTes = _plantList[_nextPlantTalk].PlantName;
             if (GameDataMonoSingleton.Instance.IsCharacterConversationExhausted(_plantList[_nextPlantTalk].PlantName))
             {
+                Debug.Log(string.Format("<color=magenta>***** PLANT2 {0} exhauseted looking get new</color>",plantTes));
                 string plantID = GameDataMonoSingleton.Instance.GetNextCharacterAvailiableForConversation();
 
                 if (string.IsNullOrEmpty(plantID))

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _plantCharacterName: Basil
   _conversationList:
-  - ConversationID: Greeting
+  - ConversationID: Greeting2
     Conversation:
     - SpeakerName: Basil
       ConversationText: I say, how are you, old sport?
@@ -27,7 +27,7 @@ MonoBehaviour:
       AudioID: 
     GreetingConversation: 1
     OnceOnly: 0
-  - ConversationID: Chatter1
+  - ConversationID: Chatter12
     Conversation:
     - SpeakerName: Basil
       ConversationText: I saw a caterpillar around here earlier. Frightful sort of
@@ -47,7 +47,7 @@ MonoBehaviour:
       AudioID: 
     GreetingConversation: 0
     OnceOnly: 1
-  - ConversationID: Chatter2
+  - ConversationID: Chatter22
     Conversation:
     - SpeakerName: Basil
       ConversationText: Lovely weather we're having, isn't it?
