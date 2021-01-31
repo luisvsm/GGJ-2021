@@ -307,9 +307,25 @@ public class BasePlant : MonoBehaviour
                 _hitmaxhealth = true;
                 _nextActionTime += GameDataMonoSingleton.Instance.HappyPlantHappyTimeInSeconds;
                 MusicController.Instance.PlaySong(_plantName);
-            }
 
-            _healthPercentageBar.UpdateBar(healthPercentage);
+				{
+					if (healthPercentage == 0.95)
+						if (PlantName == "BonScot")
+							AudioController.Play("VO_BonScot_MaxHealth");
+						else if (PlantName == "Vera")
+							AudioController.Play("VO_Vera_MaxHealth");
+						else if (PlantName == "Basil")
+							AudioController.Play("VO_Basil_MaxHealth");
+						else if (PlantName == "ReginaGretchenKaren")
+							AudioController.Play("VO_FlyTraps_FullHealth");
+						else if (PlantName == "Pepper")
+							AudioController.Play("VO_Pepper_MaxHealth");
+						else if (PlantName == "Arnold")
+							AudioController.Play("VO_Arnie_FullHealth");
+				}
+			}
+
+			_healthPercentageBar.UpdateBar(healthPercentage);
         }
 
         if (hasNeed)
