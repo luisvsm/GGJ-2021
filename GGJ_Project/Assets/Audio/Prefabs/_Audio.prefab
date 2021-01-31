@@ -1716,7 +1716,8 @@ MonoBehaviour:
         RandomStartPosition: 0
         individualSettings: []
     _volume: 0.7
-    audioMixerGroup: {fileID: 24300002, guid: 13eac2fbc4b3d4485a9642b0c066b41b, type: 2}
+    audioMixerGroup: {fileID: -7654781616101178818, guid: 13eac2fbc4b3d4485a9642b0c066b41b,
+      type: 2}
   - Name: SFX
     _parentCategoryName: 
     AudioObjectPrefab: {fileID: 0}
@@ -2783,7 +2784,8 @@ MonoBehaviour:
         RandomStartPosition: 0
         individualSettings: []
     _volume: 0.5
-    audioMixerGroup: {fileID: 24300002, guid: 13eac2fbc4b3d4485a9642b0c066b41b, type: 2}
+    audioMixerGroup: {fileID: 1424698122687389937, guid: 13eac2fbc4b3d4485a9642b0c066b41b,
+      type: 2}
   - Name: AMB
     _parentCategoryName: 
     AudioObjectPrefab: {fileID: 0}
@@ -2829,7 +2831,8 @@ MonoBehaviour:
         RandomStartPosition: 1
         individualSettings: []
     _volume: 0.14
-    audioMixerGroup: {fileID: 24300002, guid: 13eac2fbc4b3d4485a9642b0c066b41b, type: 2}
+    audioMixerGroup: {fileID: 1424698122687389937, guid: 13eac2fbc4b3d4485a9642b0c066b41b,
+      type: 2}
   - Name: MUS_ENSEMBLE
     _parentCategoryName: 
     AudioObjectPrefab: {fileID: 0}
@@ -3115,7 +3118,8 @@ MonoBehaviour:
         RandomStartPosition: 0
         individualSettings: []
     _volume: 0.6
-    audioMixerGroup: {fileID: 24300002, guid: 13eac2fbc4b3d4485a9642b0c066b41b, type: 2}
+    audioMixerGroup: {fileID: 1424698122687389937, guid: 13eac2fbc4b3d4485a9642b0c066b41b,
+      type: 2}
   musicPlaylists:
   - name: Default
     playlistItems: []
@@ -3128,8 +3132,8 @@ MonoBehaviour:
   _audioDisabled: 0
   _volume: 1
   _currentInspectorSelection:
-    currentCategoryIndex: 3
-    currentItemIndex: 6
+    currentCategoryIndex: 1
+    currentItemIndex: 0
     currentSubitemIndex: 0
     currentPlaylistEntryIndex: 0
     currentPlaylistIndex: 0
