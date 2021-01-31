@@ -290,6 +290,8 @@ public class BasePlant : MonoBehaviour
             //_needIconSprite.sprite = GameDataMonoSingleton.Instance.Dead;
            // _isDead = true;
         }
+        
+       // Debug.Log(string.Format("<color=magenta><b>Health {0} maxHealth {1} plant {2}!</b></color>", _health, _maxHealth, _plantName));
 
         if (healthUpdated)
         {
@@ -299,38 +301,45 @@ public class BasePlant : MonoBehaviour
                 _hitmaxhealth = false;
             }
             _healthPercentageBar.UpdateBar(healthPercentage);
+            
         }
         else
         {
             _health = _health + 1;
-            if (_health >= _maxHealth)
-            {
-                _needIndicatorAlert.gameObject.SetActive(false);
-                _needIndicatorDetailed.gameObject.SetActive(false);
-                _waterLevel = _maxWater;
-                _pooLevel = _minPoo + 3;
-                _health = _maxHealth;
-                _hitmaxhealth = true;
-                _nextActionTime += GameDataMonoSingleton.Instance.HappyPlantHappyTimeInSeconds;
-                MusicController.Instance.PlaySong(_plantName);
-				AudioController.Play("SFX_Give_Special");
-				playMaxHealth();
-			}
-
-			_healthPercentageBar.UpdateBar(healthPercentage);
+            _healthPercentageBar.UpdateBar(healthPercentage);
         }
-
-        if (hasNeed)
+        
+        if (_health >= _maxHealth)
         {
-            _needIndicatorAlert.gameObject.SetActive(_isZoomedOutView);
-            _needIndicatorDetailed.gameObject.SetActive(!_isZoomedOutView);
+            //Debug.Log(string.Format("<color=magenta><b>MAX HEALTH UPDATE {0}!</b></color>", _plantName));
+
+            _needIndicatorAlert.gameObject.SetActive(false);
+            _needIndicatorDetailed.gameObject.SetActive(false);
+            _waterLevel = _maxWater;
+            _pooLevel = _minPoo + 3;
+            _health = _maxHealth;
+            _hitmaxhealth = true;
+            _nextActionTime += GameDataMonoSingleton.Instance.HappyPlantHappyTimeInSeconds;
+            MusicController.Instance.PlaySong(_plantName);
+            AudioController.Play("SFX_Give_Special");
+            playMaxHealth();
         }
         else
         {
-            _needIndicatorAlert.gameObject.SetActive(false);
-            _needIndicatorDetailed.gameObject.SetActive(false);
+            if (hasNeed)
+            {
+                _needIndicatorAlert.gameObject.SetActive(_isZoomedOutView);
+                _needIndicatorDetailed.gameObject.SetActive(!_isZoomedOutView);
+            }
+            else
+            {
+                _needIndicatorAlert.gameObject.SetActive(false);
+                _needIndicatorDetailed.gameObject.SetActive(false);
+            }
+            
         }
-		playAttention(healthPercentage);
+
+        playAttention(healthPercentage);
 	}
 
 	private void playMaxHealth()

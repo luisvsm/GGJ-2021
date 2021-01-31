@@ -248,6 +248,7 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
         ConversationData.Character_Conversation convo = GetConversation(plantName, firstConvo);
         if (convo.Conversation == null || convo.Conversation.Length == 0)
         {
+           PlantManager.Instance.ConversationComplete();
             return;
         }
 
