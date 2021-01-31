@@ -91,6 +91,16 @@ public class ConversationData : ScriptableObject
 
     public bool IsCharacterConversationExhausted()
     {
-        return _playedConversations.Count == _conversationList.Length;
+        int playedconversations = 0;
+        
+        for (int i = 0; i < _conversationList.Length; i++)
+        {
+            if (_playedConversations.Contains(_conversationList[i].ConversationID))
+            {
+                playedconversations++;
+            }
+        }
+
+        return playedconversations == _conversationList.Length;
     }
 }
