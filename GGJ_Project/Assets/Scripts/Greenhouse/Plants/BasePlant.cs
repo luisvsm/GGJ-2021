@@ -177,6 +177,7 @@ public class BasePlant : MonoBehaviour
         _firstConversation = false;
         _isWaitingToTalk = false;
         _isNextToTalk = false;
+        UpdatePlantValues();
     }
 
     private void UpdatePlantValues()
@@ -373,7 +374,7 @@ public class BasePlant : MonoBehaviour
 
 	public void AddPoo(int amount = 1)
     {
-        bool canDo = PlayerInventoryMonoSingleton.Instance.UseWater(amount);
+        bool canDo = PlayerInventoryMonoSingleton.Instance.UsePoo(amount);
         if (canDo)
         {
             _pooLevel += amount;

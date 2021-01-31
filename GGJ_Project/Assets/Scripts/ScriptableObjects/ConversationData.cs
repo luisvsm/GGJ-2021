@@ -72,7 +72,8 @@ public class ConversationData : ScriptableObject
 
         if (availiableConversations != null)
         {
-            int randomConversationIndex = Random.Range(0, availiableConversations.Count);
+            int randomAvailiableIndex = Random.Range(0, availiableConversations.Count);
+            int randomConversationIndex = availiableConversations[randomAvailiableIndex];
             _playedConversations.Add(_conversationList[randomConversationIndex].ConversationID);
             return _conversationList[randomConversationIndex];
         }
