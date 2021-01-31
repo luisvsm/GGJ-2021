@@ -42,6 +42,7 @@ public class ConversationData : ScriptableObject
         {
             if (_conversationList[i].GreetingConversation)
             {
+                _playedConversations.Add(_conversationList[i].ConversationID);
                 return _conversationList[i];
             }
         }
@@ -59,7 +60,7 @@ public class ConversationData : ScriptableObject
         List<int> availiableConversations = null;
         for (int i = 0; i < _conversationList.Length; i++)
         {
-            if (!_playedConversations.Contains(_conversationList[i].ConversationID))
+            if (!_playedConversations.Contains(_conversationList[i].ConversationID) && !_conversationList[i].GreetingConversation)
             {
                 if (availiableConversations == null)
                 {
