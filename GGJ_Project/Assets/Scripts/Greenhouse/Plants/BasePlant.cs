@@ -379,6 +379,7 @@ public class BasePlant : MonoBehaviour
         {
             _pooLevel += amount;
             _health += GameDataMonoSingleton.Instance.ResourceHealAmount;
+            _healthPercentageBar.UpdateBar(_health/_maxHealth);
         }
         else
         {
@@ -393,6 +394,7 @@ public class BasePlant : MonoBehaviour
         {
             _waterLevel += amount;
             _health += GameDataMonoSingleton.Instance.ResourceHealAmount;
+            _healthPercentageBar.UpdateBar(_health/_maxHealth);
         }
         else
         {
