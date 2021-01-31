@@ -1971,7 +1971,7 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 1
+      MinTimeBetweenPlayCalls: 3
       MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
@@ -2011,7 +2011,7 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 1
+      MinTimeBetweenPlayCalls: 3
       MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
@@ -2051,7 +2051,7 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 1
+      MinTimeBetweenPlayCalls: 3
       MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
@@ -2091,7 +2091,7 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 1
+      MinTimeBetweenPlayCalls: 3
       MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
@@ -2959,7 +2959,7 @@ MonoBehaviour:
   _volume: 1
   _currentInspectorSelection:
     currentCategoryIndex: 1
-    currentItemIndex: 1
+    currentItemIndex: 6
     currentSubitemIndex: 0
     currentPlaylistEntryIndex: 0
     currentPlaylistIndex: 0

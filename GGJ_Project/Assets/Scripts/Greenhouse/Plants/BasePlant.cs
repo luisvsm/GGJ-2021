@@ -322,8 +322,40 @@ public class BasePlant : MonoBehaviour
             _needIndicatorAlert.gameObject.SetActive(false);
             _needIndicatorDetailed.gameObject.SetActive(false);
         }
-        
-    }
+		// TODO ED UPDATE PERCENTAGE
+		if (healthPercentage < 0.2)
+		{
+			if (PlantName == "BonScot")
+				AudioController.Play("VO_BonScot_Attention");
+			else if (PlantName == "Vera")
+				AudioController.Play("VO_Vera_Attention");
+			else if (PlantName == "Basil")
+				AudioController.Play("VO_Basil_Attention");
+			else if (PlantName == "ReginaGretchenKaren")
+				AudioController.Play("VO_FlyTraps_Attention");
+			else if (PlantName == "Pepper")
+				AudioController.Play("VO_Pepper_Attention");
+			else if (PlantName == "Arnold")
+				AudioController.Play("VO_Arnie_Attention");
+
+			//{
+			//	if (healthPercentage == 0.95)
+			//		if (PlantName == "BonScot")
+			//			AudioController.Play("VO_BonScot_MaxHealth");
+			//		else if (PlantName == "Vera")
+			//			AudioController.Play("VO_Vera_MaxHealth");
+			//		else if (PlantName == "Basil")
+			//			AudioController.Play("VO_Basil_MaxHealth");
+			//		else if (PlantName == "ReginaGretchenKaren")
+			//			AudioController.Play("VO_FlyTraps_FullHealth");
+			//		else if (PlantName == "Pepper")
+			//			AudioController.Play("VO_Pepper_MaxHealth");
+			//		else if (PlantName == "Arnold")
+			//			AudioController.Play("VO_Arnie_FullHealth");
+
+			//}
+		}
+	}
 
     public void AddPoo(int amount = 1)
     {
