@@ -2586,7 +2586,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 0.43
+      Volume: 0.26
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 1
@@ -2632,7 +2632,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 0.52
+      Volume: 0.5
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
@@ -2660,8 +2660,8 @@ MonoBehaviour:
         RandomDelay: 0
         ClipStopTime: 0
         ClipStartTime: 0
-        FadeIn: 0
-        FadeOut: 0
+        FadeIn: 0.1
+        FadeOut: 0.1
         RandomStartPosition: 0
         individualSettings: []
     - Name: MUS_GameLoop_BackingTrack_Percussion
@@ -2672,7 +2672,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.5
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
@@ -2700,8 +2700,8 @@ MonoBehaviour:
         RandomDelay: 0
         ClipStopTime: 0
         ClipStartTime: 0
-        FadeIn: 0
-        FadeOut: 0
+        FadeIn: 0.1
+        FadeOut: 0.1
         RandomStartPosition: 0
         individualSettings: []
     - Name: MUS_GameLoop_Basil_Oboe_Lp
@@ -2712,7 +2712,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.5
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
@@ -2740,8 +2740,8 @@ MonoBehaviour:
         RandomDelay: 0
         ClipStopTime: 0
         ClipStartTime: 0
-        FadeIn: 0
-        FadeOut: 0
+        FadeIn: 0.1
+        FadeOut: 0.1
         RandomStartPosition: 0
         individualSettings: []
     - Name: MUS_GameLoop_BonScot_Tuba_Lp
@@ -2752,7 +2752,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.5
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
@@ -2780,8 +2780,8 @@ MonoBehaviour:
         RandomDelay: 0
         ClipStopTime: 0
         ClipStartTime: 0
-        FadeIn: 0
-        FadeOut: 0
+        FadeIn: 0.1
+        FadeOut: 0.1
         RandomStartPosition: 0
         individualSettings: []
     - Name: MUS_GameLoop_FlyTraps_PizzStrings_Lp
@@ -2792,7 +2792,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.5
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
@@ -2820,8 +2820,8 @@ MonoBehaviour:
         RandomDelay: 0
         ClipStopTime: 0
         ClipStartTime: 0
-        FadeIn: 0
-        FadeOut: 0
+        FadeIn: 0.1
+        FadeOut: 0.1
         RandomStartPosition: 0
         individualSettings: []
     - Name: MUS_GameLoop_Pepper_Piccolo_Lp
@@ -2832,7 +2832,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.5
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
@@ -2860,8 +2860,8 @@ MonoBehaviour:
         RandomDelay: 0
         ClipStopTime: 0
         ClipStartTime: 0
-        FadeIn: 0
-        FadeOut: 0
+        FadeIn: 0.1
+        FadeOut: 0.1
         RandomStartPosition: 0
         individualSettings: []
     - Name: MUS_GameLoop_Vera_Fluts_Lp
@@ -2872,7 +2872,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.5
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 0
@@ -2900,11 +2900,11 @@ MonoBehaviour:
         RandomDelay: 0
         ClipStopTime: 0
         ClipStartTime: 0
-        FadeIn: 0
-        FadeOut: 0
+        FadeIn: 0.1
+        FadeOut: 0.1
         RandomStartPosition: 0
         individualSettings: []
-    _volume: 1
+    _volume: 0.5
     audioMixerGroup: {fileID: 0}
   musicPlaylists:
   - name: Default
@@ -2919,7 +2919,7 @@ MonoBehaviour:
   _volume: 1
   _currentInspectorSelection:
     currentCategoryIndex: 3
-    currentItemIndex: 0
+    currentItemIndex: 6
     currentSubitemIndex: 0
     currentPlaylistEntryIndex: 0
     currentPlaylistIndex: 0
