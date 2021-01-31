@@ -42,7 +42,7 @@ MonoBehaviour:
       AudioID: 
     GreetingConversation: 0
     OnceOnly: 1
-  - ConversationID: Greeting
+  - ConversationID: Chatter3
     Conversation:
     - SpeakerName: BonScot
       ConversationText: Well, aren't you a sight for spore eyes!
@@ -69,3 +69,45 @@ MonoBehaviour:
       AudioID: 
     GreetingConversation: 0
     OnceOnly: 1
+  - ConversationID: Greeting/Tutorial
+    Conversation:
+    - SpeakerName: BonScot
+      ConversationText: All righty! You're new to caring for plants, I can see that.
+      AudioID: 
+    - SpeakerName: BonScot
+      ConversationText: Let's get you up to speed.
+      AudioID: 
+    - SpeakerName: BonScot
+      ConversationText: Firstly, I'd like a bit of a tipple. Can you give me some
+        water?
+      AudioID: 
+    - SpeakerName: BonScot
+      ConversationText: Drag it on to my pot from the bar on the right.
+      AudioID: 
+    - SpeakerName: BonScot
+      ConversationText: Great work!
+      AudioID: 
+    - SpeakerName: BonScot
+      ConversationText: Now... I need a bit of poo!
+      AudioID: 
+    - SpeakerName: BonScot
+      ConversationText: Don't be shy - plants need fertiliser.
+      AudioID: 
+    - SpeakerName: BonScot
+      ConversationText: Go out to the greenhouse and collect some from the worm farm.
+      AudioID: 
+    - SpeakerName: BonScot
+      ConversationText: You can top up your water and clean up the leaves while you're
+        there!
+      AudioID: 
+    - SpeakerName: BonScot
+      ConversationText: Then come back and drag the poo to my pot.
+      AudioID: 
+    - SpeakerName: BonScot
+      ConversationText: Good job, laddie!
+      AudioID: 
+    - SpeakerName: BonScot
+      ConversationText: It's about time you get off and tend to the others, eh?
+      AudioID: 
+    GreetingConversation: 1
+    OnceOnly: 0

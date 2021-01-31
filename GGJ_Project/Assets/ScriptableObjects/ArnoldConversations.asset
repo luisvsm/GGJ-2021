@@ -31,8 +31,8 @@ MonoBehaviour:
     - SpeakerName: Arnold
       ConversationText: Cactus makes perfect.
       AudioID: 
-    GreetingConversation: 0
-    OnceOnly: 1
+    GreetingConversation: 1
+    OnceOnly: 0
   - ConversationID: Chatter2
     Conversation:
     - SpeakerName: Arnold
