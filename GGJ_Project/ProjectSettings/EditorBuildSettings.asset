@@ -6,11 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MenuScene.unity
-    guid: 1232c4f49134344e1a2c69c8ad76aba4
-  - enabled: 1
     path: Assets/Scenes/BootScene.unity
     guid: ddfb78c3a33184481886b62c6825881b
+  - enabled: 1
+    path: Assets/Scenes/MenuScene.unity
+    guid: 1232c4f49134344e1a2c69c8ad76aba4
   - enabled: 1
     path: Assets/Scenes/GreenHouseGameScene.unity
     guid: 0187daa9baa4b467eb71ea5cb4f0e1d6
