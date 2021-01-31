@@ -78,36 +78,37 @@ MonoBehaviour:
       ConversationText: Let's get you up to speed.
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: Firstly, I'd like a bit of a tipple. Can you give me some
-        water?
+      ConversationText: 'We need a few things: water, fertiliser, and attention.'
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: Drag it on to my pot from the bar on the right.
+      ConversationText: You can drag these things to our pots from the bar on the
+        right...
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: Great work!
+      ConversationText: ...and watch as our health improves!
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: Now... I need a bit of poo!
+      ConversationText: You might not have everything you need right away,
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: Don't be shy - plants need fertiliser.
+      ConversationText: so you'll have to collect water and worm poo from the greenhouse.
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: Go out to the greenhouse and collect some from the worm farm.
+      ConversationText: You can clean up the leaves and feed them to the worms while
+        you're there!
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: You can top up your water and clean up the leaves while you're
-        there!
+      ConversationText: Keep an eye on our health as best you can...
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: Then come back and drag the poo to my pot.
+      ConversationText: ...and we'll sing out if we need anything urgent.
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: Good job, laddie!
+      ConversationText: Once you get us all into tip-top shape, we've got a little
+        treat for you.
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: It's about time you get off and tend to the others, eh?
+      ConversationText: Now - hop to it!
       AudioID: 
     GreetingConversation: 1
     OnceOnly: 0
