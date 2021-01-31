@@ -7,13 +7,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5845987780790805187}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05b6a66a99ae14391837c928b6bbdf10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RaycastLayerName: Default
-  draggableSprite: {fileID: 21300000, guid: 68be9b36680ba8a069f232c11ec26b7d, type: 3}
+  draggableSprite: {fileID: 21300000, guid: 501715b558a974ac38b2a1724e213508, type: 3}
   draggableObjectDisplay: {fileID: 6185221065241105512, guid: 5c4a1394f03d54a3dba2b053756d42e1,
     type: 3}
   _resource: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5845987781327096881}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 05b6a66a99ae14391837c928b6bbdf10, type: 3}
   m_Name: 
