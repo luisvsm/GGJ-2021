@@ -20,7 +20,8 @@ public class BasePlant : MonoBehaviour
     [SerializeField] private string _plantName;
     [SerializeField] private Sprite _plantIcon;
     [SerializeField] private SpriteRenderer _needIconSprite;    
-    [SerializeField] private SpriteRenderer _dialogSprite;
+    [SerializeField] private GameObject _needIndicatorDetailed;
+    [SerializeField] private GameObject _needIndicatorAlert;
     [SerializeField] private PercentageFillBar _healthPercentageBar;
     //[SerializeField] private PercentageFillBar _happinessPercentageBar;
     [SerializeField] private StartConversation _startConversation;
@@ -80,6 +81,7 @@ public class BasePlant : MonoBehaviour
     private bool _hasTalked = false;
 
     private bool _isZoomedOutView = true;
+    private bool _needsAttention;
 
     
     private float _nextActionTime = 0.0f;
@@ -99,6 +101,8 @@ public class BasePlant : MonoBehaviour
         if (_isZoomedOutView)
         {
             PlantManager.Instance.GoToPlantView(_plantName);
+            _needIndicatorAlert.gameObject.SetActive(false);
+            _needIndicatorDetailed.gameObject.SetActive(true);
         }
     }
 
@@ -150,6 +154,8 @@ public class BasePlant : MonoBehaviour
             _needIconSprite.sprite = GameDataMonoSingleton.Instance.ToTalk;
             _startConversation.Activate();
             _isWaitingToTalk = true;
+            _needIndicatorAlert.gameObject.SetActive(_isZoomedOutView);
+            _needIndicatorDetailed.gameObject.SetActive(!_isZoomedOutView);
         }
     }
 
@@ -180,6 +186,7 @@ public class BasePlant : MonoBehaviour
 
         bool iconSet = false;
         bool healthUpdated = false;
+        bool hasNeed = false;
         _waterLevel -= _waterConsumptionRate;
 
 
@@ -190,6 +197,7 @@ public class BasePlant : MonoBehaviour
 
         if (_waterLevel < _minWater)
         {
+            hasNeed = true;
             if (_waterLevel < 0)
             {
                 _waterLevel = 0;
@@ -215,6 +223,7 @@ public class BasePlant : MonoBehaviour
 
         if (_pooLevel < _minPoo)
         {
+            hasNeed = true;
             if (_pooLevel < 0)
             {
                 _pooLevel = 0;
@@ -234,6 +243,7 @@ public class BasePlant : MonoBehaviour
         int temp = 0;
         if (_currentSun > _maxSun)
         {
+            hasNeed = true;
             temp = 1;
 
             _health -= _sicknessRate;
@@ -242,6 +252,7 @@ public class BasePlant : MonoBehaviour
         }
         else if (_currentSun < _minSun)
         {
+            hasNeed = true;
             temp = -1;
 
             _health -= _sicknessRate;
@@ -291,6 +302,18 @@ public class BasePlant : MonoBehaviour
 
             _healthPercentageBar.UpdateBar(healthPercentage);
         }
+
+        if (hasNeed)
+        {
+            _needIndicatorAlert.gameObject.SetActive(_isZoomedOutView);
+            _needIndicatorDetailed.gameObject.SetActive(!_isZoomedOutView);
+        }
+        else
+        {
+            _needIndicatorAlert.gameObject.SetActive(false);
+            _needIndicatorDetailed.gameObject.SetActive(false);
+        }
+        
     }
 
     public void AddPoo(int amount = 1)
