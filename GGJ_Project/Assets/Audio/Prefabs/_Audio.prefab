@@ -355,7 +355,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 0.5
+      Volume: 0.58
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 7
       MaxInstanceCount: 1
@@ -431,7 +431,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 0.4
+      Volume: 0.58
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 7
       MaxInstanceCount: 1
@@ -507,7 +507,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 0.4
+      Volume: 0.58
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 7
       MaxInstanceCount: 1
@@ -2572,7 +2572,7 @@ MonoBehaviour:
         FadeOut: 0
         RandomStartPosition: 0
         individualSettings: []
-    _volume: 0.6
+    _volume: 0.5
     audioMixerGroup: {fileID: 24300002, guid: 13eac2fbc4b3d4485a9642b0c066b41b, type: 2}
   - Name: AMB
     _parentCategoryName: 
@@ -2918,8 +2918,8 @@ MonoBehaviour:
   _audioDisabled: 0
   _volume: 1
   _currentInspectorSelection:
-    currentCategoryIndex: 3
-    currentItemIndex: 6
+    currentCategoryIndex: 0
+    currentItemIndex: 3
     currentSubitemIndex: 0
     currentPlaylistEntryIndex: 0
     currentPlaylistIndex: 0

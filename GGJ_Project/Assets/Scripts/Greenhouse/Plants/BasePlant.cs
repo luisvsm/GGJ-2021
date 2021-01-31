@@ -307,6 +307,7 @@ public class BasePlant : MonoBehaviour
                 _hitmaxhealth = true;
                 _nextActionTime += GameDataMonoSingleton.Instance.HappyPlantHappyTimeInSeconds;
                 MusicController.Instance.PlaySong(_plantName);
+				AudioController.Play("SFX_Give_Special");
 
 				{
 					if (healthPercentage == 0.95)
