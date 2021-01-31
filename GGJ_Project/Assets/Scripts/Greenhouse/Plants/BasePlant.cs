@@ -73,7 +73,7 @@ public class BasePlant : MonoBehaviour
     private float _health;
     //private float _happiness;
 
-    private bool _isDead = false;
+    //private bool _isDead = false;
     
     private bool _isWaitingToTalk = false;
     private float _nextTalkTimeStamp;
@@ -135,8 +135,8 @@ public class BasePlant : MonoBehaviour
             return;
         }
         
-        if (!_isDead)
-        {
+//        if (!_isDead)
+//        {
             if (_isNextToTalk && Time.time > _nextTalkTimeStamp)
             {
                 WantsToTalk();
@@ -145,7 +145,7 @@ public class BasePlant : MonoBehaviour
                 _nextActionTime += GameDataMonoSingleton.Instance.TickerTimeIntervalInSeconds;
                 UpdatePlantValues();
             } 
-        }
+       // }
     }
 
     private void WantsToTalk()
@@ -286,7 +286,7 @@ public class BasePlant : MonoBehaviour
             _health = 0;
             Debug.Log(string.Format("<color=red>OH NOES!!! {0} IS DEAD!</color>", _plantName));
             //_needIconSprite.sprite = GameDataMonoSingleton.Instance.Dead;
-            _isDead = true;
+           // _isDead = true;
         }
 
         if (healthUpdated)
