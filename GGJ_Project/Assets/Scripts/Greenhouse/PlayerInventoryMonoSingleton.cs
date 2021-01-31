@@ -16,7 +16,7 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
     private int _water = 10;
     private int _maxWater = 50;
     private int _poo = 10;
-    private int _maxPoo = 10;
+    private int _maxPoo = 50;
     private Dictionary<string, int> _unassignedDecorations;
 
     public int Water => _water;
