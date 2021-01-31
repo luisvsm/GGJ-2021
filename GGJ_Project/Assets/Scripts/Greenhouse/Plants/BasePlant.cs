@@ -308,22 +308,7 @@ public class BasePlant : MonoBehaviour
                 _nextActionTime += GameDataMonoSingleton.Instance.HappyPlantHappyTimeInSeconds;
                 MusicController.Instance.PlaySong(_plantName);
 				AudioController.Play("SFX_Give_Special");
-
-				{
-					if (healthPercentage == 0.95)
-						if (PlantName == "BonScot")
-							AudioController.Play("VO_BonScot_MaxHealth");
-						else if (PlantName == "Vera")
-							AudioController.Play("VO_Vera_MaxHealth");
-						else if (PlantName == "Basil")
-							AudioController.Play("VO_Basil_MaxHealth");
-						else if (PlantName == "ReginaGretchenKaren")
-							AudioController.Play("VO_FlyTraps_FullHealth");
-						else if (PlantName == "Pepper")
-							AudioController.Play("VO_Pepper_MaxHealth");
-						else if (PlantName == "Arnold")
-							AudioController.Play("VO_Arnie_FullHealth");
-				}
+				playMaxHealth();
 			}
 
 			_healthPercentageBar.UpdateBar(healthPercentage);
@@ -339,9 +324,32 @@ public class BasePlant : MonoBehaviour
             _needIndicatorAlert.gameObject.SetActive(false);
             _needIndicatorDetailed.gameObject.SetActive(false);
         }
-		// TODO ED UPDATE PERCENTAGE
-		if (healthPercentage < 0.2)
+		playAttention(healthPercentage);
+	}
+
+	private void playMaxHealth()
+	{
+		if (PlantName == "BonScot")
+			AudioController.Play("VO_BonScot_MaxHealth");
+		else if (PlantName == "Vera")
+			AudioController.Play("VO_Vera_MaxHealth");
+		else if (PlantName == "Basil")
+			AudioController.Play("VO_Basil_MaxHealth");
+		else if (PlantName == "ReginaGretchenKaren")
+			AudioController.Play("VO_FlyTraps_FullHealth");
+		else if (PlantName == "Pepper")
+			AudioController.Play("VO_Pepper_MaxHealth");
+		else if (PlantName == "Arnold")
+			AudioController.Play("VO_Arnie_FullHealth");
+	}
+
+	private static float nextTimeThatWeCanPlayAttentionSound;
+
+	private void playAttention(float healthPercentage)
+	{
+		if (healthPercentage < 0.2 && nextTimeThatWeCanPlayAttentionSound < Time.time)
 		{
+			nextTimeThatWeCanPlayAttentionSound = Time.time + 3f;
 			if (PlantName == "BonScot")
 				AudioController.Play("VO_BonScot_Attention");
 			else if (PlantName == "Vera")
@@ -354,27 +362,11 @@ public class BasePlant : MonoBehaviour
 				AudioController.Play("VO_Pepper_Attention");
 			else if (PlantName == "Arnold")
 				AudioController.Play("VO_Arnie_Attention");
-
-			//{
-			//	if (healthPercentage == 0.95)
-			//		if (PlantName == "BonScot")
-			//			AudioController.Play("VO_BonScot_MaxHealth");
-			//		else if (PlantName == "Vera")
-			//			AudioController.Play("VO_Vera_MaxHealth");
-			//		else if (PlantName == "Basil")
-			//			AudioController.Play("VO_Basil_MaxHealth");
-			//		else if (PlantName == "ReginaGretchenKaren")
-			//			AudioController.Play("VO_FlyTraps_FullHealth");
-			//		else if (PlantName == "Pepper")
-			//			AudioController.Play("VO_Pepper_MaxHealth");
-			//		else if (PlantName == "Arnold")
-			//			AudioController.Play("VO_Arnie_FullHealth");
-
-			//}
 		}
 	}
 
-    public void AddPoo(int amount = 1)
+
+	public void AddPoo(int amount = 1)
     {
 
         bool canDo = PlayerInventoryMonoSingleton.Instance.UseWater(amount);
