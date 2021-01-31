@@ -1291,6 +1291,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlantMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 7125854348534252374, guid: 9845eeabb5dc7470aa933ccabda94bbc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8781632352760973848, guid: 9845eeabb5dc7470aa933ccabda94bbc,
         type: 3}
       propertyPath: m_AnchorMax.y
