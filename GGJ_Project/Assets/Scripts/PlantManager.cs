@@ -11,10 +11,17 @@ public class PlantManager : MonoBehaviourSingleton<PlantManager>
     private float _nextTalkTimestamp;
     private int _nextPlantTalk = -1;
     private string _selectedPlant = "BonScot";
+    private bool _firstLoadHack = true;
 
     public string SelectedPlant => _selectedPlant;
 
     public Transform PlantViewPosition => _plantViewPosition;
+
+    public bool FirstLoadHack
+    {
+        get => _firstLoadHack;
+        set => _firstLoadHack = value;
+    }
 
     public void ShowAllPlants()
     {

@@ -22,6 +22,12 @@ public class PlantRoom : MonoBehaviour
        _initialScale = plantGO.transform.localScale;
        plantGO.transform.position = PlantManager.Instance.PlantViewPosition.position;
        plantGO.transform.localScale = _viewScale;
+
+       if (PlantManager.Instance.FirstLoadHack)
+       {
+           PlantManager.Instance.FirstLoadHack = false;
+           GameDataMonoSingleton.Instance.StartNextConversation("BonScot", true);
+       }
     }
 
     private void OnDisable()
