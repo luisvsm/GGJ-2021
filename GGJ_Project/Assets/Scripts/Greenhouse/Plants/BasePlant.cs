@@ -294,10 +294,11 @@ public class BasePlant : MonoBehaviour
         }
         else
         {
-
-            if (_health > _maxHealth)
+            _health = _health + 1;
+            if (_health >= _maxHealth)
             {
                 _health = _maxHealth;
+                _nextActionTime += GameDataMonoSingleton.Instance.HappyPlantHappyTimeInSeconds;
             }
 
             _healthPercentageBar.UpdateBar(healthPercentage);

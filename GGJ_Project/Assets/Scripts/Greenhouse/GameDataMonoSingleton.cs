@@ -63,7 +63,7 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     [SerializeField] private float _tickerTimeIntervalInSeconds = 1.0f;
     [SerializeField] private float _randomTalkIntervalInSecondsMin = 20.0f;
     [SerializeField] private float _randomTalkIntervalInSecondsMax = 30.0f;
-
+    [SerializeField] private float _happyPlantHappyTimeInSeconds = 120.0f;
     private bool _tickerPaused;
 
     [Header("Decorations")]
@@ -105,6 +105,8 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     public float RandomTalkIntervalInSecondsMin => _randomTalkIntervalInSecondsMin;
 
     public float RandomTalkIntervalInSecondsMax => _randomTalkIntervalInSecondsMax;
+
+    public float HappyPlantHappyTimeInSeconds => _happyPlantHappyTimeInSeconds;
 
     #endregion
 
