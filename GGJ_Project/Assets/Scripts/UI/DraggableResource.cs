@@ -13,13 +13,25 @@ public class DraggableResource : DraggableObject
     {
         Debug.Log("DraggableResource AudioHookGrab " + _resource);
 		if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.love)
+		{
 			AudioController.Play("SFX_Generic_Grab");
+			//AudioController.Play("SFX_Generic_Drop");
+		}
 		else if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.poo)
+		{
 			AudioController.Play("SFX_Poo_Grab");
+			//AudioController.Play("SFX_Generic_Drop");
+		}
 		else if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.sun)
+		{
 			AudioController.Play("SFX_Generic_Grab");
+			//AudioController.Play("SFX_Generic_Drop");
+		}
 		else if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.water)
+		{
 			AudioController.Play("SFX_WaterCan_Grab");
+			//AudioController.Play("SFX_Generic_Drop");
+		}
 	}
 
     public override void AudioHookHoverIn()
@@ -36,12 +48,24 @@ public class DraggableResource : DraggableObject
     {
         Debug.Log("DraggableResource AudioHookLetGo" + _resource);
 		if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.love)
+		{
 			AudioController.Play("SFX_Give_Love");
+			AudioController.Play("SFX_Generic_Drop");
+		}
 		else if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.poo)
+		{
 			AudioController.Play("SFX_Give_Poop");
+			AudioController.Play("SFX_Generic_Drop");
+		}
 		else if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.sun)
+		{
 			AudioController.Play("SFX_Give_Sun");
+			AudioController.Play("SFX_Generic_Drop");
+		}
 		else if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.water)
+		{
 			AudioController.Play("SFX_Give_Water");
+			AudioController.Play("SFX_Generic_Drop");
+		}
 	}
 }
