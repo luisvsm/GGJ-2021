@@ -82,33 +82,38 @@ MonoBehaviour:
       AudioID: 
     - SpeakerName: BonScot
       ConversationText: You can drag these things to our pots from the bar on the
-        right...
+        right and watch as our health improves!
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: ...and watch as our health improves!
+      ConversationText: You might not have everything you need in your inventory,
+        so you'll have to collect water and worm poo from the greenhouse.
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: You might not have everything you need right away,
+      ConversationText: You can get there by going back past the shelf of plants
+        and through the green door.
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: so you'll have to collect water and worm poo from the greenhouse.
+      ConversationText: If you feel like it, you can clean up the leaves and feed
+        them to the worms while you're there!
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: You can clean up the leaves and feed them to the worms while
-        you're there!
+      ConversationText: Use the green door to get back to us plants.
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: Keep an eye on our health as best you can...
+      ConversationText: Keep an eye on our health as best you can, and we'll sing
+        out if we need anything urgent.
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: ...and we'll sing out if we need anything urgent.
+      ConversationText: Speaking of singing - we all love to sing!
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: Once you get us all into tip-top shape, we've got a little
-        treat for you.
+      ConversationText: When we're at full health, we'll sing you a little song.
       AudioID: 
     - SpeakerName: BonScot
-      ConversationText: Now - hop to it!
+      ConversationText: Get all of us to full health to hear our full harmony!
+      AudioID: 
+    - SpeakerName: BonScot
+      ConversationText: Now - hop to it! We're counting on you!
       AudioID: 
     GreetingConversation: 1
     OnceOnly: 0
