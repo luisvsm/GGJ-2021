@@ -92,11 +92,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachDontDestroyOnLoad: 1
   printTrace: 0
-  _water: {fileID: 21300000, guid: 645eb3786a28a4649a8fcf701c28092c, type: 3}
-  _poo: {fileID: 21300000, guid: 7f7acb88b838b4ec68bcec7ff18b56b8, type: 3}
-  _heat: {fileID: 21300000, guid: 16f48eeabbd4e4751a5af95112af64c5, type: 3}
-  _heart: {fileID: 21300000, guid: c839b60e8217946d191d5dd51f664b01, type: 3}
-  _toTalk: {fileID: 21300000, guid: dfbda513757a44c44a31f4d87d98c65e, type: 3}
+  _water: {fileID: 21300000, guid: c936123fe0c094ce2ba4ef0ef27b1ef9, type: 3}
+  _poo: {fileID: 21300000, guid: 56b9c6228e2ba4845b5cbf42e9bb63c7, type: 3}
+  _heat: {fileID: 21300000, guid: ab883ec4ff4f24c1b8d75bcf81d4d531, type: 3}
+  _heart: {fileID: 21300000, guid: 5d25859442f584631b571912651f82fc, type: 3}
+  _toTalk: {fileID: 21300000, guid: d6ec2716256b849d0a9f39d70ba9f269, type: 3}
   _happy: {fileID: 21300000, guid: eedfcf59201894de4a7a25843d858a34, type: 3}
   _gimmePoop: {fileID: 21300000, guid: c25a7419f0ba948c9b05994e01a2e9ce, type: 3}
   _hot: {fileID: 21300000, guid: e837799b2b73048c599bfa5d67d6dfdb, type: 3}
