@@ -107,6 +107,7 @@ MonoBehaviour:
   _randomTalkIntervalInSecondsMin: 5
   _randomTalkIntervalInSecondsMax: 10
   _happyPlantHappyTimeInSeconds: 120
+  _resourceHealAmount: 1
   _decorations:
   - Name: 
     Position: 0

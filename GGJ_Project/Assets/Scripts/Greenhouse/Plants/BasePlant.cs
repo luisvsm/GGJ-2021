@@ -174,6 +174,7 @@ public class BasePlant : MonoBehaviour
     
     public void EndConversation()
     {
+        _firstConversation = false;
         _isWaitingToTalk = false;
         _isNextToTalk = false;
     }
@@ -303,6 +304,10 @@ public class BasePlant : MonoBehaviour
             _health = _health + 1;
             if (_health >= _maxHealth)
             {
+                _needIndicatorAlert.gameObject.SetActive(false);
+                _needIndicatorDetailed.gameObject.SetActive(false);
+                _waterLevel = _maxWater;
+                _pooLevel = _minPoo + 3;
                 _health = _maxHealth;
                 _hitmaxhealth = true;
                 _nextActionTime += GameDataMonoSingleton.Instance.HappyPlantHappyTimeInSeconds;
@@ -368,12 +373,15 @@ public class BasePlant : MonoBehaviour
 
 	public void AddPoo(int amount = 1)
     {
-
         bool canDo = PlayerInventoryMonoSingleton.Instance.UseWater(amount);
         if (canDo)
         {
             _pooLevel += amount;
             _health += GameDataMonoSingleton.Instance.ResourceHealAmount;
+        }
+        else
+        {
+            Debug.Log(string.Format("<color=red>OH NOES!!! Noo more POO!</color>"));
         }
     }
 
@@ -384,6 +392,10 @@ public class BasePlant : MonoBehaviour
         {
             _waterLevel += amount;
             _health += GameDataMonoSingleton.Instance.ResourceHealAmount;
+        }
+        else
+        {
+            Debug.Log(string.Format("<color=red>OH NOES!!! Noo more WATER!</color>"));
         }
     }
     
