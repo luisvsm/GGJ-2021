@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RaycastLayerName: Default
-  draggableSprite: {fileID: 21300000, guid: c936123fe0c094ce2ba4ef0ef27b1ef9, type: 3}
+  draggableSprite: {fileID: 21300000, guid: 68be9b36680ba8a069f232c11ec26b7d, type: 3}
   draggableObjectDisplay: {fileID: 6185221065241105512, guid: 5c4a1394f03d54a3dba2b053756d42e1,
     type: 3}
   _resource: 0
@@ -147,7 +147,7 @@ Animator:
   m_GameObject: {fileID: 7259080040973162769}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 65e3248e55de54e4ebbf0853cd6ec49b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

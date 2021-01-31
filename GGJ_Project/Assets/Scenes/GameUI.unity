@@ -858,11 +858,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlantRoomMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 1229094743165603745, guid: c8f25674dd2d54073912dbaa32c2fe94,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1229094743165603746, guid: c8f25674dd2d54073912dbaa32c2fe94,
         type: 3}
       propertyPath: m_Pivot.x
@@ -968,11 +963,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1229094744106352002, guid: c8f25674dd2d54073912dbaa32c2fe94,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 1bc55d95ed3fb44c89d09dcbb5caa154, type: 2}
     - target: {fileID: 8338517376969996770, guid: c8f25674dd2d54073912dbaa32c2fe94,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -1026,20 +1016,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1938621901}
     m_Modifications:
-    - target: {fileID: 7259080040031775538, guid: ea38688ca9cbf4c60b8388fc43883cca,
+    - target: {fileID: 3235959761205121525, guid: ea38688ca9cbf4c60b8388fc43883cca,
         type: 3}
-      propertyPath: m_Controller
+      propertyPath: draggableSprite
       value: 
-      objectReference: {fileID: 9100000, guid: 65e3248e55de54e4ebbf0853cd6ec49b, type: 2}
+      objectReference: {fileID: 21300000, guid: 501715b558a974ac38b2a1724e213508,
+        type: 3}
     - target: {fileID: 7259080040973162769, guid: ea38688ca9cbf4c60b8388fc43883cca,
         type: 3}
       propertyPath: m_Name
       value: ResourceRoomMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 7259080040973162769, guid: ea38688ca9cbf4c60b8388fc43883cca,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7259080040973162770, guid: ea38688ca9cbf4c60b8388fc43883cca,
         type: 3}
@@ -1145,26 +1131,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9189542304564763959, guid: ea38688ca9cbf4c60b8388fc43883cca,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9189542304564763959, guid: ea38688ca9cbf4c60b8388fc43883cca,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9189542304564763959, guid: ea38688ca9cbf4c60b8388fc43883cca,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 353.3333
-      objectReference: {fileID: 0}
-    - target: {fileID: 9189542304564763959, guid: ea38688ca9cbf4c60b8388fc43883cca,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -893.33325
       objectReference: {fileID: 0}
     - target: {fileID: 9189542305197887583, guid: ea38688ca9cbf4c60b8388fc43883cca,
         type: 3}
@@ -1325,16 +1291,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlantMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 7125854348534252374, guid: 9845eeabb5dc7470aa933ccabda94bbc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7125854349479326069, guid: 9845eeabb5dc7470aa933ccabda94bbc,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 71cda7c984de1491a83a477860f38c47, type: 2}
     - target: {fileID: 8781632352760973848, guid: 9845eeabb5dc7470aa933ccabda94bbc,
         type: 3}
       propertyPath: m_AnchorMax.y

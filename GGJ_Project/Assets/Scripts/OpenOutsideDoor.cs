@@ -13,6 +13,7 @@ public class OpenOutsideDoor : MonoBehaviour
         wood.SetActive(false);
         padlock.SetActive(false);
         doorCollider.enabled = true;
+        MenuController.Instance.HideAllMenu();
     }
 
 }
