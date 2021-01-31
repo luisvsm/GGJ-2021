@@ -244,8 +244,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
+      propertyPath: _startingPoo
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
       propertyPath: _sicknessRate
-      value: 0.5
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: _startingWater
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
@@ -255,7 +265,7 @@ PrefabInstance:
     - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: _waterConsumptionRate
-      value: 0.7
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4f0f853547114c769ab9147cb19c040, type: 3}

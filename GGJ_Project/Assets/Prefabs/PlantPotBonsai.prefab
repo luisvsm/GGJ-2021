@@ -157,13 +157,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
+      propertyPath: _healingRate
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
       propertyPath: _startingPoo
-      value: 7
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
       propertyPath: _startingWater
-      value: 9
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
