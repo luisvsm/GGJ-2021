@@ -21,6 +21,26 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
 
     private bool _debugLogging = false;
 
+    public virtual void AudioHookGrab()
+    {
+
+    }
+
+    public virtual void AudioHookHoverIn()
+    {
+
+    }
+
+    public virtual void AudioHookHoverOut()
+    {
+
+    }
+
+    public virtual void AudioHookLetGo()
+    {
+
+    }
+
     void Start()
     {
         if (draggableObjectDisplay == null)
@@ -70,6 +90,7 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
             // The drag consumer has changed, tell the drag controller
             // from the previous frame that a drag out event happened
             previousDragConsumer.OnDragOut.Invoke();
+            AudioHookHoverOut();
         }
 
         if (
@@ -83,6 +104,7 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
             }
             // The drag consumer has changed, tell the drag controller that a drag out event happened
             dragConsumer.OnDragIn.Invoke();
+            AudioHookHoverIn();
         }
 
         previousDragConsumer = dragConsumer;
@@ -98,6 +120,7 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
             }
 
             dragConsumer.OnDragLetGo.Invoke();
+            AudioHookLetGo();
         }
 
         currentDraggableObject = null;
@@ -147,6 +170,8 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
             draggableObjectDisplayInstance.SetActive(true);
             draggableObjectDisplayInstance.transform.position = GetWorldPositionFromInput();
         }
+
+        AudioHookGrab();
     }
 
     void StopDragging()

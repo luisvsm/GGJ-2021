@@ -22,8 +22,8 @@ public class MusicController : MonoBehaviourSingleton<MusicController>
             else
             {
                 plantSongObjects.Add(plantName[i], AudioController.Play(plantSongs[i]));
+                plantSongObjects[plantName[i]].volume = 0f;
             }
-            //plantSongObjects[plantName[i]].volume = 0f;
         }
     }
 
