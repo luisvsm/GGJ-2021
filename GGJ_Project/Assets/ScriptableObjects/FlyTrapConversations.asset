@@ -40,7 +40,7 @@ MonoBehaviour:
       AudioID: 
     GreetingConversation: 1
     OnceOnly: 0
-  - ConversationID: Chatter1
+  - ConversationID: Chatter14
     Conversation:
     - SpeakerName: FlyTrap
       ConversationText: Ew, there's an ant!
@@ -62,7 +62,7 @@ MonoBehaviour:
       AudioID: 
     GreetingConversation: 0
     OnceOnly: 1
-  - ConversationID: Chatter2
+  - ConversationID: Chatter24
     Conversation:
     - SpeakerName: FlyTrap
       ConversationText: I've decided I like being a plant.
