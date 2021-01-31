@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &3238052612424161035
+--- !u!114 &573584958
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -9,14 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5847555892199351357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b6a66a99ae14391837c928b6bbdf10, type: 3}
+  m_Script: {fileID: 11500000, guid: 607f9946dba1d4888b4e130005e7ef8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RaycastLayerName: Default
-  draggableSprite: {fileID: 21300000, guid: a3ec57e726e824ed78d475d9ed8fb6fe, type: 3}
+  draggableSprite: {fileID: 21300000, guid: f89c2e95ed4084149b19e7cfbd675e6a, type: 3}
   draggableObjectDisplay: {fileID: 3026798920163466273, guid: a378b869773514f5684d582f45d3ac87,
     type: 3}
-  _resource: 0
 --- !u!1 &7258326116867432431
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +128,7 @@ Animator:
   m_GameObject: {fileID: 7258326116867432431}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a3948d22b946d4f28b5901c40912420f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -254,7 +253,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: a3ec57e726e824ed78d475d9ed8fb6fe,
+      objectReference: {fileID: 21300000, guid: f89c2e95ed4084149b19e7cfbd675e6a,
         type: 3}
     - target: {fileID: 3863085999030948610, guid: 8ea4d294aca454e84bd925bc4f04c0d3,
         type: 3}
