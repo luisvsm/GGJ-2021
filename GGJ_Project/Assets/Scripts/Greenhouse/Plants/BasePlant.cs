@@ -85,6 +85,7 @@ public class BasePlant : MonoBehaviour
 
     
     private float _nextActionTime = 0.0f;
+    private bool _hitmaxhealth = false;
 
     public Sprite Icon => _plantIcon;
 
@@ -290,6 +291,11 @@ public class BasePlant : MonoBehaviour
 
         if (healthUpdated)
         {
+            if (healthPercentage < 1.0f && _hitmaxhealth)
+            {
+                MusicController.Instance.PauseSong(_plantName);
+                _hitmaxhealth = false;
+            }
             _healthPercentageBar.UpdateBar(healthPercentage);
         }
         else
@@ -298,7 +304,9 @@ public class BasePlant : MonoBehaviour
             if (_health >= _maxHealth)
             {
                 _health = _maxHealth;
+                _hitmaxhealth = true;
                 _nextActionTime += GameDataMonoSingleton.Instance.HappyPlantHappyTimeInSeconds;
+                MusicController.Instance.PlaySong(_plantName);
             }
 
             _healthPercentageBar.UpdateBar(healthPercentage);
