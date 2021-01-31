@@ -155,5 +155,20 @@ PrefabInstance:
       propertyPath: _plantName
       value: Basil
       objectReference: {fileID: 0}
+    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: _startingPoo
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: _sicknessRate
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: _startingHealth
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4f0f853547114c769ab9147cb19c040, type: 3}

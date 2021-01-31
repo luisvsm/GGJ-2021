@@ -345,6 +345,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
         type: 3}
+      propertyPath: _minPoo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: _minWater
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
       propertyPath: _plantIcon
       value: 
       objectReference: {fileID: 21300000, guid: f87333644222c4374a995950db2cea90,
@@ -353,6 +363,26 @@ PrefabInstance:
         type: 3}
       propertyPath: _plantName
       value: ReginaGretchenKaren
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: _healingRate
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: _startingPoo
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: _startingWater
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 9030745581764260460, guid: f4f0f853547114c769ab9147cb19c040,
+        type: 3}
+      propertyPath: _startingHealth
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4f0f853547114c769ab9147cb19c040, type: 3}
