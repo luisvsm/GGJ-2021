@@ -14,16 +14,21 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
     public UpdatePlayerInventoryDecorationCount OnDecorationCountUpdated;
     
     private int _water = 10;
+    private int _maxWater = 50;
     private int _poo = 10;
+    private int _maxPoo = 10;
     private Dictionary<string, int> _unassignedDecorations;
 
     public int Water => _water;
+    public int MaxWater => _maxWater;
     public int Poo => _poo;
+    public int MaxPoo => _maxPoo;
     public Dictionary<string, int> Decorations => _unassignedDecorations;
 
     public void CollectWater(int amount =1)
     {
         _water += amount;
+        _water = Mathf.Min(_water, _maxWater);
         OnWaterUpdated?.Invoke(_water);
     }
     
@@ -44,6 +49,7 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
     public void CollectPoo(int amount =1)
     {
         _poo += amount;
+        _poo = Mathf.Min(_water, _maxPoo);
         OnPooUpdated?.Invoke(_poo);
     }
     
