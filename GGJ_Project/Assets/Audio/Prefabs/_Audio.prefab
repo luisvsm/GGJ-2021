@@ -73,7 +73,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 0.7
+      Volume: 0.8
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 7
       MaxInstanceCount: 1
@@ -203,7 +203,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 0.7
+      Volume: 0.8
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 7
       MaxInstanceCount: 1
@@ -279,7 +279,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 0.7
+      Volume: 0.8
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 7
       MaxInstanceCount: 1
@@ -583,7 +583,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.8
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 7
       MaxInstanceCount: 1
@@ -659,7 +659,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.8
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 7
       MaxInstanceCount: 1
@@ -735,7 +735,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.8
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 7
       MaxInstanceCount: 1
@@ -1715,7 +1715,7 @@ MonoBehaviour:
         FadeOut: 0
         RandomStartPosition: 0
         individualSettings: []
-    _volume: 1
+    _volume: 0.7
     audioMixerGroup: {fileID: 24300002, guid: 13eac2fbc4b3d4485a9642b0c066b41b, type: 2}
   - Name: SFX
     _parentCategoryName: 
@@ -1809,7 +1809,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 0.6
+      Volume: 0.4
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 1
@@ -1937,7 +1937,7 @@ MonoBehaviour:
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
-      RandomDelay: 0
+      RandomDelay: 2
       overrideAudioSourceSettings: 0
       audioSource_MinDistance: 1
       audioSource_MaxDistance: 500
@@ -1954,7 +1954,7 @@ MonoBehaviour:
         Delay: 0
         RandomPitch: 0
         RandomVolume: 0
-        RandomDelay: 0
+        RandomDelay: 2
         ClipStopTime: 0
         ClipStartTime: 0
         FadeIn: 0
@@ -1976,7 +1976,7 @@ MonoBehaviour:
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
-      RandomPitch: 0
+      RandomPitch: 2
       RandomDelay: 0
       overrideAudioSourceSettings: 0
       audioSource_MinDistance: 1
@@ -1992,7 +1992,97 @@ MonoBehaviour:
         PitchShift: 0
         Pan2D: 0
         Delay: 0
-        RandomPitch: 0
+        RandomPitch: 2
+        RandomVolume: 0
+        RandomDelay: 0
+        ClipStopTime: 0
+        ClipStartTime: 0
+        FadeIn: 0
+        FadeOut: 0
+        RandomStartPosition: 0
+        individualSettings: []
+      - SubItemType: 0
+        Probability: 1
+        DisableOtherSubitems: 0
+        ItemModeAudioID: 
+        Clip: {fileID: 8300000, guid: 9f83ffe619d5bf44997283a220d7ca67, type: 3}
+        Volume: 1
+        PitchShift: 0
+        Pan2D: 0
+        Delay: 0
+        RandomPitch: 2
+        RandomVolume: 0
+        RandomDelay: 0
+        ClipStopTime: 0
+        ClipStartTime: 0
+        FadeIn: 0
+        FadeOut: 0
+        RandomStartPosition: 0
+        individualSettings: []
+      - SubItemType: 0
+        Probability: 1
+        DisableOtherSubitems: 0
+        ItemModeAudioID: 
+        Clip: {fileID: 8300000, guid: b069de10778a3c643af965a981d8ac44, type: 3}
+        Volume: 1
+        PitchShift: 0
+        Pan2D: 0
+        Delay: 0
+        RandomPitch: 2
+        RandomVolume: 0
+        RandomDelay: 0
+        ClipStopTime: 0
+        ClipStartTime: 0
+        FadeIn: 0
+        FadeOut: 0
+        RandomStartPosition: 0
+        individualSettings: []
+      - SubItemType: 0
+        Probability: 1
+        DisableOtherSubitems: 0
+        ItemModeAudioID: 
+        Clip: {fileID: 8300000, guid: 21171dcd4cd056446b922c3d714d8988, type: 3}
+        Volume: 1
+        PitchShift: 0
+        Pan2D: 0
+        Delay: 0
+        RandomPitch: 2
+        RandomVolume: 0
+        RandomDelay: 0
+        ClipStopTime: 0
+        ClipStartTime: 0
+        FadeIn: 0
+        FadeOut: 0
+        RandomStartPosition: 0
+        individualSettings: []
+      - SubItemType: 0
+        Probability: 1
+        DisableOtherSubitems: 0
+        ItemModeAudioID: 
+        Clip: {fileID: 8300000, guid: 1498da72f99a57a4bb2e5ac50a40db4a, type: 3}
+        Volume: 1
+        PitchShift: 0
+        Pan2D: 0
+        Delay: 0
+        RandomPitch: 2
+        RandomVolume: 0
+        RandomDelay: 0
+        ClipStopTime: 0
+        ClipStartTime: 0
+        FadeIn: 0
+        FadeOut: 0
+        RandomStartPosition: 0
+        individualSettings: []
+      - SubItemType: 0
+        Probability: 1
+        DisableOtherSubitems: 0
+        ItemModeAudioID: 
+        Clip: {fileID: 8300000, guid: 600031f5c63b02d4a9e35f0c1322bd6f, type: 3}
+        Volume: 1
+        PitchShift: 0
+        Pan2D: 0
+        Delay: 0
+        RandomPitch: 2
         RandomVolume: 0
         RandomDelay: 0
         ClipStopTime: 0
@@ -2089,7 +2179,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.6
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 1
@@ -2169,14 +2259,14 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.6
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
+      MinTimeBetweenPlayCalls: 0.3
       MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
-      RandomPitch: 0
+      RandomPitch: 3
       RandomDelay: 0
       overrideAudioSourceSettings: 0
       audioSource_MinDistance: 1
@@ -2192,7 +2282,7 @@ MonoBehaviour:
         PitchShift: 0
         Pan2D: 0
         Delay: 0
-        RandomPitch: 0
+        RandomPitch: 3
         RandomVolume: 0
         RandomDelay: 0
         ClipStopTime: 0
@@ -2371,12 +2461,12 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
+      MinTimeBetweenPlayCalls: 0.5
       MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
-      RandomPitch: 0
+      RandomPitch: 3
       RandomDelay: 0
       overrideAudioSourceSettings: 0
       audioSource_MinDistance: 1
@@ -2392,7 +2482,7 @@ MonoBehaviour:
         PitchShift: 0
         Pan2D: 0
         Delay: 0
-        RandomPitch: 0
+        RandomPitch: 3
         RandomVolume: 0
         RandomDelay: 0
         ClipStopTime: 0
@@ -2559,6 +2649,46 @@ MonoBehaviour:
         DisableOtherSubitems: 0
         ItemModeAudioID: 
         Clip: {fileID: 8300000, guid: f63f3a4061ba6874180ed18f1c90140f, type: 3}
+        Volume: 1
+        PitchShift: 0
+        Pan2D: 0
+        Delay: 0
+        RandomPitch: 0
+        RandomVolume: 0
+        RandomDelay: 0
+        ClipStopTime: 0
+        ClipStartTime: 0
+        FadeIn: 0
+        FadeOut: 0
+        RandomStartPosition: 0
+        individualSettings: []
+    - Name: SFX_Give_Water
+      Loop: 0
+      loopSequenceCount: 0
+      loopSequenceOverlap: 0
+      loopSequenceRandomDelay: 0
+      loopSequenceRandomPitch: 0
+      loopSequenceRandomVolume: 0
+      DestroyOnLoad: 1
+      Volume: 0.75
+      SubItemPickMode: 2
+      MinTimeBetweenPlayCalls: 3
+      MaxInstanceCount: 1
+      Delay: 0
+      PitchShift: 0
+      RandomVolume: 0
+      RandomPitch: 0
+      RandomDelay: 0
+      overrideAudioSourceSettings: 0
+      audioSource_MinDistance: 1
+      audioSource_MaxDistance: 500
+      spatialBlend: 0
+      subItems:
+      - SubItemType: 0
+        Probability: 1
+        DisableOtherSubitems: 0
+        ItemModeAudioID: 
+        Clip: {fileID: 8300000, guid: 2244f4039957a3e48930b5d4cf418894, type: 3}
         Volume: 1
         PitchShift: 0
         Pan2D: 0
@@ -2904,7 +3034,7 @@ MonoBehaviour:
         FadeOut: 2
         RandomStartPosition: 0
         individualSettings: []
-    _volume: 0.14
+    _volume: 0.24
     audioMixerGroup: {fileID: 24300002, guid: 13eac2fbc4b3d4485a9642b0c066b41b, type: 2}
   musicPlaylists:
   - name: Default
@@ -2918,8 +3048,8 @@ MonoBehaviour:
   _audioDisabled: 0
   _volume: 1
   _currentInspectorSelection:
-    currentCategoryIndex: 1
-    currentItemIndex: 3
+    currentCategoryIndex: 0
+    currentItemIndex: 8
     currentSubitemIndex: 0
     currentPlaylistEntryIndex: 0
     currentPlaylistIndex: 0
