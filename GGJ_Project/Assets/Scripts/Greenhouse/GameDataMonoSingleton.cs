@@ -114,6 +114,10 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
 
     #endregion
 
+    public void SetTickerPaused(bool paused)
+    {
+        _tickerPaused = paused;
+    }
 
     public bool IsHappy(float healthPercentage)
     {

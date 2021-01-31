@@ -37,8 +37,9 @@ public class MenuController : MonoBehaviourSingleton<MenuController>
     {
         HideAllMenu();
         _backbutton.SetActive(false);
-       _conversationBinder.gameObject.SetActive(true);
-       _conversationBinder.InitialiseConversation(convo.Conversation);
+        _conversationBinder.gameObject.SetActive(true);
+        _conversationBinder.InitialiseConversation(convo.Conversation);
+        GameDataMonoSingleton.Instance.SetTickerPaused(true);
     }
 
     public void EndConversation()
@@ -47,5 +48,6 @@ public class MenuController : MonoBehaviourSingleton<MenuController>
         _conversationBinder.gameObject.SetActive(false);
         showMenu(_activeMenuIndex);
         PlantManager.Instance.ConversationComplete();
+        GameDataMonoSingleton.Instance.SetTickerPaused(true);
     }
 }
