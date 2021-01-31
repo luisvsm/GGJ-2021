@@ -35,7 +35,7 @@ public class MusicController : MonoBehaviourSingleton<MusicController>
         }
         else
         {
-            plantSongObjects[plant].volume = 1f;
+            plantSongObjects[plant].volume = 0.4f;
         }
     }
 
