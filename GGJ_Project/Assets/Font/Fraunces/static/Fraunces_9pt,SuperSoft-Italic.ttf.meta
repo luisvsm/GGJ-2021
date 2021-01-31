@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: 1d454bf78a1214b66aa5b87fcd5971f3
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fraunces 9pt Soft
+  fontNames:
+  - Fraunces 9pt Soft
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 49c4e0a1d55974e5c8bf9f2615dd9ccb, type: 3}
+  - {fileID: 12800000, guid: a6f483c5fa6ba40e288e2f33bf63e7f6, type: 3}
+  - {fileID: 12800000, guid: 31819016003374ad09a26e301b957bed, type: 3}
+  - {fileID: 12800000, guid: 6a03e977a70f04c45ab77dee93076009, type: 3}
+  - {fileID: 12800000, guid: d9d0ac87ac00246da9f4350e1a21a76a, type: 3}
+  - {fileID: 12800000, guid: aa96134904e21430699adb7678a3d544, type: 3}
+  - {fileID: 12800000, guid: a9ba0e9934ed34304abb915684776ae9, type: 3}
+  - {fileID: 12800000, guid: f042cfda4080e48879302448ea79b82d, type: 3}
+  - {fileID: 12800000, guid: 6ac2ffad133684d6883a82b706328f69, type: 3}
+  - {fileID: 12800000, guid: 138508bd1461c4bd6a14252969669978, type: 3}
+  - {fileID: 12800000, guid: 0ac33bbdb0eaf491daa864b091e92ad7, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

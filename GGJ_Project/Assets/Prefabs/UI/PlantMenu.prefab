@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &3076240375909518258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302909694240667780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b6a66a99ae14391837c928b6bbdf10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RaycastLayerName: Default
+  draggableSprite: {fileID: 21300000, guid: c936123fe0c094ce2ba4ef0ef27b1ef9, type: 3}
+  draggableObjectDisplay: {fileID: 3026798920163466273, guid: a378b869773514f5684d582f45d3ac87,
+    type: 3}
+  _resource: 0
 --- !u!114 &9137715390995726532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,10 +30,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RaycastLayerName: Default
-  draggableSprite: {fileID: 21300000, guid: 7f7acb88b838b4ec68bcec7ff18b56b8, type: 3}
+  draggableSprite: {fileID: 21300000, guid: 56b9c6228e2ba4845b5cbf42e9bb63c7, type: 3}
   draggableObjectDisplay: {fileID: 3026798920163466273, guid: a378b869773514f5684d582f45d3ac87,
     type: 3}
   _resource: 1
+--- !u!114 &5169677866497967127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6302909695928301036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05b6a66a99ae14391837c928b6bbdf10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RaycastLayerName: Default
+  draggableSprite: {fileID: 21300000, guid: 5d25859442f584631b571912651f82fc, type: 3}
+  draggableObjectDisplay: {fileID: 3026798920163466273, guid: a378b869773514f5684d582f45d3ac87,
+    type: 3}
+  _resource: 2
 --- !u!1 &7125854348534252374
 GameObject:
   m_ObjectHideFlags: 0
@@ -80,7 +114,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.79607844, g: 0.70980394, b: 0.32941177, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -131,7 +165,7 @@ Animator:
   m_GameObject: {fileID: 7125854348534252374}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2b7324ab2f4b940e5ad56f4d7678a189, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -140,40 +174,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &3076240375909518258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6302909694240667780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b6a66a99ae14391837c928b6bbdf10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RaycastLayerName: Default
-  draggableSprite: {fileID: 21300000, guid: 645eb3786a28a4649a8fcf701c28092c, type: 3}
-  draggableObjectDisplay: {fileID: 6185221065241105512, guid: 5c4a1394f03d54a3dba2b053756d42e1,
-    type: 3}
-  _resource: 0
---- !u!114 &5169677866497967127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6302909695928301036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05b6a66a99ae14391837c928b6bbdf10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  RaycastLayerName: Default
-  draggableSprite: {fileID: 21300000, guid: c839b60e8217946d191d5dd51f664b01, type: 3}
-  draggableObjectDisplay: {fileID: 3026798920163466273, guid: a378b869773514f5684d582f45d3ac87,
-    type: 3}
-  _resource: 2
 --- !u!1001 &7125854348400854388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -290,7 +290,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7f7acb88b838b4ec68bcec7ff18b56b8,
+      objectReference: {fileID: 21300000, guid: 56b9c6228e2ba4845b5cbf42e9bb63c7,
         type: 3}
     - target: {fileID: 3863085999030948610, guid: 8ea4d294aca454e84bd925bc4f04c0d3,
         type: 3}
@@ -424,6 +424,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3222155584519461431, guid: 8ea4d294aca454e84bd925bc4f04c0d3,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c936123fe0c094ce2ba4ef0ef27b1ef9,
+        type: 3}
     - target: {fileID: 3863085999030948610, guid: 8ea4d294aca454e84bd925bc4f04c0d3,
         type: 3}
       propertyPath: m_Name
@@ -560,7 +566,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: c839b60e8217946d191d5dd51f664b01,
+      objectReference: {fileID: 21300000, guid: 5d25859442f584631b571912651f82fc,
         type: 3}
     - target: {fileID: 3863085999030948610, guid: 8ea4d294aca454e84bd925bc4f04c0d3,
         type: 3}

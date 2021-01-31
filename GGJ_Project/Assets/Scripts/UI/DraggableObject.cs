@@ -27,13 +27,21 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
         {
             Debug.Log(gameObject.name);
         }
-        draggableObjectDisplayInstance = Instantiate(draggableObjectDisplay, Vector3.zero, Quaternion.identity);
-        Transform displayTemp = draggableObjectDisplayInstance.transform.Find("display");
-        if (displayTemp)
-            displayTemp.GetComponent<SpriteRenderer>().sprite = draggableSprite;
 
-        draggableRB = draggableObjectDisplayInstance.GetComponent<Rigidbody2D>();
-        draggableObjectDisplayInstance.SetActive(false);
+        if (draggableObjectDisplay == null)
+        {
+            // Drag the current object
+        }
+        else
+        {
+            draggableObjectDisplayInstance = Instantiate(draggableObjectDisplay, Vector3.zero, Quaternion.identity);
+            Transform displayTemp = draggableObjectDisplayInstance.transform.Find("display");
+            if (displayTemp)
+                displayTemp.GetComponent<SpriteRenderer>().sprite = draggableSprite;
+
+            draggableRB = draggableObjectDisplayInstance.GetComponent<Rigidbody2D>();
+            draggableObjectDisplayInstance.SetActive(false);
+        }
     }
 
     void FixedUpdate()
@@ -99,7 +107,15 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
     {
         if (draggableRB == null)
         {
-            draggableObjectDisplayInstance.transform.position = GetWorldPositionFromInput();
+            if (draggableObjectDisplayInstance == null)
+            {
+                // Drag the current object
+                transform.position = GetWorldPositionFromInput();
+            }
+            else
+            {
+                draggableObjectDisplayInstance.transform.position = GetWorldPositionFromInput();
+            }
         }
         else
         {
@@ -121,22 +137,40 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
 
     void StartDragging()
     {
-        //Debug.Log("Start");
+        // Debug.Log("Start");
         currentDraggableObject = this;
         mask = LayerMask.GetMask(RaycastLayerName);
         dragging = true;
-        draggableObjectDisplayInstance.SetActive(true);
-        draggableObjectDisplayInstance.transform.position = GetWorldPositionFromInput();
+
+        if (draggableObjectDisplayInstance != null)
+        {
+            draggableObjectDisplayInstance.SetActive(true);
+            draggableObjectDisplayInstance.transform.position = GetWorldPositionFromInput();
+        }
     }
 
     void StopDragging()
     {
         //Debug.Log("Stop");
         dragging = false;
-        draggableObjectDisplayInstance.SetActive(false);
+        if (draggableObjectDisplayInstance != null)
+        {
+            draggableObjectDisplayInstance.SetActive(false);
+        }
         SendDragLetGoEvents();
     }
 
+    // When a world space game object is clicked
+    public void OnMouseDown()
+    {
+        // Don't want to deal with multi-touch >_< lol
+        if (Input.touchCount <= 1)
+        {
+            StartDragging();
+        }
+    }
+
+    // When a UI element is clicked
     // Fires when touch start or mouse down happens
     public void OnPointerDown(PointerEventData eventData)
     {

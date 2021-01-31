@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: dcdbe1cc8c25a4126a17e9bc7f084999
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fraunces 144pt
+  fontNames:
+  - Fraunces 144pt
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d56c1851f259a4578b2ea9009b4f8749, type: 3}
+  - {fileID: 12800000, guid: c532cdf84d90c445db8398be348123d5, type: 3}
+  - {fileID: 12800000, guid: acd980bbde8a24945bcdf86017be111c, type: 3}
+  - {fileID: 12800000, guid: d3782c6d290434437ad7e1f9698f4e03, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
