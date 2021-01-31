@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/ConversationData", order = 1)]
 public class ConversationData : ScriptableObject
@@ -30,27 +31,57 @@ public class ConversationData : ScriptableObject
     [Header("Leave the speakerName empty to link the line to the player")]
     [SerializeField] private Character_Conversation[] _conversationList;
 
-    private int _nextConversationIndex = -1;
-    private bool conversationExhausted = false;
-
-    public bool ConversationExhausted => conversationExhausted;
+    private List<string> _playedConversations;
 
     public string PlantCharacterName => _plantCharacterName;
+    
 
-    public Character_Conversation GetNextConversation()
+    public Character_Conversation GetFirstConversation()
     {
-        _nextConversationIndex++;
-
-        if (_nextConversationIndex < _conversationList.Length)
+        for (int i = 0; i < _conversationList.Length; i++)
         {
-            //todo:WIP to stop repeating conversations can easily change.
-            if (_nextConversationIndex == _conversationList.Length - 1)
+            if (_conversationList[i].GreetingConversation)
             {
-                conversationExhausted = true;
+                return _conversationList[i];
             }
-            return _conversationList[_nextConversationIndex];;
+        }
+
+        return GetRandomConversation();
+    }
+
+    public Character_Conversation GetRandomConversation()
+    {
+        if (_playedConversations == null)
+        {
+            _playedConversations = new List<string>();
+        }
+
+        List<int> availiableConversations = null;
+        for (int i = 0; i < _conversationList.Length; i++)
+        {
+            if (!_playedConversations.Contains(_conversationList[i].ConversationID))
+            {
+                if (availiableConversations == null)
+                {
+                    availiableConversations = new List<int>();
+                }
+
+                availiableConversations.Add(i);
+            }
+        }
+
+        if (availiableConversations != null)
+        {
+            int randomConversationIndex = Random.Range(0, availiableConversations.Count);
+            _playedConversations.Add(_conversationList[randomConversationIndex].ConversationID);
+            return _conversationList[randomConversationIndex];
         }
 
         return new Character_Conversation();
+    }
+
+    public bool IsCharacterConversationExhausted()
+    {
+        return _playedConversations.Count == _conversationList.Length;
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleton>
 {
@@ -48,13 +49,13 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
 
     [Header("Happiness/sickness Emojis")]
 
-    [SerializeField] private Sprite _happy;
+    //[SerializeField] private Sprite _happy;
     [SerializeField] private Sprite _gimmePoop;
     [SerializeField] private Sprite _hot;
     [SerializeField] private Sprite _cold;
-    [SerializeField] private Sprite _sick;
-    [SerializeField] private Sprite _almostDead;
-    [SerializeField] private Sprite _dead;
+    //[SerializeField] private Sprite _sick;
+    //[SerializeField] private Sprite _almostDead;
+    //[SerializeField] private Sprite _dead;
 
     [Header("Configuration Values")]
     [SerializeField] private float _sickThreshold = 0.5f;
@@ -70,7 +71,6 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
 
     [Header("Conversations")]
     [SerializeField] private ConversationData[] _conversationDatas;
-    [SerializeField] private Conversation _conversationBinder;
 
     #region encapsulated fields
 
@@ -82,19 +82,19 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
 
     public Sprite Heart => _heart;
 
-    public Sprite Happy => _happy;
+    //public Sprite Happy => _happy;
 
     public Sprite GimmePoop => _gimmePoop;
 
     public Sprite Hot => _hot;
 
-    public Sprite Sick => _sick;
+   // public Sprite Sick => _sick;
 
-    public Sprite AlmostDead => _almostDead;
+   // public Sprite AlmostDead => _almostDead;
 
     public Sprite Cold => _cold;
 
-    public Sprite Dead => _dead;
+    //public Sprite Dead => _dead;
 
     public float TickerTimeIntervalInSeconds => _tickerTimeIntervalInSeconds;
 
@@ -105,8 +105,6 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     public float RandomTalkIntervalInSecondsMin => _randomTalkIntervalInSecondsMin;
 
     public float RandomTalkIntervalInSecondsMax => _randomTalkIntervalInSecondsMax;
-
-    public Conversation ConversationBinder => _conversationBinder;
 
     #endregion
 
@@ -122,39 +120,39 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     }
 
     //Temperature <0 = cold >0 = hot 0 = allgood
-    public Sprite GetEmojiIcon(float healthPercentage, int temperature, bool needIconSet)
-    {
-        if (!needIconSet)
-        {
-            if (healthPercentage > _sickThreshold)
-            {
-                if (temperature > 0)
-                {
-                    return _hot;
-                }
-                else if (temperature < 0)
-                {
-                    return _cold;
-                }
-
-                return _happy;
-            }
-
-            if (healthPercentage > _almostDeadThreshold)
-            {
-                return _sick;
-            }
-
-            return _almostDead;
-        }
-
-        if (healthPercentage < _almostDeadThreshold)
-        {
-            return _almostDead;
-        }
-
-        return null;
-    }
+//    public Sprite GetEmojiIcon(float healthPercentage, int temperature, bool needIconSet)
+//    {
+//        if (!needIconSet)
+//        {
+//            if (healthPercentage > _sickThreshold)
+//            {
+//                if (temperature > 0)
+//                {
+//                    return _hot;
+//                }
+//                else if (temperature < 0)
+//                {
+//                    return _cold;
+//                }
+//
+//                return _happy;
+//            }
+//
+//            if (healthPercentage > _almostDeadThreshold)
+//            {
+//                return _sick;
+//            }
+//
+//            return _almostDead;
+//        }
+//
+//        if (healthPercentage < _almostDeadThreshold)
+//        {
+//            return _almostDead;
+//        }
+//
+//        return null;
+//    }
 
     public Sprite GetDectorationSprite(string name)
     {
@@ -194,29 +192,72 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
         return false;
     }
 
-    public ConversationData.Character_Conversation GetConversation(string characterID)
+    public ConversationData.Character_Conversation GetConversation(string characterID, bool firstConvo = false)
+    {
+        int characterindex = GetCharacterConversationIndex(characterID);
+        List<int> availiableConversations = null;
+
+        if (characterindex == -1)
+        {
+            return new ConversationData.Character_Conversation();
+        }
+        if (firstConvo)
+        {
+            return _conversationDatas[characterindex].GetFirstConversation();
+        }
+        else
+        {
+            return _conversationDatas[characterindex].GetRandomConversation();
+        }
+        
+    }
+
+
+    public bool IsCharacterConversationExhausted(string characterID)
+    {
+        int characterindex = GetCharacterConversationIndex(characterID);
+        if (characterindex == -1)
+        {
+            return true;
+        }
+
+        return _conversationDatas[characterindex].IsCharacterConversationExhausted();
+    }
+    
+    private int GetCharacterConversationIndex(string characterID)
     {
         for (int i = 0; i < _conversationDatas.Length; i++)
         {
             if (_conversationDatas[i].PlantCharacterName == characterID)
             {
-                if (!_conversationDatas[i].ConversationExhausted)
-                {
-                    return _conversationDatas[i].GetNextConversation();
-                }
+                return i;
             }
         }
-        return new ConversationData.Character_Conversation();
+
+        return -1;
     }
 
-    public void StartNextConversation(string plantName)
+    public void StartNextConversation(string plantName, bool firstConvo)
     {
-        ConversationData.Character_Conversation convo = GetConversation(plantName);
+        ConversationData.Character_Conversation convo = GetConversation(plantName, firstConvo);
         if (convo.Conversation == null || convo.Conversation.Length == 0)
         {
             return;
         }
-        _conversationBinder.gameObject.SetActive(true);
-        _conversationBinder.InitialiseConversation(convo.Conversation);
+
+        MenuController.Instance.StartConversation(convo);
+    }
+
+    public string GetNextCharacterAvailiableForConversation()
+    {
+        for (int i = 0; i < _conversationDatas.Length; i++)
+        {
+            if (!_conversationDatas[i].IsCharacterConversationExhausted())
+            {
+                return _conversationDatas[i].PlantCharacterName;
+            }
+        }
+
+        return String.Empty;
     }
 }

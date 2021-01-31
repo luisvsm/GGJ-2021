@@ -78,7 +78,7 @@ public class BasePlant : MonoBehaviour
     private bool _isWaitingToTalk = false;
     private float _nextTalkTimeStamp;
     private bool _isNextToTalk;
-    private bool _hasTalked = false;
+    private bool _firstConversation = true;
 
     private bool _isZoomedOutView = true;
     private bool _needsAttention;
@@ -163,7 +163,8 @@ public class BasePlant : MonoBehaviour
     {
         _startConversation.Deactivate();
         Debug.Log("<color=blue>START CONVERSATION</color>");
-        GameDataMonoSingleton.Instance.StartNextConversation(_plantName);
+        GameDataMonoSingleton.Instance.StartNextConversation(_plantName, _firstConversation);
+        
         
         //StartConversation
     }
@@ -174,7 +175,6 @@ public class BasePlant : MonoBehaviour
     {
         _isWaitingToTalk = false;
         _isNextToTalk = false;
-        PlantManager.Instance.PlantTalked();
     }
 
     private void UpdatePlantValues()
@@ -273,18 +273,18 @@ public class BasePlant : MonoBehaviour
         //TODo: work out happiness vs health & decide on priority
         // float happinessPercentage = _happiness / (float) _maxHappiness;
         float healthPercentage = _health / (float) _maxHealth;
-        Sprite needed = GameDataMonoSingleton.Instance.GetEmojiIcon(healthPercentage, temp, iconSet);
+        /*Sprite needed = GameDataMonoSingleton.Instance.GetEmojiIcon(healthPercentage, temp, iconSet);
         if (needed != null)
         {
             _needIconSprite.sprite = needed;
-        }
+        }*/
 
 
         if (_health < 0)
         {
             _health = 0;
             Debug.Log(string.Format("<color=red>OH NOES!!! {0} IS DEAD!</color>", _plantName));
-            _needIconSprite.sprite = GameDataMonoSingleton.Instance.Dead;
+            //_needIconSprite.sprite = GameDataMonoSingleton.Instance.Dead;
             _isDead = true;
         }
 

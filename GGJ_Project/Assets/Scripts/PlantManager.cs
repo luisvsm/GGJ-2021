@@ -23,6 +23,12 @@ public class PlantManager : MonoBehaviourSingleton<PlantManager>
             _plantList[i].gameObject.SetActive(true);
             _plantList[i].IsZoomedOutView = true;
         }
+
+        //triggers the random conversation system
+        if (_nextPlantTalk == -1)
+        {
+            PlantTalked();
+        }
     }
 
     public void HideAllPlants()
@@ -76,9 +82,52 @@ public class PlantManager : MonoBehaviourSingleton<PlantManager>
         _nextTalkTimestamp = Time.time + Random.Range(GameDataMonoSingleton.Instance.RandomTalkIntervalInSecondsMin,
                                  GameDataMonoSingleton.Instance.RandomTalkIntervalInSecondsMax);
         _nextPlantTalk = Random.Range(0, _plantList.Count - 1);
+        Debug.Log(string.Format("<color=magenta>***** Nextplant index 01- {0} </color>",_nextPlantTalk));
+
+        if (GameDataMonoSingleton.Instance.IsCharacterConversationExhausted(_plantList[_nextPlantTalk].PlantName))
+        {
+            _nextPlantTalk = Random.Range(0, _plantList.Count - 1);
+            Debug.Log(string.Format("<color=magenta>***** Nextplant index 02- {0} </color>",_nextPlantTalk));
+            if (GameDataMonoSingleton.Instance.IsCharacterConversationExhausted(_plantList[_nextPlantTalk].PlantName))
+            {
+                string plantID = GameDataMonoSingleton.Instance.GetNextCharacterAvailiableForConversation();
+
+                if (string.IsNullOrEmpty(plantID))
+                {
+                    return;
+                }
+                else
+                {
+                    _nextPlantTalk = GetPlantIndex(plantID);
+                    Debug.Log(string.Format("<color=magenta>***** Nextplant index 03- {0} </color>",_nextPlantTalk));
+                }
+                    
+            }
+        }
+
+        if (_nextPlantTalk < 0 || _nextPlantTalk > _plantList.Count)
+        {
+            Debug.Log(string.Format("<color=red>***** ERROR {0} trying to get out of range index </color>",_nextPlantTalk));
+
+        }
+        Debug.Log(string.Format("<color=magenta>*****Queueing {0} to talk</color>", _plantList[_nextPlantTalk].PlantName));
         _plantList[_nextPlantTalk].QueueForRandomConversation(_nextTalkTimestamp);
     }
-    
+
+    private int GetPlantIndex(string plantId)
+    {
+        for (int i = 0; i < _plantList.Count; i++)
+        {
+            if (_plantList[i].name == plantId)
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+
     public Sprite GetPlantIcon(string lineSpeakerName)
     {
         for (int i = 0; i < _plantList.Count; i++)
@@ -101,5 +150,12 @@ public class PlantManager : MonoBehaviourSingleton<PlantManager>
     public BasePlant GetSelectedPlant()
     {
         return GetPlantForPlantView(_selectedPlant);
+    }
+
+    public void ConversationComplete()
+    {
+        BasePlant plant = GetSelectedPlant();
+        plant.EndConversation();
+        PlantTalked();
     }
 }
