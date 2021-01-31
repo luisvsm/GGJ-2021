@@ -413,9 +413,28 @@ public class BasePlant : MonoBehaviour
         return -1;
     }
 
-    public void AddResource(GameDataMonoSingleton.RESOURCE_TYPE resourceType)
-    {
-        switch (resourceType)
+	public void AddResource(GameDataMonoSingleton.RESOURCE_TYPE resourceType)
+	{
+		if (_plantName == "ReginaGretchenKaren")
+			AudioController.Play("VO_FlyTraps_Heal");
+
+		else if (_plantName == "Pepper")
+			AudioController.Play("VO_Pepper_Heal");
+
+		else if (_plantName == "BonScot")
+			AudioController.Play("VO_BonScot_Heal");
+
+		else if (_plantName == "Basil")
+			AudioController.Play("VO_Basil_Heal");
+
+		else if (_plantName == "Arnold")
+			AudioController.Play("VO_Arnie_Heal");
+
+		else if (_plantName == "Vera")
+			AudioController.Play("VO_Vera_Heal");
+
+
+		switch (resourceType)
         {
             case GameDataMonoSingleton.RESOURCE_TYPE.poo:
                 AddPoo();

@@ -75,9 +75,9 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -205,9 +205,9 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -281,9 +281,9 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -355,11 +355,11 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.5
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -431,11 +431,11 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.4
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -507,11 +507,11 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.4
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -585,9 +585,9 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -661,9 +661,9 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -737,9 +737,9 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -813,9 +813,9 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -889,9 +889,9 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -965,9 +965,9 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -1039,11 +1039,11 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.7
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -1115,11 +1115,11 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.7
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -1191,11 +1191,11 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.7
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -1267,11 +1267,11 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.7
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -1343,11 +1343,11 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.7
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -1419,11 +1419,11 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.7
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -1497,9 +1497,9 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -1573,9 +1573,9 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -1649,9 +1649,9 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
-      Delay: 0
+      MinTimeBetweenPlayCalls: 7
+      MaxInstanceCount: 1
+      Delay: 0.5
       PitchShift: 0
       RandomVolume: 0
       RandomPitch: 0
@@ -1731,8 +1731,8 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MinTimeBetweenPlayCalls: 1
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -1771,8 +1771,8 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MinTimeBetweenPlayCalls: 1
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -1812,7 +1812,7 @@ MonoBehaviour:
       Volume: 1
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -1852,7 +1852,7 @@ MonoBehaviour:
       Volume: 1
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -1892,7 +1892,7 @@ MonoBehaviour:
       Volume: 1
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -1931,8 +1931,8 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MinTimeBetweenPlayCalls: 1
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -1971,8 +1971,8 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MinTimeBetweenPlayCalls: 1
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -2011,8 +2011,8 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MinTimeBetweenPlayCalls: 1
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -2051,8 +2051,8 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MinTimeBetweenPlayCalls: 1
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -2091,8 +2091,8 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MinTimeBetweenPlayCalls: 1
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -2132,7 +2132,7 @@ MonoBehaviour:
       Volume: 1
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -2171,8 +2171,8 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MinTimeBetweenPlayCalls: 1
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -2212,7 +2212,7 @@ MonoBehaviour:
       Volume: 1
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -2252,7 +2252,7 @@ MonoBehaviour:
       Volume: 1
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -2292,7 +2292,7 @@ MonoBehaviour:
       Volume: 1
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -2332,7 +2332,7 @@ MonoBehaviour:
       Volume: 1
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -2371,8 +2371,8 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MinTimeBetweenPlayCalls: 1
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -2412,7 +2412,7 @@ MonoBehaviour:
       Volume: 1
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -2451,8 +2451,8 @@ MonoBehaviour:
       DestroyOnLoad: 1
       Volume: 1
       SubItemPickMode: 2
-      MinTimeBetweenPlayCalls: 0.1
-      MaxInstanceCount: 0
+      MinTimeBetweenPlayCalls: 1
+      MaxInstanceCount: 1
       Delay: 0
       PitchShift: 0
       RandomVolume: 0
@@ -2572,7 +2572,7 @@ MonoBehaviour:
         FadeOut: 0
         RandomStartPosition: 0
         individualSettings: []
-    _volume: 1
+    _volume: 0.4
     audioMixerGroup: {fileID: 24300002, guid: 13eac2fbc4b3d4485a9642b0c066b41b, type: 2}
   - Name: AMB
     _parentCategoryName: 
@@ -2586,7 +2586,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 0.26
+      Volume: 0.18
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 1
@@ -2904,7 +2904,7 @@ MonoBehaviour:
         FadeOut: 0.1
         RandomStartPosition: 0
         individualSettings: []
-    _volume: 0.5
+    _volume: 0.31
     audioMixerGroup: {fileID: 0}
   musicPlaylists:
   - name: Default
@@ -2918,8 +2918,8 @@ MonoBehaviour:
   _audioDisabled: 0
   _volume: 1
   _currentInspectorSelection:
-    currentCategoryIndex: 3
-    currentItemIndex: 6
+    currentCategoryIndex: 0
+    currentItemIndex: 17
     currentSubitemIndex: 0
     currentPlaylistEntryIndex: 0
     currentPlaylistIndex: 0

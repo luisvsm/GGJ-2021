@@ -12,7 +12,15 @@ public class DraggableResource : DraggableObject
     public override void AudioHookGrab()
     {
         Debug.Log("DraggableResource AudioHookGrab " + _resource);
-    }
+		if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.love)
+			AudioController.Play("SFX_Generic_Grab");
+		else if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.poo)
+			AudioController.Play("SFX_Poo_Grab");
+		else if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.sun)
+			AudioController.Play("SFX_Generic_Grab");
+		else if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.water)
+			AudioController.Play("SFX_WaterCan_Grab");
+	}
 
     public override void AudioHookHoverIn()
     {
@@ -27,5 +35,13 @@ public class DraggableResource : DraggableObject
     public override void AudioHookLetGo()
     {
         Debug.Log("DraggableResource AudioHookLetGo" + _resource);
-    }
+		if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.love)
+			AudioController.Play("SFX_Give_Love");
+		else if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.poo)
+			AudioController.Play("SFX_Give_Poop");
+		else if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.sun)
+			AudioController.Play("SFX_Give_Sun");
+		else if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.water)
+			AudioController.Play("SFX_Give_Water");
+	}
 }
