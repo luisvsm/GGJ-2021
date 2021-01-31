@@ -25,10 +25,20 @@ public class PlantManager : MonoBehaviourSingleton<PlantManager>
 
     public void ShowAllPlants()
     {
+        int fullhealthPlants = 0;
         for (int i = 0; i < _plantList.Count; i++)
         {
             _plantList[i].gameObject.SetActive(true);
             _plantList[i].IsZoomedOutView = true;
+            if (_plantList[i].Health >= _plantList[i].MaxHealth)
+            {
+                fullhealthPlants = fullhealthPlants + 1;
+            }
+        }
+        
+        if(fullhealthPlants == _plantList.Count)
+        {
+            ManageCredits.Instance.Show();
         }
 
         //triggers the random conversation system

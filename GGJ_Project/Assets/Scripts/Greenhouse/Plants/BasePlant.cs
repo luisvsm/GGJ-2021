@@ -97,6 +97,10 @@ public class BasePlant : MonoBehaviour
         set => _isZoomedOutView = value;
     }
 
+    public int MaxHealth => _maxHealth;
+
+    public float Health => _health;
+
     private void OnMouseDown()
     {
         if (_isZoomedOutView)
@@ -389,6 +393,22 @@ public class BasePlant : MonoBehaviour
             _pooLevel += amount;
             _health += GameDataMonoSingleton.Instance.ResourceHealAmount;
             _healthPercentageBar.UpdateBar(_health/_maxHealth);
+            
+            if (_health >= _maxHealth)
+            {
+                //Debug.Log(string.Format("<color=magenta><b>MAX HEALTH UPDATE {0}!</b></color>", _plantName));
+
+                _needIndicatorAlert.gameObject.SetActive(false);
+                _needIndicatorDetailed.gameObject.SetActive(false);
+                _waterLevel = _maxWater;
+                _pooLevel = _minPoo + 3;
+                _health = _maxHealth;
+                _hitmaxhealth = true;
+                _nextActionTime += GameDataMonoSingleton.Instance.HappyPlantHappyTimeInSeconds;
+                MusicController.Instance.PlaySong(_plantName);
+                AudioController.Play("SFX_Give_Special");
+                playMaxHealth();
+            }
         }
         else
         {
@@ -404,6 +424,22 @@ public class BasePlant : MonoBehaviour
             _waterLevel += amount;
             _health += GameDataMonoSingleton.Instance.ResourceHealAmount;
             _healthPercentageBar.UpdateBar(_health/_maxHealth);
+            
+            if (_health >= _maxHealth)
+            {
+                //Debug.Log(string.Format("<color=magenta><b>MAX HEALTH UPDATE {0}!</b></color>", _plantName));
+
+                _needIndicatorAlert.gameObject.SetActive(false);
+                _needIndicatorDetailed.gameObject.SetActive(false);
+                _waterLevel = _maxWater;
+                _pooLevel = _minPoo + 3;
+                _health = _maxHealth;
+                _hitmaxhealth = true;
+                _nextActionTime += GameDataMonoSingleton.Instance.HappyPlantHappyTimeInSeconds;
+                MusicController.Instance.PlaySong(_plantName);
+                AudioController.Play("SFX_Give_Special");
+                playMaxHealth();
+            }
         }
         else
         {
@@ -419,6 +455,22 @@ public class BasePlant : MonoBehaviour
             _health = _maxHealth;
         }
         _healthPercentageBar.UpdateBar(_health/_maxHealth);
+        
+        if (_health >= _maxHealth)
+        {
+            //Debug.Log(string.Format("<color=magenta><b>MAX HEALTH UPDATE {0}!</b></color>", _plantName));
+
+            _needIndicatorAlert.gameObject.SetActive(false);
+            _needIndicatorDetailed.gameObject.SetActive(false);
+            _waterLevel = _maxWater;
+            _pooLevel = _minPoo + 3;
+            _health = _maxHealth;
+            _hitmaxhealth = true;
+            _nextActionTime += GameDataMonoSingleton.Instance.HappyPlantHappyTimeInSeconds;
+            MusicController.Instance.PlaySong(_plantName);
+            AudioController.Play("SFX_Give_Special");
+            playMaxHealth();
+        }
     }
     
     
