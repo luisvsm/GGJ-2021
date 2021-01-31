@@ -42,7 +42,11 @@ public class ConversationData : ScriptableObject
         {
             if (_conversationList[i].GreetingConversation)
             {
-                _playedConversations.Add(_conversationList[i].ConversationID);
+                if (!_playedConversations.Contains(_conversationList[i].ConversationID))
+                {
+                    _playedConversations.Add(_conversationList[i].ConversationID);
+                }
+                
                 return _conversationList[i];
             }
         }
@@ -60,7 +64,7 @@ public class ConversationData : ScriptableObject
         List<int> availiableConversations = null;
         for (int i = 0; i < _conversationList.Length; i++)
         {
-            if (!_playedConversations.Contains(_conversationList[i].ConversationID) && !_conversationList[i].GreetingConversation)
+            if (!_playedConversations.Contains(_conversationList[i].ConversationID))
             {
                 if (availiableConversations == null)
                 {
@@ -75,7 +79,10 @@ public class ConversationData : ScriptableObject
         {
             int randomAvailiableIndex = Random.Range(0, availiableConversations.Count);
             int randomConversationIndex = availiableConversations[randomAvailiableIndex];
-            _playedConversations.Add(_conversationList[randomConversationIndex].ConversationID);
+            if (!_playedConversations.Contains(_conversationList[randomConversationIndex].ConversationID))
+            {
+                _playedConversations.Add(_conversationList[randomConversationIndex].ConversationID);
+            }
             return _conversationList[randomConversationIndex];
         }
 
