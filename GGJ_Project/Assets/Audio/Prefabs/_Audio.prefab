@@ -1729,7 +1729,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.7
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 1
       MaxInstanceCount: 1
@@ -1769,7 +1769,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.7
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 1
       MaxInstanceCount: 1
@@ -1889,7 +1889,7 @@ MonoBehaviour:
       loopSequenceRandomPitch: 0
       loopSequenceRandomVolume: 0
       DestroyOnLoad: 1
-      Volume: 1
+      Volume: 0.8
       SubItemPickMode: 2
       MinTimeBetweenPlayCalls: 0.1
       MaxInstanceCount: 1
@@ -2748,7 +2748,7 @@ MonoBehaviour:
         FadeOut: 3
         RandomStartPosition: 1
         individualSettings: []
-    _volume: 0.2
+    _volume: 0.14
     audioMixerGroup: {fileID: 24300002, guid: 13eac2fbc4b3d4485a9642b0c066b41b, type: 2}
   - Name: MUS_ENSEMBLE
     _parentCategoryName: 
@@ -3048,8 +3048,8 @@ MonoBehaviour:
   _audioDisabled: 0
   _volume: 1
   _currentInspectorSelection:
-    currentCategoryIndex: 0
-    currentItemIndex: 8
+    currentCategoryIndex: 1
+    currentItemIndex: 0
     currentSubitemIndex: 0
     currentPlaylistEntryIndex: 0
     currentPlaylistIndex: 0

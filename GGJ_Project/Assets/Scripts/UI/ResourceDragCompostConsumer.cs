@@ -32,6 +32,7 @@ public class ResourceDragCompostConsumer : DragConsumer
             {
                 Destroy(test.gameObject);
                 SpawnLeafLitter.LeafLitterWasDestroyed();
+				AudioController.Play("SFX_Generic_Grab");
             }
         }
     }
