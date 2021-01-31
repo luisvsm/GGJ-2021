@@ -118,7 +118,7 @@ public class PlantManager : MonoBehaviourSingleton<PlantManager>
     {
         for (int i = 0; i < _plantList.Count; i++)
         {
-            if (_plantList[i].name == plantId)
+            if (_plantList[i].PlantName == plantId)
             {
                 return i;
             }
@@ -132,7 +132,7 @@ public class PlantManager : MonoBehaviourSingleton<PlantManager>
     {
         for (int i = 0; i < _plantList.Count; i++)
         {
-            if (_plantList[i].name == lineSpeakerName)
+            if (_plantList[i].PlantName == lineSpeakerName)
             {
                 return _plantList[i].Icon;
             }

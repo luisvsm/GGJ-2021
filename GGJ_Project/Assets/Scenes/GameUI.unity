@@ -158,6 +158,7 @@ MonoBehaviour:
   - {fileID: 3788208658769662256}
   - {fileID: 1215148579}
   _conversationBinder: {fileID: 922738308}
+  _backbutton: {fileID: 1695319663}
 --- !u!4 &76319253
 Transform:
   m_ObjectHideFlags: 0
@@ -972,6 +973,26 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 1bc55d95ed3fb44c89d09dcbb5caa154, type: 2}
+    - target: {fileID: 8338517376969996770, guid: c8f25674dd2d54073912dbaa32c2fe94,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338517376969996770, guid: c8f25674dd2d54073912dbaa32c2fe94,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338517376969996770, guid: c8f25674dd2d54073912dbaa32c2fe94,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8338517376969996770, guid: c8f25674dd2d54073912dbaa32c2fe94,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f25674dd2d54073912dbaa32c2fe94, type: 3}
 --- !u!95 &3364057466056315161 stripped
@@ -1128,22 +1149,22 @@ PrefabInstance:
     - target: {fileID: 9189542304564763959, guid: ea38688ca9cbf4c60b8388fc43883cca,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9189542304564763959, guid: ea38688ca9cbf4c60b8388fc43883cca,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9189542304564763959, guid: ea38688ca9cbf4c60b8388fc43883cca,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 353.3333
       objectReference: {fileID: 0}
     - target: {fileID: 9189542304564763959, guid: ea38688ca9cbf4c60b8388fc43883cca,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -893.33325
       objectReference: {fileID: 0}
     - target: {fileID: 9189542305197887583, guid: ea38688ca9cbf4c60b8388fc43883cca,
         type: 3}
