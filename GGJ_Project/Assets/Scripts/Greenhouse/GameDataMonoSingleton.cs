@@ -13,12 +13,13 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
         middle,
         bottom
     }
-    
+
     public enum RESOURCE_TYPE
     {
         water,
         poo,
-        love
+        love,
+        leafLitter
     }
     [Serializable]
     public struct PlatDecoration
@@ -28,9 +29,9 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
         public Sprite Sprite;
     }
 
-    
+
     #endregion
-    
+
     [Header("Need Icons")]
 
     [SerializeField] private Sprite _water;
@@ -40,12 +41,12 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     [SerializeField] private Sprite _heat;
 
     [SerializeField] private Sprite _heart;
-    
+
     [SerializeField] private Sprite _toTalk;
-    
-    
+
+
     [Header("Happiness/sickness Emojis")]
-    
+
     [SerializeField] private Sprite _happy;
     [SerializeField] private Sprite _gimmePoop;
     [SerializeField] private Sprite _hot;
@@ -54,22 +55,22 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     [SerializeField] private Sprite _almostDead;
     [SerializeField] private Sprite _dead;
 
-    [Header("Configuration Values")] 
+    [Header("Configuration Values")]
     [SerializeField] private float _sickThreshold = 0.5f;
     [SerializeField] private float _almostDeadThreshold = 0.25f;
     [SerializeField] private float _tickerTimeIntervalInSeconds = 1.0f;
     [SerializeField] private float _randomTalkIntervalInSecondsMin = 20.0f;
     [SerializeField] private float _randomTalkIntervalInSecondsMax = 30.0f;
-    
+
     private bool _tickerPaused;
 
-    [Header("Decorations")] 
+    [Header("Decorations")]
     [SerializeField] private PlatDecoration[] _decorations;
-    
-    [Header("Conversations")] 
+
+    [Header("Conversations")]
     [SerializeField] private ConversationData[] _conversationDatas;
     [SerializeField] private Conversation _conversationBinder;
-    
+
     #region encapsulated fields
 
     public Sprite Water => _water;
@@ -95,7 +96,7 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     public Sprite Dead => _dead;
 
     public float TickerTimeIntervalInSeconds => _tickerTimeIntervalInSeconds;
-    
+
     public bool TickerPaused => _tickerPaused;
 
     public Sprite ToTalk => _toTalk;
@@ -107,7 +108,7 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     public Conversation ConversationBinder => _conversationBinder;
 
     #endregion
-    
+
 
     public bool IsHappy(float healthPercentage)
     {
@@ -120,7 +121,7 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     }
 
     //Temperature <0 = cold >0 = hot 0 = allgood
-    public Sprite GetEmojiIcon(float healthPercentage,  int temperature, bool needIconSet)
+    public Sprite GetEmojiIcon(float healthPercentage, int temperature, bool needIconSet)
     {
         if (!needIconSet)
         {
@@ -134,18 +135,18 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
                 {
                     return _cold;
                 }
-            
+
                 return _happy;
             }
-         
+
             if (healthPercentage > _almostDeadThreshold)
             {
                 return _sick;
-            } 
-            
+            }
+
             return _almostDead;
         }
-        
+
         if (healthPercentage < _almostDeadThreshold)
         {
             return _almostDead;
@@ -156,7 +157,7 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
 
     public Sprite GetDectorationSprite(string name)
     {
-        for (int i = 0; i  < _decorations.Length; i++)
+        for (int i = 0; i < _decorations.Length; i++)
         {
             if (name.Equals(_decorations[i].Name))
             {
