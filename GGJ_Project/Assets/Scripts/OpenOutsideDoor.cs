@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class OpenOutsideDoor : MonoBehaviour
 {
-    public void OpenDoor()
+    public GameObject padlock;
+    public GameObject wood;
+    public Collider2D doorCollider;
+    public void UnlockDoor()
     {
-        Debug.Log("Playing Audio");
-        AudioController.Play("SFX_Door_Open");
-        RoomController.Instance.showRoom(3);
+        AudioController.Play("SFX_Door_Unlock");
+        wood.SetActive(false);
+        padlock.SetActive(false);
+        doorCollider.enabled = true;
     }
+
 }
