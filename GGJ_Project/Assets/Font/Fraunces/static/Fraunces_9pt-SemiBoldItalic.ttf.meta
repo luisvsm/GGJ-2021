@@ -1,0 +1,29 @@
+fileFormatVersion: 2
+guid: 78ccc23f32ae341499e67441ca5c9463
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fraunces 9pt
+  fontNames:
+  - Fraunces 9pt
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 75f30810671c3454c8bea7ac84a97098, type: 3}
+  - {fileID: 12800000, guid: 30c9d952ca1a04c949c72eae43f3448c, type: 3}
+  - {fileID: 12800000, guid: 85ac10962ee5042d08365f35ef6e540d, type: 3}
+  - {fileID: 12800000, guid: 91248b7bb647b408c8182d76349f1db7, type: 3}
+  - {fileID: 12800000, guid: 25b29c5df92d14661859d40ec2f31d01, type: 3}
+  - {fileID: 12800000, guid: b14a807edf437448cbf89b389ea566ee, type: 3}
+  - {fileID: 12800000, guid: e252eaded5a9b4e17a633654ed04ff6e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

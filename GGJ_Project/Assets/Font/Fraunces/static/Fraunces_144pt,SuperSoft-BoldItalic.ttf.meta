@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: 8e77c209badf94f52985257b182497c7
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fraunces 144pt Soft
+  fontNames:
+  - Fraunces 144pt Soft
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 504c14e03b2c2403995293a1b4898d9e, type: 3}
+  - {fileID: 12800000, guid: d494fff02859a444fa491e85505bc0a9, type: 3}
+  - {fileID: 12800000, guid: 445ef4a2392144c0994b7cab07d4ae12, type: 3}
+  - {fileID: 12800000, guid: 7c8a6223784ee4a6f8b608df72d5b6ab, type: 3}
+  - {fileID: 12800000, guid: 56aa16a447d594a539fa7631f4af6a3f, type: 3}
+  - {fileID: 12800000, guid: f17cc677e3ba44104a9910860da1c6f9, type: 3}
+  - {fileID: 12800000, guid: 206c6e6911f814c2d83fbf92d6a371b0, type: 3}
+  - {fileID: 12800000, guid: 7d81b7b92bfbd4a6cab207b8e0cd433e, type: 3}
+  - {fileID: 12800000, guid: a78a23d95d5de4cf2aaaeef7c2d4d422, type: 3}
+  - {fileID: 12800000, guid: facb55ee7ee1f498c8eaefb5bd327145, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

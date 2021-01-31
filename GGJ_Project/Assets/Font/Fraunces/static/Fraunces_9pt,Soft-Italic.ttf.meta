@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: a018bcc327d68477aa8ccce8bad77737
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Fraunces
+  fontNames:
+  - Fraunces
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: ff985a0792a044cd28424305597e9c60, type: 3}
+  - {fileID: 12800000, guid: 757ec8fd029054c9eae4857d6e136751, type: 3}
+  - {fileID: 12800000, guid: 203dda2f9139f48059726c0002884497, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
