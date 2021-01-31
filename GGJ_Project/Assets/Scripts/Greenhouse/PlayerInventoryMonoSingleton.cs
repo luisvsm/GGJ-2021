@@ -9,10 +9,10 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
     public delegate void UpdatePlayerInventory(int newValue);
     public UpdatePlayerInventory OnWaterUpdated;
     public UpdatePlayerInventory OnPooUpdated;
-    
+
     public delegate void UpdatePlayerInventoryDecorationCount(string name, int newValue);
     public UpdatePlayerInventoryDecorationCount OnDecorationCountUpdated;
-    
+
     private int _water = 10;
     private int _maxWater = 50;
     private int _poo = 10;
@@ -25,14 +25,14 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
     public int MaxPoo => _maxPoo;
     public Dictionary<string, int> Decorations => _unassignedDecorations;
 
-    public void CollectWater(int amount =1)
+    public void CollectWater(int amount = 1)
     {
         _water += amount;
         _water = Mathf.Min(_water, _maxWater);
         OnWaterUpdated?.Invoke(_water);
     }
-    
-    public bool UseWater(int amount =1)
+
+    public bool UseWater(int amount = 1)
     {
         if (_water >= amount)
         {
@@ -45,15 +45,15 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
             return false;
         }
     }
-    
-    public void CollectPoo(int amount =1)
+
+    public void CollectPoo(int amount = 1)
     {
         _poo += amount;
         _poo = Mathf.Min(_poo, _maxPoo);
         OnPooUpdated?.Invoke(_poo);
     }
-    
-    public bool UsePoo(int amount =1)
+
+    public bool UsePoo(int amount = 1)
     {
         if (_poo >= amount)
         {
@@ -66,8 +66,8 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
             return false;
         }
     }
-    
-    
+
+
     public void CollectDecoration(string decoName)
     {
         if (_unassignedDecorations == null)
@@ -83,11 +83,11 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
         }
         else
         {
-            _unassignedDecorations.Add(decoName,1);
+            _unassignedDecorations.Add(decoName, 1);
             OnDecorationCountUpdated?.Invoke(decoName, _unassignedDecorations[decoName]);
         }
     }
-    
+
     public void UseDecoration(string decoName)
     {
         if (_unassignedDecorations == null)
@@ -129,5 +129,5 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
 
         return false;
     }
-    
+
 }

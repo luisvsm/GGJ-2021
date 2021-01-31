@@ -6,7 +6,7 @@ public class RoomController : MonoBehaviourSingleton<RoomController>
 {
     public delegate void RoomChanged();
     public RoomChanged OnRoomChanged;
-    
+
     public List<GameObject> RoomList;
     public int startingRoom = 0;
     public int greenhouseRoom = 1;
@@ -14,7 +14,7 @@ public class RoomController : MonoBehaviourSingleton<RoomController>
     public int plantViewRoom = 3;
     // Start is called before the first frame update
 
-    private int _currentRoom =0;
+    private int _currentRoom = 0;
     void Start()
     {
         showRoom(startingRoom);
@@ -23,7 +23,7 @@ public class RoomController : MonoBehaviourSingleton<RoomController>
     public void showRoom(int roomIndex)
     {
         bool roomChanged = false;
-		AudioController.Play("SFX_Generic_Transition");
+        AudioController.Play("SFX_Generic_Transition");
         FadeController.Instance.Fade(() =>
         {
             for (int i = 0; i < RoomList.Count; i++)
@@ -38,6 +38,7 @@ public class RoomController : MonoBehaviourSingleton<RoomController>
                     _currentRoom = i;
                 }
             }
+            // if (roomIndex != 0) // hack, blame Luis
             MenuController.Instance.showMenu(roomIndex);
         },
         () =>
@@ -53,7 +54,7 @@ public class RoomController : MonoBehaviourSingleton<RoomController>
     {
         return _currentRoom > 1;
     }
-    
+
     public void GoBack()
     {
         if (_currentRoom > 1)
@@ -66,7 +67,7 @@ public class RoomController : MonoBehaviourSingleton<RoomController>
     {
         showRoom(plantViewRoom);
     }
-    
+
     public void ShowPlantShelfRoom()
     {
         showRoom(plantShelfRoom);
