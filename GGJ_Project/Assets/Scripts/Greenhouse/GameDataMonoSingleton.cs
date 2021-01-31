@@ -64,6 +64,8 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     [SerializeField] private float _randomTalkIntervalInSecondsMin = 20.0f;
     [SerializeField] private float _randomTalkIntervalInSecondsMax = 30.0f;
     [SerializeField] private float _happyPlantHappyTimeInSeconds = 120.0f;
+    [SerializeField] private float _resourceHealAmount = 1.0f;
+    
     private bool _tickerPaused;
 
     [Header("Decorations")]
@@ -71,6 +73,7 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
 
     [Header("Conversations")]
     [SerializeField] private ConversationData[] _conversationDatas;
+    
 
     #region encapsulated fields
 
@@ -107,6 +110,7 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
     public float RandomTalkIntervalInSecondsMax => _randomTalkIntervalInSecondsMax;
 
     public float HappyPlantHappyTimeInSeconds => _happyPlantHappyTimeInSeconds;
+    public float ResourceHealAmount => _resourceHealAmount;
 
     #endregion
 

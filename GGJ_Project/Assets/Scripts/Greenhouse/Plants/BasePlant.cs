@@ -376,14 +376,23 @@ public class BasePlant : MonoBehaviour
 
     public void AddPoo(int amount = 1)
     {
-        _pooLevel += amount;
-        PlayerInventoryMonoSingleton.Instance.UsePoo(amount);
+
+        bool canDo = PlayerInventoryMonoSingleton.Instance.UseWater(amount);
+        if (canDo)
+        {
+            _pooLevel += amount;
+            _health += GameDataMonoSingleton.Instance.ResourceHealAmount;
+        }
     }
-    
+
     public void AddWater(int amount = 1)
     {
-        _waterLevel += amount;
-        PlayerInventoryMonoSingleton.Instance.UseWater(amount);
+        bool canDo = PlayerInventoryMonoSingleton.Instance.UseWater(amount);
+        if (canDo)
+        {
+            _waterLevel += amount;
+            _health += GameDataMonoSingleton.Instance.ResourceHealAmount;
+        }
     }
     
     private void AddLove()

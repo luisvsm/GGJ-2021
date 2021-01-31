@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 //using Data.Util;
 using UnityEngine;
 
@@ -12,8 +13,8 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
     public delegate void UpdatePlayerInventoryDecorationCount(string name, int newValue);
     public UpdatePlayerInventoryDecorationCount OnDecorationCountUpdated;
     
-    private int _water;
-    private int _poo;
+    private int _water = 10;
+    private int _poo = 10;
     private Dictionary<string, int> _unassignedDecorations;
 
     public int Water => _water;
@@ -26,10 +27,18 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
         OnWaterUpdated?.Invoke(_water);
     }
     
-    public void UseWater(int amount =1)
+    public bool UseWater(int amount =1)
     {
-        _water -= amount;
-        OnWaterUpdated?.Invoke(_water);
+        if (_water >= amount)
+        {
+            _water -= amount;
+            OnWaterUpdated?.Invoke(_water);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     public void CollectPoo(int amount =1)
@@ -38,10 +47,18 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
         OnPooUpdated?.Invoke(_poo);
     }
     
-    public void UsePoo(int amount =1)
+    public bool UsePoo(int amount =1)
     {
-        _poo -= amount;
-        OnPooUpdated?.Invoke(_poo);
+        if (_poo >= amount)
+        {
+            _poo -= amount;
+            OnPooUpdated?.Invoke(_poo);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     
     
