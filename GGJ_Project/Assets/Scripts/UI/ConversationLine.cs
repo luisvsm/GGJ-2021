@@ -12,7 +12,7 @@ public class ConversationLine : MonoBehaviour
     //don't do this at home kids passing structs sucks :) 
     public void InitialiseConversation(ConversationData.Conversation_Line line)
     {
-        if (_icon != null && string.IsNullOrEmpty(line.SpeakerName))
+        if (_icon != null && !string.IsNullOrEmpty(line.SpeakerName))
         {
             _icon.sprite = PlantManager.Instance.GetPlantIcon(line.SpeakerName);
         }

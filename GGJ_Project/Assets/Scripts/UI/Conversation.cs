@@ -34,7 +34,7 @@ public class Conversation : MonoBehaviour
 
         if (_lines != null)
         {
-            bool isPlayer = string.IsNullOrEmpty(_lines[_nextline].SpeakerName) ;
+            bool isPlayer = string.IsNullOrEmpty(_lines[_nextline].SpeakerName);
             
             _plantGameObject.SetActive(!isPlayer);
             _playerGameObject.SetActive(isPlayer);
