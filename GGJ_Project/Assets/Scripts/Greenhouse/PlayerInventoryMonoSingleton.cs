@@ -49,7 +49,7 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
     public void CollectPoo(int amount =1)
     {
         _poo += amount;
-        _poo = Mathf.Min(_water, _maxPoo);
+        _poo = Mathf.Min(_poo, _maxPoo);
         OnPooUpdated?.Invoke(_poo);
     }
     
