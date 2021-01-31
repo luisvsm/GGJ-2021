@@ -6,11 +6,11 @@ public class ShowPlants : MonoBehaviour
 {
     void OnEnable()
     {
-        PlantManager.Instance.showAllPlants();
+        PlantManager.Instance.ShowAllPlants();
     }
 
     void OnDisable()
     {
-        PlantManager.Instance.hideAllPlants();
+        PlantManager.Instance.HideAllPlants();
     }
 }

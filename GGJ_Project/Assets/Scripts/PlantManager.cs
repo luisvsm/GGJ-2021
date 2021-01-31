@@ -6,36 +6,43 @@ using UnityEngine;
 public class PlantManager : MonoBehaviourSingleton<PlantManager>
 {
     [SerializeField] private List<BasePlant> _plantList;
-    [SerializeField] private  GameObject PlantViewPosition;
+    [SerializeField] private  Transform _plantViewPosition;
     
     private float _nextTalkTimestamp;
     private int _nextPlantTalk = -1;
+    private string _selectedPlant = "BonScot";
 
-    public void showAllPlants()
+    public string SelectedPlant => _selectedPlant;
+
+    public Transform PlantViewPosition => _plantViewPosition;
+
+    public void ShowAllPlants()
     {
         for (int i = 0; i < _plantList.Count; i++)
         {
             _plantList[i].gameObject.SetActive(true);
+            _plantList[i].IsZoomedOutView = true;
         }
     }
 
-    public void hideAllPlants()
+    public void HideAllPlants()
     {
         for (int i = 0; i < _plantList.Count; i++)
         {
             _plantList[i].gameObject.SetActive(false);
+            _plantList[i].IsZoomedOutView = false;
         }
     }
 
     public void showPlant(int plantIndex)
     {
-        hideAllPlants();
+        HideAllPlants();
         _plantList[plantIndex].gameObject.SetActive(true);
     }
     
     public BasePlant GetPlantForPlantView(string plantName)
     {
-        hideAllPlants();
+        HideAllPlants();
         BasePlant plant = GetPlant(plantName);
         plant.gameObject.SetActive(true);
         return plant;
@@ -62,11 +69,6 @@ public class PlantManager : MonoBehaviourSingleton<PlantManager>
         }
 
         _plantList.Add(plant);
-        //uncomment to turn back on conversations
-        /* if (_nextPlantTalk == -1)
-         {
-             PlantTalked();
-         }*/
     }
 
     public void PlantTalked()
@@ -89,5 +91,15 @@ public class PlantManager : MonoBehaviourSingleton<PlantManager>
 
         return null;
     }
-    
+
+    public void GoToPlantView(string plantName)
+    {
+        _selectedPlant = plantName;
+        RoomController.Instance.ShowPlantRoom();
+    }
+
+    public BasePlant GetSelectedPlant()
+    {
+        return GetPlantForPlantView(_selectedPlant);
+    }
 }

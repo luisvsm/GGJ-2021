@@ -79,12 +79,28 @@ public class BasePlant : MonoBehaviour
     private bool _isNextToTalk;
     private bool _hasTalked = false;
 
+    private bool _isZoomedOutView = true;
+
     
     private float _nextActionTime = 0.0f;
 
     public Sprite Icon => _plantIcon;
 
     public string PlantName => _plantName;
+
+    public bool IsZoomedOutView
+    {
+        get => _isZoomedOutView;
+        set => _isZoomedOutView = value;
+    }
+
+    private void OnMouseDown()
+    {
+        if (_isZoomedOutView)
+        {
+            PlantManager.Instance.GoToPlantView(_plantName);
+        }
+    }
 
     #endregion
     
