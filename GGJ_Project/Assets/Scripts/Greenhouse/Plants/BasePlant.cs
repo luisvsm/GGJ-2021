@@ -426,6 +426,9 @@ public class BasePlant : MonoBehaviour
             case GameDataMonoSingleton.RESOURCE_TYPE.love:
                 AddLove();
                 break;
+            case GameDataMonoSingleton.RESOURCE_TYPE.sun:
+                Debug.Log("TODOL: Move plant to sunny spot <3");
+                break;
         }
     }
 

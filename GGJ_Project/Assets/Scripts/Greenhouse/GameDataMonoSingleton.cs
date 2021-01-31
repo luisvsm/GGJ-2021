@@ -19,7 +19,8 @@ public class GameDataMonoSingleton : MonoBehaviourSingleton<GameDataMonoSingleto
         water,
         poo,
         love,
-        leafLitter
+        leafLitter,
+        sun
     }
     [Serializable]
     public struct PlatDecoration
