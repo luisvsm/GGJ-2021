@@ -135,6 +135,11 @@ public class BasePlant : MonoBehaviour
     {
         if (GameDataMonoSingleton.Instance.TickerPaused)
         {
+            if (Time.time > _nextActionTime)
+            {
+                _nextActionTime += GameDataMonoSingleton.Instance.TickerTimeIntervalInSeconds;
+            }
+
             //If the ticker is paused don't do anything.
             return;
         }
@@ -170,7 +175,6 @@ public class BasePlant : MonoBehaviour
         Debug.Log("<color=blue>START CONVERSATION</color>");
         GameDataMonoSingleton.Instance.StartNextConversation(_plantName, _firstConversation);
         
-        
         //StartConversation
     }
     
@@ -181,7 +185,8 @@ public class BasePlant : MonoBehaviour
         _firstConversation = false;
         _isWaitingToTalk = false;
         _isNextToTalk = false;
-        UpdatePlantValues();
+        _needIndicatorAlert.gameObject.SetActive(false);
+        _needIndicatorDetailed.gameObject.SetActive(false);
     }
 
     private void UpdatePlantValues()
@@ -309,13 +314,14 @@ public class BasePlant : MonoBehaviour
         }
         else
         {
-            _health = _health + 1;
+            _health = _health + _healingRate;
             _healthPercentageBar.UpdateBar(healthPercentage);
+            Debug.Log(string.Format("<color=purple><b>ADDING HEALTH 5 {0}!</b></color>", _plantName));
         }
         
         if (_health >= _maxHealth)
         {
-            //Debug.Log(string.Format("<color=magenta><b>MAX HEALTH UPDATE {0}!</b></color>", _plantName));
+            Debug.Log(string.Format("<color=magenta><b>MAX HEALTH UPDATE 4 {0}!</b></color>", _plantName));
 
             _needIndicatorAlert.gameObject.SetActive(false);
             _needIndicatorDetailed.gameObject.SetActive(false);
@@ -392,11 +398,12 @@ public class BasePlant : MonoBehaviour
         {
             _pooLevel += amount;
             _health += GameDataMonoSingleton.Instance.ResourceHealAmount;
+            Debug.Log(string.Format("<color=purple><b>ADDING HEALTH 4 {0}!</b></color>", _plantName));
             _healthPercentageBar.UpdateBar(_health/_maxHealth);
             
             if (_health >= _maxHealth)
             {
-                //Debug.Log(string.Format("<color=magenta><b>MAX HEALTH UPDATE {0}!</b></color>", _plantName));
+                Debug.Log(string.Format("<color=magenta><b>MAX HEALTH UPDATE {0}!</b></color>", _plantName));
 
                 _needIndicatorAlert.gameObject.SetActive(false);
                 _needIndicatorDetailed.gameObject.SetActive(false);
@@ -423,11 +430,12 @@ public class BasePlant : MonoBehaviour
         {
             _waterLevel += amount;
             _health += GameDataMonoSingleton.Instance.ResourceHealAmount;
+            Debug.Log(string.Format("<color=purple><b>ADDING HEALTH 3 {0}!</b></color>", _plantName));
             _healthPercentageBar.UpdateBar(_health/_maxHealth);
             
             if (_health >= _maxHealth)
             {
-                //Debug.Log(string.Format("<color=magenta><b>MAX HEALTH UPDATE {0}!</b></color>", _plantName));
+                Debug.Log(string.Format("<color=magenta><b>MAX HEALTH UPDATE 2 {0}!</b></color>", _plantName));
 
                 _needIndicatorAlert.gameObject.SetActive(false);
                 _needIndicatorDetailed.gameObject.SetActive(false);
@@ -449,16 +457,17 @@ public class BasePlant : MonoBehaviour
     
     private void AddLove()
     {
-        _health = _health + 1;
+        _health = _health + (_healingRate * 3);
         if (_health > _maxHealth)
         {
             _health = _maxHealth;
         }
         _healthPercentageBar.UpdateBar(_health/_maxHealth);
+        Debug.Log(string.Format("<color=purple><b>ADDING HEALTH 6 {0}!</b></color>", _plantName));
         
         if (_health >= _maxHealth)
         {
-            //Debug.Log(string.Format("<color=magenta><b>MAX HEALTH UPDATE {0}!</b></color>", _plantName));
+            Debug.Log(string.Format("<color=magenta><b>MAX HEALTH UPDATE 3 {0}!</b></color>", _plantName));
 
             _needIndicatorAlert.gameObject.SetActive(false);
             _needIndicatorDetailed.gameObject.SetActive(false);

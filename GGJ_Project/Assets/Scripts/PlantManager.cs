@@ -30,6 +30,7 @@ public class PlantManager : MonoBehaviourSingleton<PlantManager>
         {
             _plantList[i].gameObject.SetActive(true);
             _plantList[i].IsZoomedOutView = true;
+            Debug.Log(string.Format("<color=magenta><b> PLANT: {0} HELATH: {1} MAX HEALTH {2}", _plantList[i].PlantName, _plantList[i].Health, _plantList[i].MaxHealth));
             if (_plantList[i].Health >= _plantList[i].MaxHealth)
             {
                 fullhealthPlants = fullhealthPlants + 1;

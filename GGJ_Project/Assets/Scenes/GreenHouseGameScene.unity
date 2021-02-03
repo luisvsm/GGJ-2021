@@ -1340,6 +1340,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3532757413464795299, guid: 1abd72835b52e4a2fbfe4476347e30b2,
+        type: 3}
+      propertyPath: _healingRate
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1abd72835b52e4a2fbfe4476347e30b2, type: 3}
 --- !u!4 &61371048967241207 stripped
@@ -1494,6 +1499,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3127785188908848257, guid: de700c483b660464dbb5aa83dfe70805,
+        type: 3}
+      propertyPath: _healingRate
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de700c483b660464dbb5aa83dfe70805, type: 3}
 --- !u!1001 &3337016099935060593
@@ -1567,6 +1577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3273587828216982292, guid: 70a4937b502dc45a09448e733c93d74f,
+        type: 3}
+      propertyPath: _healingRate
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3273587828216982292, guid: 70a4937b502dc45a09448e733c93d74f,
         type: 3}
@@ -1646,6 +1661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023156232187367770, guid: 76b6a8bc1b15545e8b854a7bcff44341,
+        type: 3}
+      propertyPath: _healingRate
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4023156232187367770, guid: 76b6a8bc1b15545e8b854a7bcff44341,
         type: 3}
@@ -1943,6 +1963,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8718853784879351844, guid: 9353b60ce67c74d4c801a42cf9dda04f,
+        type: 3}
+      propertyPath: _healingRate
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9353b60ce67c74d4c801a42cf9dda04f, type: 3}
 --- !u!4 &7943859629282849792 stripped
@@ -2022,6 +2047,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239663805106155645, guid: bdca1dd8fb1704dc19102871c0993dc2,
+        type: 3}
+      propertyPath: _healingRate
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdca1dd8fb1704dc19102871c0993dc2, type: 3}
