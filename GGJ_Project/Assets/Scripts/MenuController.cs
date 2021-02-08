@@ -17,7 +17,9 @@ public class MenuController : MonoBehaviourSingleton<MenuController>
     {
         for (int i = 0; i < MenuListAnimators.Count; i++)
         {
-            MenuListAnimators[i].SetBool("open", menuIndex==i);
+            if(MenuListAnimators[i].gameObject.activeSelf)
+                MenuListAnimators[i].SetBool("open", menuIndex==i);
+
             if (menuIndex == i)
             {
                 _activeMenuIndex = i;
@@ -29,7 +31,8 @@ public class MenuController : MonoBehaviourSingleton<MenuController>
     {
         for (int i = 0; i < MenuListAnimators.Count; i++)
         {
-            MenuListAnimators[i].SetBool("open", false);
+            if(MenuListAnimators[i].gameObject.activeSelf)
+                MenuListAnimators[i].SetBool("open", false);
         }
     }
 

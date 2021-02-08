@@ -595,6 +595,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4715934866933488622, guid: 855b372cb6fdf438681b8728774d3ce3,
+        type: 3}
+      propertyPath: _resourceHealAmount
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673899008115860302, guid: 855b372cb6fdf438681b8728774d3ce3,
+        type: 3}
+      propertyPath: plantName.Array.data[0]
+      value: FlyTrap
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673899008115860302, guid: 855b372cb6fdf438681b8728774d3ce3,
+        type: 3}
+      propertyPath: plantName.Array.data[5]
+      value: Vera
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 855b372cb6fdf438681b8728774d3ce3, type: 3}
 --- !u!114 &785888885 stripped
@@ -962,6 +977,24 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 2468126661928058254}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1611936764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3155912476065660714, guid: 5d7eb18efa13d455bb51a84fb065eb3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7024449897553789461}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1611936767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611936764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e7121d1cbfd4434c879d8f7822ea509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1737879763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1561412490, guid: 2114e2624fa86424db3217541fca295c,
@@ -1185,7 +1218,7 @@ PrefabInstance:
     - target: {fileID: 5746487794467508584, guid: f96d70915d0494a9b81d5be65f5c34bc,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5746487794467508585, guid: f96d70915d0494a9b81d5be65f5c34bc,
         type: 3}
@@ -1339,11 +1372,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3532757413464795299, guid: 1abd72835b52e4a2fbfe4476347e30b2,
-        type: 3}
-      propertyPath: _healingRate
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1abd72835b52e4a2fbfe4476347e30b2, type: 3}
@@ -1499,11 +1527,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3127785188908848257, guid: de700c483b660464dbb5aa83dfe70805,
-        type: 3}
-      propertyPath: _healingRate
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de700c483b660464dbb5aa83dfe70805, type: 3}
 --- !u!1001 &3337016099935060593
@@ -1578,16 +1601,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3273587828216982292, guid: 70a4937b502dc45a09448e733c93d74f,
-        type: 3}
-      propertyPath: _healingRate
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3273587828216982292, guid: 70a4937b502dc45a09448e733c93d74f,
-        type: 3}
-      propertyPath: _startingHealth
-      value: 15
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70a4937b502dc45a09448e733c93d74f, type: 3}
 --- !u!1001 &3815806692113274490
@@ -1661,16 +1674,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4023156232187367770, guid: 76b6a8bc1b15545e8b854a7bcff44341,
-        type: 3}
-      propertyPath: _healingRate
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4023156232187367770, guid: 76b6a8bc1b15545e8b854a7bcff44341,
-        type: 3}
-      propertyPath: _startingHealth
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76b6a8bc1b15545e8b854a7bcff44341, type: 3}
@@ -1963,11 +1966,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8718853784879351844, guid: 9353b60ce67c74d4c801a42cf9dda04f,
-        type: 3}
-      propertyPath: _healingRate
-      value: 0.1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9353b60ce67c74d4c801a42cf9dda04f, type: 3}
 --- !u!4 &7943859629282849792 stripped
@@ -2047,11 +2045,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8239663805106155645, guid: bdca1dd8fb1704dc19102871c0993dc2,
-        type: 3}
-      propertyPath: _healingRate
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bdca1dd8fb1704dc19102871c0993dc2, type: 3}

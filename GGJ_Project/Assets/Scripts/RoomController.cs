@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoomController : MonoBehaviourSingleton<RoomController>
 {
-    public delegate void RoomChanged();
+    public delegate void RoomChanged(int room);
     public RoomChanged OnRoomChanged;
 
     public List<GameObject> RoomList;
@@ -17,13 +17,15 @@ public class RoomController : MonoBehaviourSingleton<RoomController>
     private int _currentRoom = 0;
     void Start()
     {
-        showRoom(startingRoom);
+        showRoom(startingRoom, true);
     }
 
-    public void showRoom(int roomIndex)
+    public void showRoom(int roomIndex, bool strartingRoom = false)
     {
         bool roomChanged = false;
-        AudioController.Play("SFX_Generic_Transition");
+        if (!strartingRoom)
+            AudioController.Play("SFX_Generic_Transition");
+
         FadeController.Instance.Fade(() =>
         {
             for (int i = 0; i < RoomList.Count; i++)
@@ -38,14 +40,14 @@ public class RoomController : MonoBehaviourSingleton<RoomController>
                     _currentRoom = i;
                 }
             }
-            // if (roomIndex != 0) // hack, blame Luis
-            MenuController.Instance.showMenu(roomIndex);
+            if (!strartingRoom)
+                MenuController.Instance.showMenu(roomIndex);
         },
         () =>
         {
             if (roomChanged)
             {
-                OnRoomChanged?.Invoke();
+                OnRoomChanged?.Invoke(roomIndex);
             }
         });
     }

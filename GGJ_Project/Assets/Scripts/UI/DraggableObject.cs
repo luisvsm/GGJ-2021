@@ -158,7 +158,7 @@ public class DraggableObject : MonoBehaviour, IPointerDownHandler
         }
     }
 
-    void StartDragging()
+    public virtual void StartDragging()
     {
         // Debug.Log("Start");
         currentDraggableObject = this;

@@ -33,7 +33,22 @@ public class DraggableResource : DraggableObject
 			//AudioController.Play("SFX_Generic_Drop");
 		}
 	}
-
+	
+	public override void StartDragging(){
+		
+		if ( _resource == GameDataMonoSingleton.RESOURCE_TYPE.poo) {
+			// Check that we have the poo
+			if(PlayerInventoryMonoSingleton.Instance.HasPoo())
+				base.StartDragging();
+		}else if (_resource == GameDataMonoSingleton.RESOURCE_TYPE.water ) {
+			// Check that we have the water 
+			if(PlayerInventoryMonoSingleton.Instance.HasWater())
+				base.StartDragging();
+		}else{
+			// Else it's not a resource that we need to track
+			base.StartDragging();
+		}
+	}
     public override void AudioHookHoverIn()
     {
         Debug.Log("DraggableResource AudioHookHoverIn" + _resource);

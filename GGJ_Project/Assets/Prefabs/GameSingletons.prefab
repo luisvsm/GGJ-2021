@@ -104,10 +104,10 @@ MonoBehaviour:
   _sickThreshold: 0.5
   _almostDeadThreshold: 0.5
   _tickerTimeIntervalInSeconds: 1
-  _randomTalkIntervalInSecondsMin: 5
-  _randomTalkIntervalInSecondsMax: 10
+  _randomTalkIntervalInSecondsMin: 3
+  _randomTalkIntervalInSecondsMax: 6
   _happyPlantHappyTimeInSeconds: 120
-  _resourceHealAmount: 1
+  _resourceHealAmount: 0.1
   _decorations:
   - Name: 
     Position: 0
@@ -175,6 +175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MusicController
+      objectReference: {fileID: 0}
+    - target: {fileID: 1986762774168230954, guid: 192efcc5840684a2897f44d06161906c,
+        type: 3}
+      propertyPath: plantName.Array.data[5]
+      value: FlyTrap
       objectReference: {fileID: 0}
     - target: {fileID: 1986762774168230955, guid: 192efcc5840684a2897f44d06161906c,
         type: 3}

@@ -30,6 +30,10 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
         OnWaterUpdated?.Invoke(_water);
     }
 
+    public bool HasWater(int amount = 1){
+        return _water >= amount;
+    }
+
     public bool UseWater(int amount = 1)
     {
         if (_water >= amount)
@@ -42,6 +46,10 @@ public class PlayerInventoryMonoSingleton : MonoBehaviourSingleton<PlayerInvento
         {
             return false;
         }
+    }
+
+    public bool HasPoo(int amount = 1){
+        return _poo >= amount;
     }
 
     public void CollectPoo(int amount = 1)

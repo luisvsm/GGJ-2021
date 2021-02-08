@@ -6,7 +6,7 @@ public class MusicController : MonoBehaviourSingleton<MusicController>
 {
     public List<string> plantSongs;
     public List<string> plantName;
-    private Dictionary<string, AudioObject> plantSongObjects = new Dictionary<string, AudioObject>();
+    public Dictionary<string, AudioObject> plantSongObjects = new Dictionary<string, AudioObject>();
 
     void Start()
     {

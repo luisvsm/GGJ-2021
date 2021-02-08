@@ -372,7 +372,7 @@ public class BasePlant : MonoBehaviour
 
 	private void playAttention(float healthPercentage)
 	{
-		if (healthPercentage < 0.2 && nextTimeThatWeCanPlayAttentionSound < Time.time)
+		if (healthPercentage < 0.4 && nextTimeThatWeCanPlayAttentionSound < Time.time)
 		{
 			nextTimeThatWeCanPlayAttentionSound = Time.time + 3f;
 			if (PlantName == "BonScot")
@@ -457,7 +457,7 @@ public class BasePlant : MonoBehaviour
     
     private void AddLove()
     {
-        _health = _health + (_healingRate * 3);
+        _health = _health + (_healingRate * 2f);
         if (_health > _maxHealth)
         {
             _health = _maxHealth;
